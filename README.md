@@ -24,3 +24,6 @@ The file std-german.aiml has been removed because it fits not in the language on
 #### aiml/de/cdrossman_german
 copy of standard german aiml files by Christian Drossmann from http://alicebot.wikidot.com/aiml:de-de:cdrossman:alice:german-1-aiml and http://alicebot.wikidot.com/aiml:de-de:cdrossman:alice:german-2-aiml
 This copy is more complete (has more phrases) than other files commonly named std-german.aiml
+
+#### aiml/en/Mitsuku
+free aiml files from Mitsuku Chatbot by Square Bear a.k.a. Steve Worswick from http://www.square-bear.co.uk/aiml/
