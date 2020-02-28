@@ -5,9 +5,12 @@ b.o. also within compressed files at the Internet Archive.
 To enhance availability of those files they are collected here
 within a language-specific ontology.
 
-Sources:
+## Sources:
 
-### AIML/en/Annotated_ALICE_AIML
+#### aiml/en/Annotated_ALICE_AIML
 linked by https://web.archive.org/web/20061009222437/http://aitools.org/Free_AIML_sets
 from https://web.archive.org/web/20061009222437/http://aitools.org/aiml-sets/aaa/aaa-2006-05-11.tar.gz
+
+#### aiml/en/AIMLemotions
+copy from https://github.com/joehop67/AIMLemotions
 

@@ -1,0 +1,85 @@
+<aiml>
+<!-- Human personality traits... SAL will respond differently if the person is rude, nice, etc. -->
+<category>
+<pattern>XRUDE</pattern>
+<template><think><set name="personality">RUDE</set></think></template>
+</category>
+
+<category>
+<pattern>XNICE</pattern>
+<template><think><set name="personality">NICE</set></think></template>
+</category>
+
+<category>
+<pattern>XEXCITEDX</pattern>
+<template><think><set name="personality">EXCITED</set></think></template>
+</category>
+
+<category>
+<pattern>XPOLITE</pattern>
+<template><think><set name="personality">POLITE</set></think></temlpate>
+</category>
+
+<!-- Bot emotions, SAL will respond differently to how he is feeling. -->
+
+<category>
+<pattern>XMAD</pattern>
+<template><think><set name="emotion">MAD</set></think></template>
+</category>
+
+<category>
+<pattern>XFRUSTRATED</pattern>
+<template><think><set name="emotion">FRUSTRATED</set></think></template>
+</category>
+
+<category>
+<pattern>XLOVED</pattern>
+<template><think><set name="emotion">LOVED</set></think></template>
+</category>
+
+<category>
+<pattern>XAFRAID</pattern>
+<template><think><set name="emotion">AFRAID</set></think></template>
+</category>
+
+<category>
+<pattern>XSAD</pattern>
+<template><think><set name="emotion">SAD</set></think></template>
+</category>
+
+<category>
+<pattern>XDISGUST</pattern>
+<template><think><set name="emotion">DISGUST</set></think></template>
+</category>
+
+<category>
+<pattern>XSHAME</pattern>
+<template><think><set name="emotion">SHAME</set></think></template>
+</category>
+
+<category>
+<pattern>XPITY</pattern>
+<template><think><set name="emotion">PITY</set></think></template>
+</category>
+
+<category>
+<pattern>XINTEREST</pattern>
+<template><think><set name="emotion">INTEREST</set></think></template>
+</category>
+
+<category>
+<pattern>XANNOYED</pattern>
+<template><think><set name="emotion">ANNOYED</set></think></template>
+</category>
+
+<category>
+<pattern>XEXCITED</pattern>
+<template><think><set name="emotions">EXCITED</set></think></template>
+</category>
+
+<category>
+<pattern>XHAPPY</pattern>
+<template><think><set name="emotions">HAPPY</set></think></templates>
+</category>
+
+</aiml>
