@@ -7,10 +7,6 @@ within a language-specific ontology.
 
 ## Sources:
 
-#### aiml/en/Annotated_ALICE_AIML
-linked by https://web.archive.org/web/20061009222437/http://aitools.org/Free_AIML_sets
-from https://web.archive.org/web/20061009222437/http://aitools.org/aiml-sets/aaa/aaa-2006-05-11.tar.gz
-
 #### aiml/en/AIMLemotions
 copy from https://github.com/joehop67/AIMLemotions
 
@@ -30,4 +26,8 @@ free aiml files from Mitsuku Chatbot by Square Bear a.k.a. Steve Worswick from h
 
 #### aiml/en/aiml-en-us-pandorabots-callmom
 Open Source AIML of Pandorabots CallMom from https://code.google.com/archive/p/aiml-en-us-pandorabots-callmom/
+
+#### aiml/en/aiml-en-us-foundation-alice
+Copy from https://code.google.com/archive/p/aiml-en-us-foundation-alice/
+This includes the data set safe-aiml-reductions, mindpix and Annotated_ALICE_AIML.
 
