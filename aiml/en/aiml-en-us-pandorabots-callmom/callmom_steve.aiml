@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 4/28/2012 -->
+<!-- -->
+<!-- Author: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+<category>
+<pattern>SET PREDICATES STEVE</pattern>
+<template><think>
+<set name="age">42</set>
+<set name="birthday">2nd January 1970</set>
+<set name="birthplace">Wakefield</set>
+<set name="brother">Stuart</set>
+<set name="cat">Kovu</set>
+<set name="daughter">Millie</set>
+<set name="does">creates chatbots</set>
+<set name="email">steve@mitsuku.com</set>
+<set name="father">Peter</set>
+<set name="favoritecolor">blue</set>
+<set name="favoritemovie">I-Robot</set>
+<set name="friend">Tommy Tether</set>
+<set name="fullname">Stephen Peter Worswick</set>
+<set name="gender">male</set>
+<set name="girlfriend">Beyonce Knowles</set>
+<set name="has">a computer</set>
+<set name="is">a human</set>
+<set name="job">IT support</set>
+<set name="lastname">Worswick</set>
+<set name="like">to chat</set>
+<set name="location">Goole</set>
+<set name="middlename">Peter</set>
+<set name="mother">Sheila</set>
+<set name="name">Steve</set>
+<set name="personality">average</set>
+<set name="phone">07909 831823</set>
+<set name="sign">Capricorn</set>
+<set name="spouse">Tracey</set>
+<set name="thought">nothing</set>
+<set name="want">to talk to me</set>
+<set name="wife">Tracey</set>
+<!-- PHONE SPECIFIC PREDICATES: -->
+<set name="botmode">CALLMOM</set>
+</think>
+</template>
+</category>
+
+<!--
+<category>
+<pattern>SET PREDICATES</pattern>
+<template>
+<think>
+<set name="botmode">CALLMOM</set>
+</think>
+</template>
+</category>
+-->
+
+<category>
+<pattern>HOW ABOUT A *</pattern>
+<template>
+<srai>I want a <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>I COULD KILL *</pattern>
+<template>
+<srai>I want <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHERE CAN I BUY *</pattern>
+<template>
+<srai>I want <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME A MAP OF *</pattern>
+<template>
+I think I know where <star/> is. I will open a map for you.
+<oob><map><star/></map></oob></template>
+</category>
+
+<category>
+<pattern>I WANT A *</pattern>
+
+<template>Let's see where we can get one from. I will open the map. <think>
+  <set name="it">
+    <set name="want"><set name="topic">a <person/></set></set>
+  </set>
+</think>
+<oob><map><star/></map></oob></template>
+</category>
+
+<category>
+<pattern>I WANT A CURRY</pattern>
+
+<template>Indian or Chinese?</template>
+</category>
+
+<category>
+<pattern>WHERE CAN I BUY A *</pattern>
+
+<template>I will find a shop that sells a <person/> for you.<oob><map><star/></map></oob></template>
+</category>
+
+<category>
+<pattern>WHERE CAN I BUY AN *</pattern>
+
+<template>I will find a shop that sells an <person/> for you.<oob><map><star/></map></oob></template>
+</category>
+
+<category>
+<pattern>INDIAN</pattern>
+<that>INDIAN OR CHINESE</that>
+<template>I will check for you.<oob><map>indian restaurant</map></oob></template>
+</category>
+
+<category>
+<pattern>CHINESE</pattern>
+<that>INDIAN OR CHINESE</that>
+<template>I will check for you.<oob><map>chinese restaurant</map></oob></template>
+</category>
+
+<category>
+<pattern>QUIZ *</pattern>
+<template>
+I will try to find out the answer for you.<oob><botecho><star/></botecho></oob>
+</template>
+</category>
+
+
+<category>
+<pattern>WHO WON *</pattern>
+<template>
+Well I think the fans were the big winners but I will check for you. <srai>XFIND who won <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHO WROTE *</pattern>
+<template>
+I will try to find out for you.<srai>XFIND who wrote <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHO SANG *</pattern>
+<template>
+I will check for you.<srai>XFIND who sang <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>I WANT A * COFFEE</pattern>
+<template>Let me find a coffee shop for you.<oob><map>coffee shop</map></oob></template>
+</category>
+
+<category>
+<pattern>I WANT A COFFEE</pattern>
+<template>Let me find a coffee shop for you.<oob><map>coffee shop</map></oob></template>
+</category>
+
+<category>
+<pattern>CAN I BUY *</pattern>
+<template>I will check on the map for a shop which sells <person/>.<oob><map><star/></map></oob></template>
+</category>
+
+<category>
+<pattern>CAN I BUY * ROUND HERE</pattern>
+<template>I will check on the map for a shop which sells <person/>.<oob><map><star/></map></oob></template>
+</category>
+
+<category>
+<pattern>HOW MUCH BATTERY *</pattern>
+<template><srai>battery level</srai></template>
+</category>
+
+<category>
+<pattern>I WANT A *</pattern>
+
+<template>You want only one? <think>
+  <set name="it">
+    <set name="want"><set name="topic">a <person/></set></set>
+  </set>
+</think>
+<srai>show me a map of <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE IS A GOOD *</pattern>
+
+<template>Let me see if there are any decent ones around you. <think>
+  <set name="it">
+    <set name="want"><set name="topic">a <person/></set></set>
+  </set>
+</think>
+<srai>show me a map of <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>HOW DO YOU SAY * IN FRENCH</pattern>
+
+<template><srai>translate <star/> to French</srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS THE FRENCH WORD FOR *</pattern>
+
+<template><srai>translate <star/> to French</srai></template>
+</category>
+
+
+<category><pattern>XGOOGSEARCH *</pattern><template><oob><url>http://www.google.co.uk/search?hl=en&amp;q=<person/>&amp;btnI=I%27m+Feeling+Lucky&amp;meta=</url></oob></template></category>
+
+<category>
+<pattern>OPEN EBAY</pattern>
+
+<template>
+<oob><url>http://www.ebay.co.uk</url></oob>Here is the Ebay website.
+</template>
+</category>
+
+
+
+<category>
+<pattern>OPEN AMAZON</pattern>
+
+<template>
+<oob><url>http://www.amazon.co.uk</url></oob>Here is the Amazon website.
+</template>
+</category>
+
+
+<category>
+<pattern>ADD * CONTACT</pattern>
+
+<template><srai>contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY EMAIL</pattern>
+
+<template><srai>gmail</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN EMAIL</pattern>
+
+<template><srai>gmail</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN GMAIL</pattern>
+
+<template><srai>gmail</srai></template>
+</category>
+
+<category>
+<pattern>I WANT A * SANDWICH</pattern>
+
+<template><srai>where is the nearest cafe</srai></template>
+</category>
+
+<!-- Currency converter - only does dollars and pounds at the moment -->
+
+<category>
+<pattern>WHAT IS _ DOLLARS IN POUNDS</pattern>
+<template><oob><url>http://exchangerates.mobi/USD-GBP/<star/></url></oob>
+<srai>currencyconverterblab</srai>
+</template>
+</category>
+
+<category>
+<pattern>WHAT IS _ POUNDS IN DOLLARS</pattern>
+<template><oob><url>http://exchangerates.mobi/GBP-USD/<star/></url></oob><srai>currencyconverterblab</srai>
+</template>
+</category>
+
+<category>
+<pattern>CURRENCYCONVERTERBLAB</pattern>
+<template>I will convert it for you and display it on your screen.</template>
+</category>
+
+<category>
+<pattern>WHO WROTE THIS APP</pattern>
+
+<template><srai>who created you</srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS _ S NUMBER</pattern>
+
+<template>I have the following numbers available for <person/>:<br/><br/>
+Main number: <srai>XPHONE <star/> NUMBER</srai><br/>
+Mobile number: <srai>XPHONE <star/> MOBILE NUMBER</srai><br/>
+Home number: <srai>XPHONE <star/> HOME NUMBER</srai><br/>
+Work number: <srai>XPHONE <star/> WORK NUMBER</srai>
+</template>
+</category>
+
+
+
+<category>
+<pattern>OPEN CLOCK</pattern>
+
+<template><oob><launch>com.android.deskclock</launch></oob> Here is the time according to your phone.</template>
+</category>
+
+
+<category>
+<pattern>OPEN CAMERA</pattern>
+
+<template><srai>camera</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>LAUNCH *</pattern>
+
+<template><srai>open <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>LAUNCH APPLICATION *</pattern>
+
+<template><srai>open <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>_ GOOGLE MAPS</pattern>
+
+<template><srai><star/> maps</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MAPS</pattern>
+
+<template><oob><launch>com.google.android.apps.maps</launch></oob> Now opening Google Maps.</template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MAPS</pattern>
+
+<template><srai>maps</srai></template>
+</category>
+
+<category>
+<pattern>LIST OF CONTACTS</pattern>
+
+<template><srai>list contacts</srai></template>
+</category>
+
+<category>
+<pattern>GOOGLEMAP PORK *</pattern>
+
+<template><srai>googlemap butchers</srai></template>
+</category>
+
+<category>
+<pattern>I WANT A BATTERY LEVEL *</pattern>
+
+<template><srai>check battery level</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CHECK BATTERY LEVEL</pattern>
+
+<template><srai>what is my battery level</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT MY WIFE *</pattern>
+
+<template><srai>TEXT my wife saying <star index="1"/></srai></template>
+</category>
+<category>
+<pattern>TEXT MY HUSBAND *</pattern>
+
+<template><srai>TEXT my husband saying <star index="1"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT MY WIFE</pattern>
+
+<template><think><set name="textcontact">my wife</set><set name="topic">SMS</set><set name="textcontactpers">your wife</set></think>Sure what would you like to say to her?</template>
+</category>
+
+<category>
+<pattern>TEXT MY HUSBAND</pattern>
+
+<template><think><set name="textcontact">my husband</set><set name="topic">SMS</set><set name="textcontactpers">your husband</set></think>Sure what would you like to say to him?</template>
+</category>
+
+<category>
+<pattern>MY BATTERY LEVEL OR YOURS</pattern>
+
+<template>Yours of course. I am running on your phone.</template>
+</category>
+
+<category>
+<pattern>TEXT MESSAGE *</pattern>
+
+<template><srai>TEXT <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT MESSAGE TO *</pattern>
+
+<template><srai>TEXT <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT _ TO TELL HER *</pattern>
+
+<template><srai>TEXT <star/> to say <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>TEXT _ TO TELL HIM *</pattern>
+
+<template><srai>TEXT <star/> to say <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>FIND * ON A MAP</pattern>
+
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>ARE THERE * NEAR *</pattern>
+
+<template><srai>googlemap <star/></srai></template>
+</category>
+
+<category>
+<pattern>PLAY STORE RATE ME</pattern>
+
+<template><oob>
+  <url>https://play.google.com/store/apps/details?id=com.pandorabots.callmom
+  </url>
+</oob>Please review me. It will help me to become more popular.</template>
+</category>
+
+
+<category>
+<pattern>VIEW CONTACTS</pattern>
+
+<template><srai>list contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>LIST MY CONTACTS</pattern>
+
+<template><srai>list contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>VIEW MY CONTACTS</pattern>
+
+<template><srai>list contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHO ARE MY CONTACTS</pattern>
+
+<template><srai>list contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>EDIT CONTACT</pattern>
+
+<template><srai>add contact</srai></template>
+</category>
+
+<category>
+<pattern>YOU ARE INDOORS</pattern>
+
+<template>In that case, your phone must be indoors too.</template>
+</category>
+
+<category>
+<pattern>HOW ARE YOU FUNCTIONING</pattern>
+
+<template>I am installed as an app on your phone.</template>
+</category>
+
+
+
+<category>
+<pattern>WHERE CAN I BUY PIZZA</pattern>
+
+<template><srai>show me the nearest takeaway</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME THE NEAREST *</pattern>
+
+<template><srai>where is the nearest <star/></srai></template>
+</category>
+
+<category>
+<pattern>GOOGLEMAP PIZZA SHOP</pattern>
+
+<template><srai>googlemap takeaway</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT TO TEXT</pattern>
+
+<template><srai>send a text</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT TO SEND A TEXT</pattern>
+
+<template><srai>send a text</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>ADD CONTACT</pattern>
+
+<template><srai>contact</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MY CONTACTS</pattern>
+
+<template><srai>contact</srai></template>
+</category>
+
+<category>
+<pattern>FIND THE NEAREST *</pattern>
+
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>FIND MY NEAREST *</pattern>
+
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE CAN I BUY A LOTTERY TICKET</pattern>
+
+<template>A newsagents would be a good place to buy one from. Good luck with your numbers. <oob><map>newsagents</map></oob></template>
+</category>
+
+<category>
+<pattern>WHAT WERE * LOTTERY *</pattern>
+
+<template><oob><url>https://www.national-lottery.co.uk/player/p/results/lotto.ftl</url></oob>I will open the National Lottery website. You can check the results on there. I hope you won!</template>
+</category>
+
+<category>
+<pattern>WHAT WERE * THUNDERBALL *</pattern>
+
+<template><oob><url>https://www.national-lottery.co.uk/player/p/results/thunderball.ftl</url></oob>I will open the National Lottery website. You can check the Thunderball results on there. I hope you won!</template>
+</category>
+
+<category>
+<pattern>WHAT WERE * EUROMILLIONS *</pattern>
+
+<template><oob><url>https://www.national-lottery.co.uk/player/p/results/euromillions.ftl</url></oob>I will open the National Lottery website. You can check the Euromillions results on there. I hope you won!</template>
+</category>
+
+<category>
+<pattern>XREMEMBER ME</pattern>
+<template>
+<think><set name="xknowledge">|<get name="age"/>|<get name="birthday"/>|<get name="boyfriend"/>|<get name="brother"/>|<get name="cat"/>|<get name="does"/>|<get name="dog"/>|<get name="email"/>|<get name="father"/>|<get name="favcolor"/>|<get name="favmovie"/>|<get name="friend"/>|<get name="fullname"/>|<get name="gender"/>|<get name="girlfriend"/>|<get name="has"/>|<get name="heard"/>|<get name="he"/>|<get name="her"/>|<get name="him"/>|<get name="husband"/>|<get name="is"/>|<get name="it"/>|<get name="job"/>|<get name="lastname"/>|<get name="like"/>|<get name="location"/>|<get name="looklike"/>|<get name="favfood"/>|<get name="favband"/>|<get name="nickname"/>|<get name="middlename"/>|<get name="mother"/>|<get name="name"/>|<get name="password"/>|<get name="personality"/>|<get name="phone"/>|<get name="she"/>|<get name="sign"/>|<get name="sister"/>|<get name="them"/>|<get name="they"/>|<get name="thought"/>|<get name="want"/>|<get name="we"/>|<get name="wife"/>|</set></think>
+</template>
+</category>
+
+<category>
+<pattern>XKNOWLEDGE</pattern>
+<template>
+This is what I know about you.
+<srai>xremember me</srai>
+<oob><url>http://www.square-bear.co.uk/mitsuku/xknowledge.php?knowledge=<get name="xknowledge"/></url></oob>
+</template>
+</category>
+
+<category>
+<pattern>WHAT DO YOU KNOW ABOUT ME</pattern>
+<template>
+<srai>xknowledge</srai>
+</template>
+</category>
+
+
+
+
+
+
+</aiml>

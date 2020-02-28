@@ -27,3 +27,7 @@ This copy is more complete (has more phrases) than other files commonly named st
 
 #### aiml/en/Mitsuku
 free aiml files from Mitsuku Chatbot by Square Bear a.k.a. Steve Worswick from http://www.square-bear.co.uk/aiml/
+
+#### aiml/en/aiml-en-us-pandorabots-callmom
+Open Source AIML of Pandorabots CallMom from https://code.google.com/archive/p/aiml-en-us-pandorabots-callmom/
+

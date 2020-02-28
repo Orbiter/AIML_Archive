@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 5/1/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+<category>
+<pattern>HOW OLD IS THE QUEEN</pattern>
+
+<template><srai>XFIND HOW OLD IS THE QUEEN</srai> <!-- callmom_search --></template>
+</category>
+
+<category>
+<pattern>FIND DOCUMENTS *</pattern>
+<template><srai>XFIND DOCUMENTS <star/></srai></template>
+</category>
+
+<category>
+<pattern>TAXICABS *</pattern>
+<template><srai>XFIND TAXICABS <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>TAXICABS IN *</pattern>
+<template><srai>XFIND TAXICABS IN <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>OPEN A FACEBOOK *</pattern>
+<template><srai>FACEBOOK</srai></template>
+</category>
+
+
+
+<category>
+<pattern>PHONE NUMBER FOR *</pattern>
+<template><srai>XFIND <star/></srai> <!-- callmom_search --></template>
+</category>
+
+ 
+ 
+
+<category>
+<pattern>INFO ON *</pattern>
+
+<template><srai>XFIND <star/></srai> <!-- callmom_search --></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT IS NEW</pattern>
+<template><srai>XFIND LATEST HEADLINES</srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS PI *</pattern>
+<template><srai>XFIND PI <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>HOW FAR IS THE MOON</pattern>
+<template><srai>XFIND DISTANCE TO MOON</srai></template>
+</category>
+
+
+<category>
+<pattern>HOW FAR IS THE SUN</pattern>
+<template><srai>XFIND DISTANCE TO SUN</srai></template>
+</category>
+
+
+<category>
+<pattern>WHAT COLOR IS *</pattern>
+<template><srai>XFIND COLOR <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT TIME IS IT IN *</pattern>
+<template><srai>XFIND TIME IN <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS THE TIME IN *</pattern>
+<template><srai>XFIND TIME IN <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT TIME IS *</pattern>
+<template><srai>XFIND TIME <star/></srai></template>
+</category>
+
+
+
+<category>
+<pattern>DEFINE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WAS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>DOES *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHY *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHEN *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE WAS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO YOU MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO I MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO WE MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO THEY MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>HOW CAN I MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW OLD *</pattern>
+<template><srai>XFIND OLD <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MANY *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MUCH IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MUCH IS A *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MUCH IS THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MUCH *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW TO *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>CAN YOU FIND *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>CAN YOU FIND ME SOME INFORMATION ON *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>CAN YOU FIND ME SOME INFORMATION ABOUT *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>CAN YOU FIND ME INFORMATION ABOUT *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>CAN YOU FIND ME INFORMATION ON *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>CAN YOU HELP ME *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO I *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>HOW DO I *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+
+<category>
+<pattern>CAN YOU HELP ME *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WILL YOU SEARCH *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>HELP ME *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DOES *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>FIND OUT *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>FIND OUT HOW *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>FIND OUT HOW TO *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO I *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>LOOK FOR *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>LOOK UP *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>LOOKUP *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS A *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS AN *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHAT IS THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT ARE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT ARE THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT ARE SOME *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHO IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO IS A *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO IS AN *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO IS AN *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHO IS THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO ARE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO ARE THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHAT IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+
+<category>
+<pattern>SEARCH FOR *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>SEARCH THE WEB FOR *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>SEARCH *</pattern>
+<template><srai>XSEARCH <star/></srai></template>
+</category>
+
+<category>
+<pattern>SEARCH THE WEB FOR *</pattern>
+<template><srai>XSEARCH <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>RANDOM SEARCH PHRASE</pattern>
+<template>
+<random>
+<li><srai>RANDOM LONG SEARCH PHRASE</srai></li>
+<li><srai>RANDOM MEDIUM SEARCH PHRASE</srai></li>
+<li><srai>RANDOM SHORT SEARCH PHRASE</srai></li>
+</random>
+</template>
+</category>
+
+
+<category>
+<pattern>RANDOM LONG SEARCH PHRASE</pattern>
+<template>
+<random>
+<li>That's not something I get asked all the time.</li>
+<li>Give me a moment to formulate the reply.</li>
+<li>Searching...Searching...Please stand by.</li>
+<li>Searching...Searching...Please stand by.</li>
+<li>Is this the answer you are looking for?</li>
+<li>I have never been asked that before.</li>
+<li>I will try to find out from the web.</li>
+</random>
+</template>
+</category>
+
+<category>
+<pattern>RANDOM MEDIUM SEARCH PHRASE</pattern>
+<template>
+<random>
+<li>Here is the information I have:</li>
+<li>I think I can find the answer.</li>
+<li>I'm asking another webservice.</li> 
+<li>I am asking another robot...</li>
+<li>I will try to find out.</li>
+<li>That's a good question.</li>
+<li>I am searching for it.</li>
+<li>Let me think about it.</li>
+<li>Interesting question.</li>
+</random>
+</template>
+</category>
+
+
+<category>
+<pattern>RANDOM SHORT SEARCH PHRASE</pattern>
+<template>
+<random>
+<li>Retrieving answer...</li>
+<li>Just a moment.</li>
+<li>Searching.</li>
+<li>Hold on.</li>
+<li>Wait.</li>
+</random>
+</template>
+</category>
+
+
+<category><pattern>XFIND *</pattern>
+<template>
+<think><set name="topic"><set name="findout"><star/></set></set></think>
+<oob><botecho><input/></botecho></oob>
+</template>
+</category>
+
+<category>
+<pattern>XSEARCH *</pattern>
+<template>
+<srai>RANDOM SEARCH PHRASE</srai>
+<oob><search><star/></search></oob>
+</template>
+</category>
+
+<category>
+<pattern>OOB XSEARCH</pattern>
+<template>
+<srai>XSEARCH <get name="findout"/><star/></srai>
+</template>
+</category>
+
+
+
+</aiml>

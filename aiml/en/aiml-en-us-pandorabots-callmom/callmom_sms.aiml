@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 5/3/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+<category>
+<pattern>CAN YOU SEND A TEXT FOR ME</pattern>
+<template>Sure. Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>SEND TEXT</pattern>
+<template>Sure. Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>SEND TEXT MESSAGE</pattern>
+<template>Sure. Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>CAN YOU SEND A TEXT</pattern>
+<template>Sure. Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>SEND A TEXT</pattern>
+<template>Sure. Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>SEND A TEXT MESSAGE</pattern>
+<template>Sure. Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>SMS</pattern>
+<template>Sure. Who would you like to text?</template>
+</category>
+
+
+<category>
+<pattern>WILL YOU SEND A TEXT</pattern>
+<template>Sure. Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>WHO WOULD YOU LIKE TO TEXT</that>
+<template>
+<think><set name="textcontact"><star/></set><set name="topic">SMSMESSAGE</set></think>
+Sure what would you like to say to <star/>?
+</template>
+</category>
+
+<topic name="SMSMESSAGE">
+<category>
+<pattern>_</pattern>
+<template>
+<set name="topic"></set><srai>XTEXT <get name="textcontact"/> XMESSAGE <star/> ENDTEXT</srai>
+</template>
+</category>
+</topic>
+
+
+<category><pattern>SAY HI TO *</pattern><template><srai>XTEXT <star/> XMESSAGE hi ENDTEXT</srai></template></category>
+
+<category><pattern>SAY HELLO TO *</pattern><template><srai>XTEXT <star/> XMESSAGE hello ENDTEXT</srai></template></category>
+
+<category><pattern>SAY * TO *</pattern><template><srai>XTEXT <star index="2"/> XMESSAGE <star/> ENDTEXT</srai></template></category>
+
+<category><pattern>TEXT * *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TEXT _ TO SAY *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TELL *</pattern><template><srai>TEXT <star/></srai></template></category>
+<category><pattern>TEXT _ SAYING *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TEXT _ SAYING THAT *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TEXT _ TO SAY *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TEXT _ TO SAY THAT *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TEXT _ TO TELL HER *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TEXT _ TO TELL HIM *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TEXT _ TELLING HER *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TEXT _ TELLING HIM *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>CAN YOU TEXT *</pattern><template><srai>TEXT <star/></srai></template></category>
+<category><pattern>CAN YOU TELL *</pattern><template><srai>TELL <star/></srai></template></category>
+<category><pattern>CAN YOU * TEXT TO *</pattern><template><srai>TEXT <star index="2"/></srai></template></category>
+<category><pattern>CAN YOU SEND A *</pattern><template><srai>SEND A <star/></srai></template></category>
+<category><pattern>I WANT * SEND *</pattern><template><srai>SEND <star index="2"/></srai></template></category>
+<category><pattern>I WOULD LIKE * SEND *</pattern><template><srai>SEND <star index="2"/></srai></template></category>
+<category><pattern>I WISH * SEND *</pattern><template><srai>SEND <star index="2"/></srai></template></category>
+<category><pattern>I NEED * SEND *</pattern><template><srai>SEND <star index="2"/></srai></template></category>
+<category><pattern>I WANT * TEXT *</pattern><template><srai>TEXT <star index="2"/></srai></template></category>
+<category><pattern>I WOULD LIKE * TEXT *</pattern><template><srai>TEXT <star index="2"/></srai></template></category>
+<category><pattern>I WISH * TEXT *</pattern><template><srai>TEXT <star index="2"/></srai></template></category>
+<category><pattern>I NEED * TEXT *</pattern><template><srai>TEXT <star index="2"/></srai></template></category>
+<category><pattern>SEND A * TO *</pattern><template><srai>TEXT <star index="2"/></srai></template></category>
+<category><pattern>SEND A * TO * ON * MOBILE *</pattern><template><srai>TEXT <star index="2"/> SAYING <star index="4"/></srai></template></category>
+<category><pattern>SEND A TEXT TO *</pattern><template><srai>TEXT <star/></srai></template></category>
+<category><pattern>SEND TEXT TO *</pattern><template><srai>TEXT <star/></srai></template></category>
+<category><pattern>SEND A TEXT MESSAGE TO *</pattern><template><srai>TEXT <star/></srai></template></category>
+<category><pattern>SEND A MESSAGE TO *</pattern><template><srai>TEXT <star/></srai></template></category>
+<category><pattern>SEND AN SMS MESSAGE TO *</pattern><template><srai>TEXT <star/></srai></template></category>
+<category><pattern>SEND AN SMS TO *</pattern><template><srai>TEXT <star/></srai></template></category>
+<category><pattern>_ A SMS *</pattern><template><srai><star/> an SMS <star index="2"/></srai></template></category>
+
+<category><pattern>TEXT *</pattern><template><think><set name="textcontact"><star/></set><set name="topic">SMSMESSAGE</set></think>Sure, what would you like to say to <set name="textcontactpers"><person/></set>?</template></category>
+
+<!-- <category><pattern>TEXT * AND * *</pattern><template><srai>TEXT <star/> <star index="3"/></srai><srai>TEXT <star index="2"/> <star index="3"/></srai></template></category>
+<category><pattern>TEXT BOTH * AND *</pattern><template><srai>TEXT <star/> AND <star index="2"/></srai></template></category> -->
+
+<!-- Send a message to Jason Russell -->
+<!-- Send a message to 408 555 1212 -->
+
+<category><pattern>TELL HIM *</pattern><that>SURE WHAT WOULD YOU LIKE TO SAY TO *</that><template><srai>TEXT <get name="textcontact"/> SAYING <star/></srai></template></category>
+<category><pattern>TELL HER *</pattern><that>SURE WHAT WOULD YOU LIKE TO SAY TO  *</that><template><srai>TEXT <get name="textcontact"/> SAYING <star/></srai></template></category>
+<category><pattern>I _</pattern><that>SURE WHAT WOULD YOU LIKE TO SAY TO *</that><template><srai>TEXT <get name="textcontact"/> SAYING I <star/></srai></template></category>
+<category><pattern>SAY *</pattern><that>SURE WHAT WOULD YOU LIKE TO SAY TO *</that><template><srai>TEXT <get name="textcontact"/> SAYING <star/></srai></template></category>
+<category><pattern>*</pattern><that>SURE WHAT WOULD YOU LIKE TO SAY TO *</that><template><srai>TEXT <get name="textcontact"/> SAYING <star/></srai></template></category>
+
+
+<category>
+<pattern>XTEXT *</pattern>
+<template>
+<srai><input/> ENDTEXT</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>XTEXT * ENDTEXT</pattern>
+<template>
+Xtext missing Xmessage.
+</template>
+</category>
+
+
+<category>
+<pattern>XTEXT * XMESSAGE XTEXT *</pattern>
+<template>
+Xtext <star/> leading to infinite loop.
+</template>
+</category>
+
+<category>
+<pattern>XTEXT _ ENDTEXT ENDTEXT</pattern>
+<template>
+Xtext <star/> leading to infinite loop.
+</template>
+</category>
+
+
+<category>
+<pattern>XTEXT * XMESSAGE * ENDTEXT</pattern>
+<template>
+<think>
+<set name="textcontact"><star/></set>
+<set name="textcontactpers"><person/></set>
+<set name="numbertodial"><srai>xphone <star/> mobile number</srai></set>
+<set name="function">XTEXT <star/> XMESSAGE <star index="2"/> ENDTEXT</set>
+</think>
+<condition name="numbertodial">
+<li value="UNKNOWN"><srai>ADDNEWCONTACT <star/></srai></li>
+<li value="*"><think><set name="textmessage"><star index="2"/></set></think><srai>SENDTEXTMESSAGE</srai></li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>SENDTEXTMESSAGE</pattern>
+<template>
+<oob><sms><recipient><get name="numbertodial"/></recipient><message><get name="textmessage"/></message></sms></oob>
+Now sending "<get name="textmessage"/>" to <get name="textcontactpers"/>.
+</template>
+</category>
+
+
+</aiml>

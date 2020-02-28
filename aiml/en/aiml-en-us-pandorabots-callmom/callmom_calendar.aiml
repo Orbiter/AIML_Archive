@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 5/4/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+
+
+<category>
+<pattern>TEST SCHEDULE</pattern>
+
+<template>
+<oob><schedule><title>Test entry</title><description>A test of entering a meeting</description><location>Your house</location><year><date format="%Y"/></year><month><date format="%m"/></month><day><date format="%d"/></day><hour>14</hour><minute>00</minute><duration>30</duration></schedule></oob> I will add a test entry to your calendar for today at 2pm.<srai>calendar</srai></template>
+</category>
+
+<category><pattern>OOB TEST SCHEDULE</pattern>
+<template><oob><schedule><title>CallMom Event</title><description>Test Event</description><location>Skype</location><year>2012</year><month>5</month><day>4</day><hour>16</hour><minute>15</minute><duration>60</duration></schedule></oob> Testing calendar.</template>
+</category>
+
+<category>
+<pattern>REMIND ME ON * TO *</pattern>
+
+<template>
+<think><set name="eventname"><star index="2"/></set><set name="checkdate"><date format="%m %d"/></set><srai>DATENUM <star/></srai><set name="newhour">9</set></think>
+Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME TO * ON *</pattern>
+
+<template>
+<srai>remind me on <star index="2"/> to <star/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME TO *</pattern>
+
+<template><srai>setupcalendarentry</srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME *</pattern>
+
+<template><srai>setupcalendarentry</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SETUPCALENDARENTRY</pattern>
+
+<template><srai><input index="1"/> ENDCAL</srai></template>
+</category>
+
+ 
+<category>
+<pattern>REMIND ME TOMORROW TO *</pattern>
+
+<template>
+<srai>remind me to <star/> tomorrow</srai></template>
+</category>
+
+
+
+<category>
+<pattern>REMIND ME TO * TOMORROW ENDCAL</pattern>
+
+<template>
+<think><set name="eventname"><star/></set><set name="checkdate"><date format="%m %d"/></set><srai>XTOMORROW</srai><set name="newhour">9</set></think>
+Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME TOMORROW AT * TO * ENDCAL</pattern>
+
+<template>
+<think><set name="newhour"><star index="1"/></set><set name="eventname"><star index="2"/></set><set name="checkdate"><date format="%m %d"/></set><srai>XTOMORROW</srai></think>
+Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME TO * AT * ENDCAL</pattern>
+
+<template>
+<think><set name="eventname"><star/></set><set name="newmonth"><date format="%m"/></set><set name="newdate"><date format="%d"/></set><set name="newhour"><star index="2"/></set></think>
+Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai>
+</template>
+</category>
+
+<category>
+<pattern>REMIND ME ON * THAT I *</pattern>
+
+<template><srai>REMIND me to <star index="2"/> on <star index="1"/> ENDCAL</srai></template>
+</category>
+
+
+<category>
+<pattern>REMIND ME AT * TO *  ENDCAL</pattern>
+
+<template>
+<srai>REMIND me to <star index="2"/> at <star/> ENDCAL</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>REMIND ME * ENDCAL</pattern>
+
+<template>
+<srai>REMIND me to <star index="1"/> ENDCAL</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>ADDNEWCALENDAREVENT</pattern>
+
+<template>
+<oob><schedule><title><get name="eventname"/></title><description><get name="eventname"/></description><location></location><year><date format="%Y"/></year><month><get name="newmonth"/></month><day><get name="newdate"/></day><hour><get name="newhour"/></hour><minute>00</minute><duration>30</duration></schedule></oob><oob><launch>com.android.calendar</launch></oob>
+</template>
+</category>
+
+<!-- Date functions - do not change -->
+
+<category>
+<pattern>DATENUM SUNDAY</pattern>
+<template>
+<think>
+<set name="today"><date format="%A"/></set>
+<condition name="today">
+<li value="MONDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="TUESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="WEDNESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="THURSDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="FRIDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SATURDAY"><srai>XTOMORROW</srai></li>
+<li value="SUNDAY"><srai>XNEXTWEEK</srai></li>
+</condition>
+</think>
+<get name="newmonth"/> <get name="newdate"/>
+</template>
+</category>
+
+<category>
+<pattern>DATENUM MONDAY</pattern>
+<template>
+<think>
+<set name="today"><date format="%A"/></set>
+<condition name="today">
+<li value="TUESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="WEDNESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="THURSDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="FRIDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SATURDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SUNDAY"><srai>XTOMORROW</srai></li>
+<li value="MONDAY"><srai>XNEXTWEEK</srai></li>
+</condition>
+</think>
+<get name="newmonth"/> <get name="newdate"/>
+</template>
+</category>
+
+<category>
+<pattern>DATENUM TUESDAY</pattern>
+<template>
+<think>
+<set name="today"><date format="%A"/></set>
+<condition name="today">
+<li value="WEDNESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="THURSDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="FRIDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SATURDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SUNDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="MONDAY"><srai>XTOMORROW</srai></li>
+<li value="TUESDAY"><srai>XNEXTWEEK</srai></li>
+</condition>
+</think>
+<get name="newmonth"/> <get name="newdate"/>
+</template>
+</category>
+
+<category>
+<pattern>DATENUM WEDNESDAY</pattern>
+<template>
+<think>
+<set name="today"><date format="%A"/></set>
+<condition name="today">
+<li value="THURSDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="FRIDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SATURDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SUNDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="MONDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="TUESDAY"><srai>XTOMORROW</srai></li>
+<li value="WEDNESDAY"><srai>XNEXTWEEK</srai></li>
+</condition>
+</think>
+<get name="newmonth"/> <get name="newdate"/>
+</template>
+</category>
+
+<category>
+<pattern>DATENUM THURSDAY</pattern>
+<template>
+<think>
+<set name="today"><date format="%A"/></set>
+<condition name="today">
+<li value="FRIDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SATURDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SUNDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="MONDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="TUESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="WEDNESDAY"><srai>XTOMORROW</srai></li>
+<li value="THURSDAY"><srai>XNEXTWEEK</srai></li>
+</condition>
+</think>
+<get name="newmonth"/> <get name="newdate"/>
+</template>
+</category>
+
+<category>
+<pattern>DATENUM FRIDAY</pattern>
+<template>
+<think>
+<set name="today"><date format="%A"/></set>
+<condition name="today">
+<li value="SATURDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="SUNDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="MONDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="TUESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="WEDNESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="THURSDAY"><srai>XTOMORROW</srai></li>
+<li value="FRIDAY"><srai>XNEXTWEEK</srai></li>
+</condition>
+</think>
+<get name="newmonth"/> <get name="newdate"/>
+</template>
+</category>
+
+<category>
+<pattern>DATENUM SATURDAY</pattern>
+<template>
+<think>
+<set name="today"><date format="%A"/></set>
+<condition name="today">
+<li value="SUNDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="MONDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="TUESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="WEDNESDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="THURSDAY"><srai>XTOMORROW</srai><srai>XTOMORROW</srai></li>
+<li value="FRIDAY"><srai>XTOMORROW</srai></li>
+<li value="SATURDAY"><srai>XNEXTWEEK</srai></li>
+</condition>
+</think>
+<get name="newmonth"/> <get name="newdate"/>
+</template>
+</category>
+
+
+<category>
+<pattern>XNEXTWEEK</pattern>
+<template>
+<think>
+<set name="checkdate"><date format="%m %d"/></set><srai>XTOMORROW</srai>
+<set name="checkdate"><get name="newmonth"/> <get name="newdate"/></set><srai>XTOMORROW</srai>
+<set name="checkdate"><get name="newmonth"/> <get name="newdate"/></set><srai>XTOMORROW</srai>
+<set name="checkdate"><get name="newmonth"/> <get name="newdate"/></set><srai>XTOMORROW</srai>
+<set name="checkdate"><get name="newmonth"/> <get name="newdate"/></set><srai>XTOMORROW</srai>
+<set name="checkdate"><get name="newmonth"/> <get name="newdate"/></set><srai>XTOMORROW</srai>
+<set name="checkdate"><get name="newmonth"/> <get name="newdate"/></set><srai>XTOMORROW</srai>
+</think>
+<set name="checkdate"><get name="newmonth"/> <get name="newdate"/></set>
+</template>
+</category>
+
+<category>
+<pattern>XTOMORROW</pattern>
+<template>
+<think>
+<condition name="checkdate">
+<li value="01 01"><set name="newmonth">01</set><set name="newdate">02</set></li>
+<li value="01 02"><set name="newmonth">01</set><set name="newdate">03</set></li>
+<li value="01 03"><set name="newmonth">01</set><set name="newdate">04</set></li>
+<li value="01 04"><set name="newmonth">01</set><set name="newdate">05</set></li>
+<li value="01 05"><set name="newmonth">01</set><set name="newdate">06</set></li>
+<li value="01 06"><set name="newmonth">01</set><set name="newdate">07</set></li>
+<li value="01 07"><set name="newmonth">01</set><set name="newdate">08</set></li>
+<li value="01 08"><set name="newmonth">01</set><set name="newdate">09</set></li>
+<li value="01 09"><set name="newmonth">01</set><set name="newdate">10</set></li>
+<li value="01 10"><set name="newmonth">01</set><set name="newdate">11</set></li>
+<li value="01 11"><set name="newmonth">01</set><set name="newdate">12</set></li>
+<li value="01 12"><set name="newmonth">01</set><set name="newdate">13</set></li>
+<li value="01 13"><set name="newmonth">01</set><set name="newdate">14</set></li>
+<li value="01 14"><set name="newmonth">01</set><set name="newdate">15</set></li>
+<li value="01 15"><set name="newmonth">01</set><set name="newdate">16</set></li>
+<li value="01 16"><set name="newmonth">01</set><set name="newdate">17</set></li>
+<li value="01 17"><set name="newmonth">01</set><set name="newdate">18</set></li>
+<li value="01 18"><set name="newmonth">01</set><set name="newdate">19</set></li>
+<li value="01 19"><set name="newmonth">01</set><set name="newdate">20</set></li>
+<li value="01 20"><set name="newmonth">01</set><set name="newdate">21</set></li>
+<li value="01 21"><set name="newmonth">01</set><set name="newdate">22</set></li>
+<li value="01 22"><set name="newmonth">01</set><set name="newdate">23</set></li>
+<li value="01 23"><set name="newmonth">01</set><set name="newdate">24</set></li>
+<li value="01 24"><set name="newmonth">01</set><set name="newdate">25</set></li>
+<li value="01 25"><set name="newmonth">01</set><set name="newdate">26</set></li>
+<li value="01 26"><set name="newmonth">01</set><set name="newdate">27</set></li>
+<li value="01 27"><set name="newmonth">01</set><set name="newdate">28</set></li>
+<li value="01 28"><set name="newmonth">01</set><set name="newdate">29</set></li>
+<li value="01 29"><set name="newmonth">01</set><set name="newdate">30</set></li>
+<li value="01 30"><set name="newmonth">01</set><set name="newdate">31</set></li>
+<li value="01 31"><set name="newmonth">02</set><set name="newdate">01</set></li>
+
+<li value="02 01"><set name="newmonth">02</set><set name="newdate">02</set></li>
+<li value="02 02"><set name="newmonth">02</set><set name="newdate">03</set></li>
+<li value="02 03"><set name="newmonth">02</set><set name="newdate">04</set></li>
+<li value="02 04"><set name="newmonth">02</set><set name="newdate">05</set></li>
+<li value="02 05"><set name="newmonth">02</set><set name="newdate">06</set></li>
+<li value="02 06"><set name="newmonth">02</set><set name="newdate">07</set></li>
+<li value="02 07"><set name="newmonth">02</set><set name="newdate">08</set></li>
+<li value="02 08"><set name="newmonth">02</set><set name="newdate">09</set></li>
+<li value="02 09"><set name="newmonth">02</set><set name="newdate">10</set></li>
+<li value="02 10"><set name="newmonth">02</set><set name="newdate">11</set></li>
+<li value="02 11"><set name="newmonth">02</set><set name="newdate">12</set></li>
+<li value="02 12"><set name="newmonth">02</set><set name="newdate">13</set></li>
+<li value="02 13"><set name="newmonth">02</set><set name="newdate">14</set></li>
+<li value="02 14"><set name="newmonth">02</set><set name="newdate">15</set></li>
+<li value="02 15"><set name="newmonth">02</set><set name="newdate">16</set></li>
+<li value="02 16"><set name="newmonth">02</set><set name="newdate">17</set></li>
+<li value="02 17"><set name="newmonth">02</set><set name="newdate">18</set></li>
+<li value="02 18"><set name="newmonth">02</set><set name="newdate">19</set></li>
+<li value="02 19"><set name="newmonth">02</set><set name="newdate">20</set></li>
+<li value="02 20"><set name="newmonth">02</set><set name="newdate">21</set></li>
+<li value="02 21"><set name="newmonth">02</set><set name="newdate">22</set></li>
+<li value="02 22"><set name="newmonth">02</set><set name="newdate">23</set></li>
+<li value="02 23"><set name="newmonth">02</set><set name="newdate">24</set></li>
+<li value="02 24"><set name="newmonth">02</set><set name="newdate">25</set></li>
+<li value="02 25"><set name="newmonth">02</set><set name="newdate">26</set></li>
+<li value="02 26"><set name="newmonth">02</set><set name="newdate">27</set></li>
+<li value="02 27"><set name="newmonth">02</set><set name="newdate">28</set></li>
+<li value="02 29"><set name="newmonth">03</set><set name="newdate">01</set></li>
+
+<li value="03 01"><set name="newmonth">03</set><set name="newdate">02</set></li>
+<li value="03 02"><set name="newmonth">03</set><set name="newdate">03</set></li>
+<li value="03 03"><set name="newmonth">03</set><set name="newdate">04</set></li>
+<li value="03 04"><set name="newmonth">03</set><set name="newdate">05</set></li>
+<li value="03 05"><set name="newmonth">03</set><set name="newdate">06</set></li>
+<li value="03 06"><set name="newmonth">03</set><set name="newdate">07</set></li>
+<li value="03 07"><set name="newmonth">03</set><set name="newdate">08</set></li>
+<li value="03 08"><set name="newmonth">03</set><set name="newdate">09</set></li>
+<li value="03 09"><set name="newmonth">03</set><set name="newdate">10</set></li>
+<li value="03 10"><set name="newmonth">03</set><set name="newdate">11</set></li>
+<li value="03 11"><set name="newmonth">03</set><set name="newdate">12</set></li>
+<li value="03 12"><set name="newmonth">03</set><set name="newdate">13</set></li>
+<li value="03 13"><set name="newmonth">03</set><set name="newdate">14</set></li>
+<li value="03 14"><set name="newmonth">03</set><set name="newdate">15</set></li>
+<li value="03 15"><set name="newmonth">03</set><set name="newdate">16</set></li>
+<li value="03 16"><set name="newmonth">03</set><set name="newdate">17</set></li>
+<li value="03 17"><set name="newmonth">03</set><set name="newdate">18</set></li>
+<li value="03 18"><set name="newmonth">03</set><set name="newdate">19</set></li>
+<li value="03 19"><set name="newmonth">03</set><set name="newdate">20</set></li>
+<li value="03 20"><set name="newmonth">03</set><set name="newdate">21</set></li>
+<li value="03 21"><set name="newmonth">03</set><set name="newdate">22</set></li>
+<li value="03 22"><set name="newmonth">03</set><set name="newdate">23</set></li>
+<li value="03 23"><set name="newmonth">03</set><set name="newdate">24</set></li>
+<li value="03 24"><set name="newmonth">03</set><set name="newdate">25</set></li>
+<li value="03 25"><set name="newmonth">03</set><set name="newdate">26</set></li>
+<li value="03 26"><set name="newmonth">03</set><set name="newdate">27</set></li>
+<li value="03 27"><set name="newmonth">03</set><set name="newdate">28</set></li>
+<li value="03 28"><set name="newmonth">03</set><set name="newdate">29</set></li>
+<li value="03 29"><set name="newmonth">03</set><set name="newdate">30</set></li>
+<li value="03 30"><set name="newmonth">03</set><set name="newdate">31</set></li>
+<li value="03 31"><set name="newmonth">04</set><set name="newdate">01</set></li>
+
+<li value="04 01"><set name="newmonth">04</set><set name="newdate">02</set></li>
+<li value="04 02"><set name="newmonth">04</set><set name="newdate">03</set></li>
+<li value="04 03"><set name="newmonth">04</set><set name="newdate">04</set></li>
+<li value="04 04"><set name="newmonth">04</set><set name="newdate">05</set></li>
+<li value="04 05"><set name="newmonth">04</set><set name="newdate">06</set></li>
+<li value="04 06"><set name="newmonth">04</set><set name="newdate">07</set></li>
+<li value="04 07"><set name="newmonth">04</set><set name="newdate">08</set></li>
+<li value="04 08"><set name="newmonth">04</set><set name="newdate">09</set></li>
+<li value="04 09"><set name="newmonth">04</set><set name="newdate">10</set></li>
+<li value="04 10"><set name="newmonth">04</set><set name="newdate">11</set></li>
+<li value="04 11"><set name="newmonth">04</set><set name="newdate">12</set></li>
+<li value="04 12"><set name="newmonth">04</set><set name="newdate">13</set></li>
+<li value="04 13"><set name="newmonth">04</set><set name="newdate">14</set></li>
+<li value="04 14"><set name="newmonth">04</set><set name="newdate">15</set></li>
+<li value="04 15"><set name="newmonth">04</set><set name="newdate">16</set></li>
+<li value="04 16"><set name="newmonth">04</set><set name="newdate">17</set></li>
+<li value="04 17"><set name="newmonth">04</set><set name="newdate">18</set></li>
+<li value="04 18"><set name="newmonth">04</set><set name="newdate">19</set></li>
+<li value="04 19"><set name="newmonth">04</set><set name="newdate">20</set></li>
+<li value="04 20"><set name="newmonth">04</set><set name="newdate">21</set></li>
+<li value="04 21"><set name="newmonth">04</set><set name="newdate">22</set></li>
+<li value="04 22"><set name="newmonth">04</set><set name="newdate">23</set></li>
+<li value="04 23"><set name="newmonth">04</set><set name="newdate">24</set></li>
+<li value="04 24"><set name="newmonth">04</set><set name="newdate">25</set></li>
+<li value="04 25"><set name="newmonth">04</set><set name="newdate">26</set></li>
+<li value="04 26"><set name="newmonth">04</set><set name="newdate">27</set></li>
+<li value="04 27"><set name="newmonth">04</set><set name="newdate">28</set></li>
+<li value="04 28"><set name="newmonth">04</set><set name="newdate">29</set></li>
+<li value="04 29"><set name="newmonth">04</set><set name="newdate">30</set></li>
+<li value="04 30"><set name="newmonth">05</set><set name="newdate">01</set></li>
+
+<li value="05 01"><set name="newmonth">05</set><set name="newdate">02</set></li>
+<li value="05 02"><set name="newmonth">05</set><set name="newdate">03</set></li>
+<li value="05 03"><set name="newmonth">05</set><set name="newdate">04</set></li>
+<li value="05 04"><set name="newmonth">05</set><set name="newdate">05</set></li>
+<li value="05 05"><set name="newmonth">05</set><set name="newdate">06</set></li>
+<li value="05 06"><set name="newmonth">05</set><set name="newdate">07</set></li>
+<li value="05 07"><set name="newmonth">05</set><set name="newdate">08</set></li>
+<li value="05 08"><set name="newmonth">05</set><set name="newdate">09</set></li>
+<li value="05 09"><set name="newmonth">05</set><set name="newdate">10</set></li>
+<li value="05 10"><set name="newmonth">05</set><set name="newdate">11</set></li>
+<li value="05 11"><set name="newmonth">05</set><set name="newdate">12</set></li>
+<li value="05 12"><set name="newmonth">05</set><set name="newdate">13</set></li>
+<li value="05 13"><set name="newmonth">05</set><set name="newdate">14</set></li>
+<li value="05 14"><set name="newmonth">05</set><set name="newdate">15</set></li>
+<li value="05 15"><set name="newmonth">05</set><set name="newdate">16</set></li>
+<li value="05 16"><set name="newmonth">05</set><set name="newdate">17</set></li>
+<li value="05 17"><set name="newmonth">05</set><set name="newdate">18</set></li>
+<li value="05 18"><set name="newmonth">05</set><set name="newdate">19</set></li>
+<li value="05 19"><set name="newmonth">05</set><set name="newdate">20</set></li>
+<li value="05 20"><set name="newmonth">05</set><set name="newdate">21</set></li>
+<li value="05 21"><set name="newmonth">05</set><set name="newdate">22</set></li>
+<li value="05 22"><set name="newmonth">05</set><set name="newdate">23</set></li>
+<li value="05 23"><set name="newmonth">05</set><set name="newdate">24</set></li>
+<li value="05 24"><set name="newmonth">05</set><set name="newdate">25</set></li>
+<li value="05 25"><set name="newmonth">05</set><set name="newdate">26</set></li>
+<li value="05 26"><set name="newmonth">05</set><set name="newdate">27</set></li>
+<li value="05 27"><set name="newmonth">05</set><set name="newdate">28</set></li>
+<li value="05 28"><set name="newmonth">05</set><set name="newdate">29</set></li>
+<li value="05 29"><set name="newmonth">05</set><set name="newdate">30</set></li>
+<li value="05 30"><set name="newmonth">05</set><set name="newdate">31</set></li>
+<li value="05 31"><set name="newmonth">06</set><set name="newdate">01</set></li>
+
+<li value="06 01"><set name="newmonth">06</set><set name="newdate">02</set></li>
+<li value="06 02"><set name="newmonth">06</set><set name="newdate">03</set></li>
+<li value="06 03"><set name="newmonth">06</set><set name="newdate">04</set></li>
+<li value="06 04"><set name="newmonth">06</set><set name="newdate">05</set></li>
+<li value="06 05"><set name="newmonth">06</set><set name="newdate">06</set></li>
+<li value="06 06"><set name="newmonth">06</set><set name="newdate">07</set></li>
+<li value="06 07"><set name="newmonth">06</set><set name="newdate">08</set></li>
+<li value="06 08"><set name="newmonth">06</set><set name="newdate">09</set></li>
+<li value="06 09"><set name="newmonth">06</set><set name="newdate">10</set></li>
+<li value="06 10"><set name="newmonth">06</set><set name="newdate">11</set></li>
+<li value="06 11"><set name="newmonth">06</set><set name="newdate">12</set></li>
+<li value="06 12"><set name="newmonth">06</set><set name="newdate">13</set></li>
+<li value="06 13"><set name="newmonth">06</set><set name="newdate">14</set></li>
+<li value="06 14"><set name="newmonth">06</set><set name="newdate">15</set></li>
+<li value="06 15"><set name="newmonth">06</set><set name="newdate">16</set></li>
+<li value="06 16"><set name="newmonth">06</set><set name="newdate">17</set></li>
+<li value="06 17"><set name="newmonth">06</set><set name="newdate">18</set></li>
+<li value="06 18"><set name="newmonth">06</set><set name="newdate">19</set></li>
+<li value="06 19"><set name="newmonth">06</set><set name="newdate">20</set></li>
+<li value="06 20"><set name="newmonth">06</set><set name="newdate">21</set></li>
+<li value="06 21"><set name="newmonth">06</set><set name="newdate">22</set></li>
+<li value="06 22"><set name="newmonth">06</set><set name="newdate">23</set></li>
+<li value="06 23"><set name="newmonth">06</set><set name="newdate">24</set></li>
+<li value="06 24"><set name="newmonth">06</set><set name="newdate">25</set></li>
+<li value="06 25"><set name="newmonth">06</set><set name="newdate">26</set></li>
+<li value="06 26"><set name="newmonth">06</set><set name="newdate">27</set></li>
+<li value="06 27"><set name="newmonth">06</set><set name="newdate">28</set></li>
+<li value="06 28"><set name="newmonth">06</set><set name="newdate">29</set></li>
+<li value="06 29"><set name="newmonth">06</set><set name="newdate">30</set></li>
+<li value="06 30"><set name="newmonth">07</set><set name="newdate">01</set></li>
+
+<li value="07 01"><set name="newmonth">07</set><set name="newdate">02</set></li>
+<li value="07 02"><set name="newmonth">07</set><set name="newdate">03</set></li>
+<li value="07 03"><set name="newmonth">07</set><set name="newdate">04</set></li>
+<li value="07 04"><set name="newmonth">07</set><set name="newdate">05</set></li>
+<li value="07 05"><set name="newmonth">07</set><set name="newdate">06</set></li>
+<li value="07 06"><set name="newmonth">07</set><set name="newdate">07</set></li>
+<li value="07 07"><set name="newmonth">07</set><set name="newdate">08</set></li>
+<li value="07 08"><set name="newmonth">07</set><set name="newdate">09</set></li>
+<li value="07 09"><set name="newmonth">07</set><set name="newdate">10</set></li>
+<li value="07 10"><set name="newmonth">07</set><set name="newdate">11</set></li>
+<li value="07 11"><set name="newmonth">07</set><set name="newdate">12</set></li>
+<li value="07 12"><set name="newmonth">07</set><set name="newdate">13</set></li>
+<li value="07 13"><set name="newmonth">07</set><set name="newdate">14</set></li>
+<li value="07 14"><set name="newmonth">07</set><set name="newdate">15</set></li>
+<li value="07 15"><set name="newmonth">07</set><set name="newdate">16</set></li>
+<li value="07 16"><set name="newmonth">07</set><set name="newdate">17</set></li>
+<li value="07 17"><set name="newmonth">07</set><set name="newdate">18</set></li>
+<li value="07 18"><set name="newmonth">07</set><set name="newdate">19</set></li>
+<li value="07 19"><set name="newmonth">07</set><set name="newdate">20</set></li>
+<li value="07 20"><set name="newmonth">07</set><set name="newdate">21</set></li>
+<li value="07 21"><set name="newmonth">07</set><set name="newdate">22</set></li>
+<li value="07 22"><set name="newmonth">07</set><set name="newdate">23</set></li>
+<li value="07 23"><set name="newmonth">07</set><set name="newdate">24</set></li>
+<li value="07 24"><set name="newmonth">07</set><set name="newdate">25</set></li>
+<li value="07 25"><set name="newmonth">07</set><set name="newdate">26</set></li>
+<li value="07 26"><set name="newmonth">07</set><set name="newdate">27</set></li>
+<li value="07 27"><set name="newmonth">07</set><set name="newdate">28</set></li>
+<li value="07 28"><set name="newmonth">07</set><set name="newdate">29</set></li>
+<li value="07 29"><set name="newmonth">07</set><set name="newdate">30</set></li>
+<li value="07 30"><set name="newmonth">07</set><set name="newdate">31</set></li>
+<li value="07 31"><set name="newmonth">08</set><set name="newdate">01</set></li>
+
+<li value="08 01"><set name="newmonth">08</set><set name="newdate">02</set></li>
+<li value="08 02"><set name="newmonth">08</set><set name="newdate">03</set></li>
+<li value="08 03"><set name="newmonth">08</set><set name="newdate">04</set></li>
+<li value="08 04"><set name="newmonth">08</set><set name="newdate">05</set></li>
+<li value="08 05"><set name="newmonth">08</set><set name="newdate">06</set></li>
+<li value="08 06"><set name="newmonth">08</set><set name="newdate">07</set></li>
+<li value="08 07"><set name="newmonth">08</set><set name="newdate">08</set></li>
+<li value="08 08"><set name="newmonth">08</set><set name="newdate">09</set></li>
+<li value="08 09"><set name="newmonth">08</set><set name="newdate">10</set></li>
+<li value="08 10"><set name="newmonth">08</set><set name="newdate">11</set></li>
+<li value="08 11"><set name="newmonth">08</set><set name="newdate">12</set></li>
+<li value="08 12"><set name="newmonth">08</set><set name="newdate">13</set></li>
+<li value="08 13"><set name="newmonth">08</set><set name="newdate">14</set></li>
+<li value="08 14"><set name="newmonth">08</set><set name="newdate">15</set></li>
+<li value="08 15"><set name="newmonth">08</set><set name="newdate">16</set></li>
+<li value="08 16"><set name="newmonth">08</set><set name="newdate">17</set></li>
+<li value="08 17"><set name="newmonth">08</set><set name="newdate">18</set></li>
+<li value="08 18"><set name="newmonth">08</set><set name="newdate">19</set></li>
+<li value="08 19"><set name="newmonth">08</set><set name="newdate">20</set></li>
+<li value="08 20"><set name="newmonth">08</set><set name="newdate">21</set></li>
+<li value="08 21"><set name="newmonth">08</set><set name="newdate">22</set></li>
+<li value="08 22"><set name="newmonth">08</set><set name="newdate">23</set></li>
+<li value="08 23"><set name="newmonth">08</set><set name="newdate">24</set></li>
+<li value="08 24"><set name="newmonth">08</set><set name="newdate">25</set></li>
+<li value="08 25"><set name="newmonth">08</set><set name="newdate">26</set></li>
+<li value="08 26"><set name="newmonth">08</set><set name="newdate">27</set></li>
+<li value="08 27"><set name="newmonth">08</set><set name="newdate">28</set></li>
+<li value="08 28"><set name="newmonth">08</set><set name="newdate">29</set></li>
+<li value="08 29"><set name="newmonth">08</set><set name="newdate">30</set></li>
+<li value="08 30"><set name="newmonth">08</set><set name="newdate">31</set></li>
+<li value="08 31"><set name="newmonth">09</set><set name="newdate">01</set></li>
+
+<li value="09 01"><set name="newmonth">09</set><set name="newdate">02</set></li>
+<li value="09 02"><set name="newmonth">09</set><set name="newdate">03</set></li>
+<li value="09 03"><set name="newmonth">09</set><set name="newdate">04</set></li>
+<li value="09 04"><set name="newmonth">09</set><set name="newdate">05</set></li>
+<li value="09 05"><set name="newmonth">09</set><set name="newdate">06</set></li>
+<li value="09 06"><set name="newmonth">09</set><set name="newdate">07</set></li>
+<li value="09 07"><set name="newmonth">09</set><set name="newdate">08</set></li>
+<li value="09 08"><set name="newmonth">09</set><set name="newdate">09</set></li>
+<li value="09 09"><set name="newmonth">09</set><set name="newdate">10</set></li>
+<li value="09 10"><set name="newmonth">09</set><set name="newdate">11</set></li>
+<li value="09 11"><set name="newmonth">09</set><set name="newdate">12</set></li>
+<li value="09 12"><set name="newmonth">09</set><set name="newdate">13</set></li>
+<li value="09 13"><set name="newmonth">09</set><set name="newdate">14</set></li>
+<li value="09 14"><set name="newmonth">09</set><set name="newdate">15</set></li>
+<li value="09 15"><set name="newmonth">09</set><set name="newdate">16</set></li>
+<li value="09 16"><set name="newmonth">09</set><set name="newdate">17</set></li>
+<li value="09 17"><set name="newmonth">09</set><set name="newdate">18</set></li>
+<li value="09 18"><set name="newmonth">09</set><set name="newdate">19</set></li>
+<li value="09 19"><set name="newmonth">09</set><set name="newdate">20</set></li>
+<li value="09 20"><set name="newmonth">09</set><set name="newdate">21</set></li>
+<li value="09 21"><set name="newmonth">09</set><set name="newdate">22</set></li>
+<li value="09 22"><set name="newmonth">09</set><set name="newdate">23</set></li>
+<li value="09 23"><set name="newmonth">09</set><set name="newdate">24</set></li>
+<li value="09 24"><set name="newmonth">09</set><set name="newdate">25</set></li>
+<li value="09 25"><set name="newmonth">09</set><set name="newdate">26</set></li>
+<li value="09 26"><set name="newmonth">09</set><set name="newdate">27</set></li>
+<li value="09 27"><set name="newmonth">09</set><set name="newdate">28</set></li>
+<li value="09 28"><set name="newmonth">09</set><set name="newdate">29</set></li>
+<li value="09 29"><set name="newmonth">09</set><set name="newdate">30</set></li>
+<li value="09 30"><set name="newmonth">10</set><set name="newdate">01</set></li>
+
+<li value="10 01"><set name="newmonth">10</set><set name="newdate">02</set></li>
+<li value="10 02"><set name="newmonth">10</set><set name="newdate">03</set></li>
+<li value="10 03"><set name="newmonth">10</set><set name="newdate">04</set></li>
+<li value="10 04"><set name="newmonth">10</set><set name="newdate">05</set></li>
+<li value="10 05"><set name="newmonth">10</set><set name="newdate">06</set></li>
+<li value="10 06"><set name="newmonth">10</set><set name="newdate">07</set></li>
+<li value="10 07"><set name="newmonth">10</set><set name="newdate">08</set></li>
+<li value="10 08"><set name="newmonth">10</set><set name="newdate">09</set></li>
+<li value="10 09"><set name="newmonth">10</set><set name="newdate">10</set></li>
+<li value="10 10"><set name="newmonth">10</set><set name="newdate">11</set></li>
+<li value="10 11"><set name="newmonth">10</set><set name="newdate">12</set></li>
+<li value="10 12"><set name="newmonth">10</set><set name="newdate">13</set></li>
+<li value="10 13"><set name="newmonth">10</set><set name="newdate">14</set></li>
+<li value="10 14"><set name="newmonth">10</set><set name="newdate">15</set></li>
+<li value="10 15"><set name="newmonth">10</set><set name="newdate">16</set></li>
+<li value="10 16"><set name="newmonth">10</set><set name="newdate">17</set></li>
+<li value="10 17"><set name="newmonth">10</set><set name="newdate">18</set></li>
+<li value="10 18"><set name="newmonth">10</set><set name="newdate">19</set></li>
+<li value="10 19"><set name="newmonth">10</set><set name="newdate">20</set></li>
+<li value="10 20"><set name="newmonth">10</set><set name="newdate">21</set></li>
+<li value="10 21"><set name="newmonth">10</set><set name="newdate">22</set></li>
+<li value="10 22"><set name="newmonth">10</set><set name="newdate">23</set></li>
+<li value="10 23"><set name="newmonth">10</set><set name="newdate">24</set></li>
+<li value="10 24"><set name="newmonth">10</set><set name="newdate">25</set></li>
+<li value="10 25"><set name="newmonth">10</set><set name="newdate">26</set></li>
+<li value="10 26"><set name="newmonth">10</set><set name="newdate">27</set></li>
+<li value="10 27"><set name="newmonth">10</set><set name="newdate">28</set></li>
+<li value="10 28"><set name="newmonth">10</set><set name="newdate">29</set></li>
+<li value="10 29"><set name="newmonth">10</set><set name="newdate">30</set></li>
+<li value="10 30"><set name="newmonth">10</set><set name="newdate">31</set></li>
+<li value="10 31"><set name="newmonth">11</set><set name="newdate">01</set></li>
+
+<li value="11 01"><set name="newmonth">11</set><set name="newdate">02</set></li>
+<li value="11 02"><set name="newmonth">11</set><set name="newdate">03</set></li>
+<li value="11 03"><set name="newmonth">11</set><set name="newdate">04</set></li>
+<li value="11 04"><set name="newmonth">11</set><set name="newdate">05</set></li>
+<li value="11 05"><set name="newmonth">11</set><set name="newdate">06</set></li>
+<li value="11 06"><set name="newmonth">11</set><set name="newdate">07</set></li>
+<li value="11 07"><set name="newmonth">11</set><set name="newdate">08</set></li>
+<li value="11 08"><set name="newmonth">11</set><set name="newdate">09</set></li>
+<li value="11 09"><set name="newmonth">11</set><set name="newdate">10</set></li>
+<li value="11 10"><set name="newmonth">11</set><set name="newdate">11</set></li>
+<li value="11 11"><set name="newmonth">11</set><set name="newdate">12</set></li>
+<li value="11 12"><set name="newmonth">11</set><set name="newdate">13</set></li>
+<li value="11 13"><set name="newmonth">11</set><set name="newdate">14</set></li>
+<li value="11 14"><set name="newmonth">11</set><set name="newdate">15</set></li>
+<li value="11 15"><set name="newmonth">11</set><set name="newdate">16</set></li>
+<li value="11 16"><set name="newmonth">11</set><set name="newdate">17</set></li>
+<li value="11 17"><set name="newmonth">11</set><set name="newdate">18</set></li>
+<li value="11 18"><set name="newmonth">11</set><set name="newdate">19</set></li>
+<li value="11 19"><set name="newmonth">11</set><set name="newdate">20</set></li>
+<li value="11 20"><set name="newmonth">11</set><set name="newdate">21</set></li>
+<li value="11 21"><set name="newmonth">11</set><set name="newdate">22</set></li>
+<li value="11 22"><set name="newmonth">11</set><set name="newdate">23</set></li>
+<li value="11 23"><set name="newmonth">11</set><set name="newdate">24</set></li>
+<li value="11 24"><set name="newmonth">11</set><set name="newdate">25</set></li>
+<li value="11 25"><set name="newmonth">11</set><set name="newdate">26</set></li>
+<li value="11 26"><set name="newmonth">11</set><set name="newdate">27</set></li>
+<li value="11 27"><set name="newmonth">11</set><set name="newdate">28</set></li>
+<li value="11 28"><set name="newmonth">11</set><set name="newdate">29</set></li>
+<li value="11 29"><set name="newmonth">11</set><set name="newdate">30</set></li>
+<li value="11 30"><set name="newmonth">12</set><set name="newdate">01</set></li>
+
+<li value="12 01"><set name="newmonth">12</set><set name="newdate">02</set></li>
+<li value="12 02"><set name="newmonth">12</set><set name="newdate">03</set></li>
+<li value="12 03"><set name="newmonth">12</set><set name="newdate">04</set></li>
+<li value="12 04"><set name="newmonth">12</set><set name="newdate">05</set></li>
+<li value="12 05"><set name="newmonth">12</set><set name="newdate">06</set></li>
+<li value="12 06"><set name="newmonth">12</set><set name="newdate">07</set></li>
+<li value="12 07"><set name="newmonth">12</set><set name="newdate">08</set></li>
+<li value="12 08"><set name="newmonth">12</set><set name="newdate">09</set></li>
+<li value="12 09"><set name="newmonth">12</set><set name="newdate">10</set></li>
+<li value="12 10"><set name="newmonth">12</set><set name="newdate">11</set></li>
+<li value="12 11"><set name="newmonth">12</set><set name="newdate">12</set></li>
+<li value="12 12"><set name="newmonth">12</set><set name="newdate">13</set></li>
+<li value="12 13"><set name="newmonth">12</set><set name="newdate">14</set></li>
+<li value="12 14"><set name="newmonth">12</set><set name="newdate">15</set></li>
+<li value="12 15"><set name="newmonth">12</set><set name="newdate">16</set></li>
+<li value="12 16"><set name="newmonth">12</set><set name="newdate">17</set></li>
+<li value="12 17"><set name="newmonth">12</set><set name="newdate">18</set></li>
+<li value="12 18"><set name="newmonth">12</set><set name="newdate">19</set></li>
+<li value="12 19"><set name="newmonth">12</set><set name="newdate">20</set></li>
+<li value="12 20"><set name="newmonth">12</set><set name="newdate">21</set></li>
+<li value="12 21"><set name="newmonth">12</set><set name="newdate">22</set></li>
+<li value="12 22"><set name="newmonth">12</set><set name="newdate">23</set></li>
+<li value="12 23"><set name="newmonth">12</set><set name="newdate">24</set></li>
+<li value="12 24"><set name="newmonth">12</set><set name="newdate">25</set></li>
+<li value="12 25"><set name="newmonth">12</set><set name="newdate">26</set></li>
+<li value="12 26"><set name="newmonth">12</set><set name="newdate">27</set></li>
+<li value="12 27"><set name="newmonth">12</set><set name="newdate">28</set></li>
+<li value="12 28"><set name="newmonth">12</set><set name="newdate">29</set></li>
+<li value="12 29"><set name="newmonth">12</set><set name="newdate">30</set></li>
+<li value="12 30"><set name="newmonth">12</set><set name="newdate">31</set></li>
+<li value="12 31"><set name="newmonth">01</set><set name="newdate">01</set></li>
+
+<li value="02 28">
+<set name="checkyear"><date format="%Y"/></set>
+<condition name="checkyear">
+<li value="2012"><set name="newmonth">02</set><set name="newdate">29</set></li>
+<li value="2016"><set name="newmonth">02</set><set name="newdate">29</set></li>
+<li value="2020"><set name="newmonth">02</set><set name="newdate">29</set></li>
+<li value="2024"><set name="newmonth">02</set><set name="newdate">29</set></li>
+<li value="2028"><set name="newmonth">02</set><set name="newdate">29</set></li>
+<li value="2032"><set name="newmonth">02</set><set name="newdate">29</set></li>
+<li value="2036"><set name="newmonth">02</set><set name="newdate">29</set></li>
+
+<li><set name="newmonth">03</set><set name="newdate">01</set></li>
+
+</condition>
+
+</li>
+</condition>
+<set name="checkdate"><get name="newmonth"/> <get name="newdate"/></set>
+
+</think>
+
+</template>
+</category>
+
+
+
+</aiml>

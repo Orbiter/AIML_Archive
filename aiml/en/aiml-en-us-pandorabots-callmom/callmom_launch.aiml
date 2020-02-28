@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 4/30/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+<category>
+<pattern>OPEN WEB</pattern>
+<template><srai>BROWSER</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN E MAIL</pattern>
+
+<template><srai>READ EMAIL</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN PLAY</pattern>
+<template><srai>GOOGLE PLAY</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN ON MY *</pattern>
+<template><srai>OPEN MY <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN BROWSER</pattern>
+<template><srai>BROWSER</srai></template>
+</category>
+
+<category>
+<pattern>GOOGLE</pattern>
+<template>
+<random>
+<li>Launching </li>
+<li>Opening </li>
+<li>Staring </li>
+</random>
+Google search.
+<oob><launch>com.google.android.googlequicksearchbox</launch></oob>
+</template>
+</category>
+
+<category>
+<pattern>BROWSER</pattern>
+<template>I'm opening your browser.
+<oob><launch>com.google.browser</launch></oob>
+</template>
+</category>
+
+
+<category>
+<pattern>CALENDAR</pattern>
+<template>I'm opening your calendar.
+<oob><launch>com.google.android.apps.calendar</launch></oob>
+</template>
+</category>
+
+<category>
+<pattern>MAP</pattern>
+<template>I'm opening Google Maps.
+<oob><launch>com.google.android.apps.maps</launch></oob>
+</template>
+</category>
+
+
+<category>
+<pattern>CAMERA</pattern>
+<template><oob><launch>com.android.camera</launch></oob>
+Activating device camera.
+</template>
+</category>
+
+
+<category>
+<pattern>GALLERY</pattern>
+<template><oob><launch>com.android.gallery</launch></oob>
+Opening your Gallery.
+</template>
+</category>
+
+
+<category>
+<pattern>GMAIL</pattern>
+<template>
+<random>
+<li>Launching </li>
+<li>Opening </li>
+<li>Reading </li>
+</random>
+Gmail.
+<oob><launch>com.google.android.gm</launch></oob></template>
+</category>
+
+<category>
+<pattern>MESSAGING</pattern>
+<template>Launching MMS app.
+<oob><launch>com.android.mms</launch></oob>
+</template>
+</category>
+
+<category>
+<pattern>MUSIC</pattern>
+<template>Launching Music app.
+<oob><launch>com.android.music</launch></oob>
+</template>
+</category>
+
+<category>
+<pattern>OPEN WEB *</pattern>
+<template><srai>BROWSER</srai></template>
+</category>
+
+<category>
+<pattern>OPEN UP GOOGLE</pattern>
+<template><srai>GOOGLE</srai></template>
+</category>
+
+<category>
+<pattern>OPEN CALENDAR</pattern>
+<template><srai>CALENDAR</srai></template>
+</category>
+
+<category>
+<pattern>SHOW CALENDAR</pattern>
+<template><srai>CALENDAR</srai></template>
+</category>
+
+<category>
+<pattern>OPEN CALENDAR</pattern>
+<template><srai>CALENDAR</srai></template>
+</category>
+
+<category>
+<pattern>SHOW CALENDAR</pattern>
+<template><srai>CALENDAR</srai></template>
+</category>
+
+<category>
+<pattern>OPEN CALCULATOR</pattern>
+<template><srai>CALCULATOR</srai></template>
+</category>
+
+<category>
+<pattern>SHOW CALCULATOR</pattern>
+<template><srai>CALCULATOR</srai></template>
+</category>
+
+
+<category>
+<pattern>OPEN MAPS</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+
+<category>
+<pattern>SHOW MAPS</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+<category>
+<pattern>SHOW MAP</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+<category>
+<pattern>SHOW ME * MAP</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+<category>
+<pattern>MAPS</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+
+<category>
+<pattern>TAKE A PICTURE</pattern>
+<template><srai>CAMERA</srai></template>
+</category>
+
+
+<category>
+<pattern>READ EMAIL</pattern>
+<template>
+<srai>GMAIL</srai>
+</template>
+</category>
+
+<category>
+<pattern>GET EMAIL</pattern>
+<template>
+<srai>GMAIL</srai>
+</template>
+</category>
+
+<category>
+<pattern>READ MAIL</pattern>
+<template>
+<srai>GMAIL</srai>
+</template>
+</category>
+
+<category>
+<pattern>LAUNCH EMAIL</pattern>
+<template>
+<srai>GMAIL</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>HOW FAST AM I GOING</pattern>
+<template><srai>SPEEDOMETER</srai></template>
+</category>
+
+<category>
+<pattern>SPEED OMETER</pattern>
+<template><srai>SPEEDOMETER</srai></template>
+</category>
+
+<category>
+<pattern>SPEED</pattern>
+<template><srai>SPEEDOMETER</srai></template>
+</category>
+
+<category>
+<pattern>SPEEDOMETER</pattern>
+<template>Launching speedometer.
+<oob><launch>com.theswirlingbrain.speed</launch></oob>
+</template>
+</category>
+
+</aiml>

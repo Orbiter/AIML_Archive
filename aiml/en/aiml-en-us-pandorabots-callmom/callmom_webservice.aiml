@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 4/24/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Adeena Mignogna adeena@mignogna.org -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+<!-- NOTES:   -->
+<!--    The Wolfram app id used here is one Adeena created for a CallMom test only -->
+
+<category>
+<pattern>CONVERT *</pattern>
+
+<template><srai>XFIND <star/></srai> <!-- callmom_webservice --></template>
+</category>
+
+<category>
+<pattern>* IN FRENCH</pattern>
+
+<template><srai>TRANSLATE <star/> TO FRENCH</srai> <!-- callmom_webservice --></template>
+</category>
+
+<category>
+<pattern>UPDATE FACEBOOK</pattern>
+<template>Facebook connection not yet implemented.</template>
+</category>
+
+
+<category>
+<pattern>DO YOU HAVE ANY NEWS *</pattern>
+<template><oob><botecho>news <star/></botecho></oob></template>
+</category>
+
+<category>
+<pattern>DO YOU HAVE NEWS *</pattern>
+<template><oob><botecho>news <star/></botecho></oob></template>
+</category>
+
+<category>
+<pattern>WHAT IS THE NEWS *</pattern>
+<template><oob><botecho>news <star/></botecho></oob></template>
+</category>
+
+<category>
+<pattern>WHAT IS THE * NEWS *</pattern>
+<template><oob><botecho>news <star index="2"/></botecho></oob></template>
+</category>
+
+
+<category>
+<pattern>SAY * IN *</pattern>
+<template><srai>TRANSLATE <star/> TO <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO I SAY * IN *</pattern>
+<template><srai>TRANSLATE <star/> TO <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO YOU SAY * IN *</pattern>
+<template><srai>TRANSLATE <star/> TO <star index="2"/></srai></template>
+</category>
+
+
+<category>
+<pattern>TRANSLATE *</pattern>
+<template><oob><botecho>translate <star/></botecho></oob></template>
+</category>
+
+<category>
+<pattern>XWOLFRAMALPHA *</pattern>
+<template>
+<think>
+<set name="findout"><star/></set>
+<set name="webservice">wolframalpha</set>
+</think>
+<oob><geturl>http://api.wolframalpha.com/v2/query?input=<star/>&amp;appid=YourAppIdGoesHere</geturl></oob>
+<srai>RANDOM MEDIUM SEARCH PHRASE</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>XDBPEDIA *</pattern>
+<template>
+<think>
+<set name="findout"><star/></set>
+<set name="webservice">dbpedia</set>
+</think>
+<oob><geturl>http://lookup.dbpedia.org/api/search.asmx/KeywordSearch?QueryString=<star/></geturl></oob>
+<srai>RANDOM SHORT SEARCH PHRASE</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>OOB *</pattern>
+<template>Unrecognized OOB command: <star/>.</template>
+</category>
+
+</aiml>

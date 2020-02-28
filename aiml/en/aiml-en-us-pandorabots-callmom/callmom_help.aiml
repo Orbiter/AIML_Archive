@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 2/21/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Adeena Mignogna   adeenajm@gmail.com  -->
+<!-- Richard Wallace   rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+
+<!--   GENERAL HELP   -->
+
+<category>
+<pattern>HELP</pattern>
+<template>
+I assume you mean help using CallMom.  If not, please be more specific.  You can use me
+to make a call, send a text, get driving directions, search the web and much more.  We can
+also just have a conversation.
+</template>
+</category>
+
+<category>
+<pattern>HELP *</pattern>
+<template>
+<srai>HELP</srai>
+</template>
+</category>
+
+<category>
+<pattern>WHAT CAN YOU DO</pattern>
+<template>I can make calls, send texts and emails, learn contacts, launch apps, look for directions and locations on a map, tell you my battery level, answer questions from web services, learn to correct speech recognition errors and more!
+</template>
+</category>
+
+<category>
+<pattern>WHY ARE YOU CALLED *</pattern>
+<template>The app you are using is called "CallMom" because given the choice of talking to their phones, the most common thing people say to them is "Call mom".  I, the AI personality talking to you, am called <bot name="name"/>.
+</template>
+</category>
+
+<!--   HELP RELATED TO DIRECTIONS AND MAP   -->
+
+<category>
+<pattern>HOW DO I GET DIRECTIONS</pattern>
+<template>
+Say Directions to the place you want to go.  For example: "Directions to Washington DC"
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I ASK FOR DIRECTIONS</pattern>
+<template>
+<srai>HOW DO I GET DIRECTIONS</srai>
+</template>
+</category>
+
+<category>
+<pattern>I NEED DIRECTIONS</pattern>
+<template>
+<srai>HOW DO I GET DIRECTIONS</srai>
+</template>
+</category>
+
+<category>
+<pattern>I NEED DRIVING DIRECTIONS</pattern>
+<template>
+<srai>HOW DO I GET DIRECTIONS</srai>
+</template>
+</category>
+
+<category>
+<pattern>HELP WITH DIRECTIONS</pattern>
+<template>
+<srai>HOW DO I GET DIRECTIONS</srai>
+</template>
+</category>
+
+<category>
+<pattern>HELP ME WITH DIRECTIONS</pattern>
+<template>
+<srai>HOW DO I GET DIRECTIONS</srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I ASK FOR DRIVING DIRECTIONS</pattern>
+<template>
+<srai>HOW DO I GET DIRECTIONS</srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I GET DRIVING DIRECTIONS</pattern>
+<template>
+<srai>HOW DO I GET DIRECTIONS</srai>
+</template>
+</category>
+
+<!--   HELP RELATED TO DIALING   -->
+
+<category>
+<pattern>HOW DO I MAKE A CALL</pattern>
+<template>
+Say "Call" and then the name of the person.  For example, "Call John Doe."
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I CALL SOMEONE</pattern>
+<template>
+<srai>HOW DO I MAKE A CALL</srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I MAKE A PHONE CALL</pattern>
+<template>
+<srai>HOW DO I MAKE A CALL</srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I MAKE A PHONECALL</pattern>
+<template>
+<srai>HOW DO I MAKE A CALL</srai>
+</template>
+</category>
+
+<!--   HELP RELATED TO TEXTS/SMS   -->
+
+
+<category>
+<pattern>HOW DO I TEXT</pattern>
+<template>
+Say "Text the person saying your message."  For example, "Text John Doe saying meet me at Starbucks."
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I SEND A TEXT</pattern>
+<template>
+<srai>HOW DO I TEXT</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>HOW CAN I SEND A TEXT</pattern>
+<template>
+<srai>HOW DO I TEXT</srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I MAKE A TEXT</pattern>
+<template>
+<srai>HOW DO I TEXT</srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I SEND A TEXT MESSAGE</pattern>
+<template>
+<srai>HOW DO I TEXT</srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I SEND A TEXT MESSAGE *</pattern>
+<template>
+<srai>HOW DO I TEXT</srai>
+</template>
+</category>
+
+</aiml>

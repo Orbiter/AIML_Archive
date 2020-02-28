@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc. -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License -->
+<!-- as published by the Free Software Foundation. -->
+<!-- Last modified 3/21/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+
+
+<category>
+<pattern>WHERE IS THE AIRPORT</pattern>
+<template><oob><map>airport</map></oob>
+It is where the planes land.<think><set name="it"><set name="topic">Airport</set></set></think> </template>
+</category>
+
+ 
+<category>
+<pattern>HOW FAR IS *</pattern>
+<template><srai>DIRECTIONS TO <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW FAR AWAY IS *</pattern>
+<template><srai>DIRECTIONS TO <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MANY MILES TO *</pattern>
+<template><srai>DIRECTIONS <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>GET DIRECTIONS *</pattern>
+<template><srai>DIRECTIONS TO <star/></srai></template>
+</category>
+
+<category>
+<pattern>GET DIRECTIONS TO *</pattern>
+<template><srai>DIRECTIONS TO <star/></srai></template>
+</category>
+
+<category>
+<pattern>GIVE ME DIRECTIONS DIRECTIONS TO *</pattern>
+<template><srai>DIRECTIONS TO <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE IS * FROM HERE</pattern>
+<template>
+<srai>directions to <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I GET FROM * TO *</pattern>
+<template>
+<srai>directions from <star/> to <star index="2"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I GET TO * FROM *</pattern>
+<template>
+<srai>directions from <star index="2"/> to <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I GET TO *</pattern>
+<template>
+<srai>directions to <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>DIRECTIONS TO HOME</pattern>
+<template>
+<condition name="location">
+<li value="*"><srai>directions to <get name="location"/></srai></li>
+<li>I don't know where you live. Where is home?</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>WHERE IS HOME</that>
+<template>
+Ok so you live in <set name="location"><star/></set>.<br/><srai>directions to <get name="location"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I GET HOME</pattern>
+<template>
+<srai>directions to home</srai>
+</template>
+</category>
+
+<category>
+<pattern>I WANT TO GO HOME</pattern>
+<template>
+<srai>how do i get home</srai>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME THE WAY TO *</pattern>
+<template>
+<srai>directions to</srai>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME THE WAY FROM *</pattern>
+<template>
+<srai>How do I get from <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I GET FROM *</pattern>
+<template>
+<srai>dirctions from <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME HOW TO GET TO *</pattern>
+<template>
+<srai>directions to <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME HOW TO GET FROM *</pattern>
+<template>
+<srai>directions from <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>DIRECTIONS FROM * TO *</pattern>
+<template>
+Here are the driving directions.
+<oob><directions><from><star/></from><to><star index="2"/></to></directions></oob>
+</template>
+</category>
+
+<category>
+<pattern>DIRECTIONS TO *</pattern>
+<template>
+Here are the driving directions.
+<oob><directions><to><star/></to></directions></oob>
+</template>
+</category>
+
+<category>
+<pattern>DIRECTIONS TO * FROM HERE</pattern>
+<template>
+<srai>directions to <star/></srai>
+</template>
+</category>
+
+</aiml>
+

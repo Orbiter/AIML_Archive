@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 4/26/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+<category>
+<pattern>NAVIGATE TO *</pattern>
+<template><srai>DIRECTIONS TO <star/></srai></template>
+</category>
+
+<category>
+<pattern>MY _ HAS BEEN STOLEN</pattern>
+<template>Let me find a police station for you. <srai>GOOGLEMAP police station</srai>
+</template>
+</category>
+
+<category>
+<pattern>I HAVE LOST MY WALLET</pattern>
+<template>Let me find a police station for you. <srai>GOOGLEMAP police station</srai>
+</template>
+</category>
+
+<category>
+<pattern>STARBUCKS</pattern>
+<template><srai>GOOGLEMAP STARBUCKS</srai>
+</template>
+</category>
+
+<category>
+<pattern>WHERE ARE *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE ARE THE *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE ARE SOME *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE IS A *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE IS *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE IS AN *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHERE IS THE *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>I AM LOOKING FOR * </pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHERE IS THE NEAREST *</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>I NEED * </pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>I WANT * </pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHERE IS THE NEAREST *</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>NEAREST *</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>IS THERE * AROUND HERE</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>ARE THERE * AROUND HERE</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>FIND ME *</pattern>
+<template><srai>Where is <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>FIND *</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>GOOD * AROUND HERE</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>* RESTAURANTS IN * </pattern>
+<template><srai>GOOGLEMAP <star/> <star index="2"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>I AM HUNGRY</pattern>
+<template>I'm looking for a restaurant near you.<srai>GOOGLEMAP Restaurant</srai>
+</template>
+</category>
+
+<category>
+<pattern>I AM THIRSTY</pattern>
+<template>I'm looking for a bar near you.  <srai>GOOGLEMAP bar</srai>
+</template>
+</category>
+
+<category>
+<pattern>I AM SICK</pattern>
+<template>I'm looking for a hospital you.  <srai>GOOGLEMAP hospital</srai>
+</template>
+</category>
+
+<category>
+<pattern>MY * HAS BROKEN DOWN</pattern>
+<template>I'm looking for a garage near you. <srai>GOOGLEMAP garage</srai>
+</template>
+</category>
+
+<category>
+<pattern>I FANCY * FOOD</pattern>
+<template>I'm looking for a <star/> restaurant near you.  <srai>GOOGLEMAP <star/> restaurant</srai>
+</template>
+</category>
+
+<category>
+<pattern>I WANT * FOOD</pattern>
+<template>I'm looking for a <star/> restaurant near you. <srai>GOOGLEMAP <star/> restaurant</srai>
+</template>
+</category>
+
+<category>
+<pattern>WHERE CAN I GET SOME *</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHERE CAN I GET *</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHERE IS * IN *</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category><pattern>GOOGLEMAP * IN MY AREA</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * NEAR ME</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP A *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP AN *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP ANY *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP SOME *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * NEAR HERE</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * AROUND HERE</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * NEARBY</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * WITHIN WALKING DISTANCE</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * CLOSE BY</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * OPEN</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * THAT *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * WHICH *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP MONEY</pattern><template><srai>GOOGLEMAP ATM</srai></template></category>
+
+
+
+<category>
+<pattern>GOOGLEMAP *</pattern>
+<template>
+<random>
+<li>I'm looking on the map.</li>
+<li>I've found several near you.</li>
+<li>Let me try to find it for you.</li>
+<li>I think I can find it.</li>
+<li>Is this what you are looking for?</li>
+<li>I think I know where <person/> is.</li>
+</random>
+<oob><map><star/></map></oob></template>
+</category>
+
+
+
+</aiml>

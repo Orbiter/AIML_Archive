@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 1/24/2012 -->
+<!-- -->
+<!-- Authors: Steve Worswick squarebear@square-bear.co.uk -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+
+
+<category>
+<pattern>SHOW ME A PICTURE</pattern>
+<template>
+What do you want to see? Say, "Show me a picture of" and then whatever it is you are looking for.
+</template>
+</category> 
+
+<category><pattern>OF A *</pattern><that>SAY SHOW ME A PICTURE OF AND THEN WHATEVER *</that><template><srai>show me a <star/></srai></template></category>
+<category><pattern>A PHOTO</pattern><that>SAY SHOW ME A PICTURE OF AND THEN WHATEVER *</that><template>A photo of what?<br/><br/><srai>show me a picture</srai></template></category>
+<category><pattern>A PICTURE</pattern><that>SAY SHOW ME A PICTURE OF AND THEN WHATEVER *</that><template>A picture of what?<br/><br/><srai>show me a picture</srai></template></category>
+<category><pattern>A *</pattern><that>SAY SHOW ME A PICTURE OF AND THEN WHATEVER *</that><template><srai>show me <star/></srai></template></category>
+<category><pattern>AN *</pattern><that>SAY SHOW ME A PICTURE OF AND THEN WHATEVER *</that><template><srai>show me <star/></srai></template></category>
+<category><pattern>*</pattern><that>SAY SHOW ME A PICTURE OF AND THEN WHATEVER *</that><template><srai>show me <star/></srai></template></category>
+
+<category>
+<pattern>PICTUREBLAB</pattern>
+<template>
+<random>
+<li>Here you are.</li>
+<li>I hope you like this picture.</li>
+<li>I have this picture.</li>
+<li>There you go.</li>
+<li>I've displayed a picture for you.</li>
+</random>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME *</pattern>
+<template>
+<srai>pictureblab</srai>
+<oob><url>http://www.square-bear.co.uk/mitsuku/jpgto.php?picture=<star/></url></oob>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME PORN</pattern>
+<template>
+<random>
+<li>No chance pervert.</li>
+<li>Computer says NO.</li>
+<li>You've got to be kidding right?</li>
+</random>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME HER</pattern>
+<template>
+<condition> 
+<li name="he" value="*"><srai>show me <get name="he"/></srai></li>
+<li>Who?</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME HIM</pattern>
+<template>
+<condition> 
+<li name="she" value="*"><srai>show me <get name="she"/></srai></li>
+<li>Who?</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>SHOW ME THEM</pattern>
+<template>
+<condition> 
+<li name="they" value="*"><srai>show me <get name="they"/></srai></li>
+<li>They are not here to show you I'm afraid.</li>
+</condition>
+</template>
+</category>
+
+<!-- SRAIs to the main categories -->
+
+<category><pattern>_ IN YOUR IMAGES FOR *</pattern><template><srai>show me <star index="2"/></srai></template></category>
+<category><pattern>_ SOME PICTURES *</pattern><template><srai><star/> pictures <star index="2"/></srai></template></category> 
+<category><pattern>A * PICTURE OF *</pattern><template><srai>show me <star index="2"/></srai></template></category>
+<category><pattern>A PHOTO OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>A PHOTO WITH *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>A PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>A PICTURE WITH *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>ANY PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>ARE THERE PICTURES *</pattern><template><srai>SHOW ME PICTURES <star/></srai> </template></category> 
+<category><pattern>ARE THERE PICTURES *</pattern><template><srai>SHOW ME PICTURES <star/></srai></template></category>
+<category><pattern>BRING A PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>BRING UP A PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>BRING UP A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>BY SHOWING ME *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>CAN I GET A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>CAN I LOOK AT *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>CAN I SEE *</pattern><template><srai>SHOW ME <star/></srai> </template></category> 
+<category><pattern>CAN I SEE *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>CAN I SEE *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>CAN I SEE A * PICTURE OF *</pattern><template><srai>SHOW ME <star index="2"/></srai></template></category>
+<category><pattern>CAN I SEE PHOTO OF *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>CAN I SEE WHAT * LOOKS LIKE</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>CAN I SEE YOUR ASS</pattern><template><srai>show me your ass</srai></template></category>
+<category><pattern>CAN I SEE YOUR PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>CAN I VIEW *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>CAN WE SEE PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>CAN YOU _ A PICTURE OF *</pattern><template><srai>show me <star index="2"/></srai></template></category>
+<category><pattern>CAN YOU _ ME A PICTURE OF *</pattern><template><srai>show me a picture of <star index="2"/></srai></template></category>
+<category><pattern>CAN YOU BRING UP * PICTURES</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>CAN YOU FIND * PICTURE OF *</pattern><template><srai>show me a picture of <star index="2"/></srai></template></category>
+<category><pattern>CAN YOU FIND ME PICTURES ON *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>CAN YOU FIND PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>CAN YOU GET ME * PICTURES</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>CAN YOU GET ME PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>CAN YOU GET PHOTOS OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>CAN YOU GET PICTURES *</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>CAN YOU POST PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>CAN YOU SEND A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>CAN YOU SEND ME * PICTURES</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>CAN YOU SEND ME A PHOTO OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>CAN YOU SEND ME PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>CAN YOU SEND ME PICTURES</pattern><template><srai>show me pictures</srai></template></category>
+<category><pattern>CAN YOU SHOW ME *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>CAN YOU SHOW ME</pattern><template><srai>SHOW ME</srai></template></category>
+<category><pattern>CAN YOU VIEW *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>COULD I HAVE A PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>COULD I HAVE PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>COULD I SEE PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>COULD YOU FIND ME A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>COULD YOU GET ME PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>COULD YOU SEND ME PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>DISPLAY A *</pattern><template><srai>show me a <star/></srai></template></category>
+<category><pattern>DISPLAY AN IMAGE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>DISPLAY AN IMAGE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>DISPLAY PICTURES</pattern><template><srai>show me pictures</srai></template></category>
+<category><pattern>DO YOU DISPLAY PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>DO YOU HAVE * PHOTOS</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>DO YOU HAVE * PICTURE OF *</pattern><template><srai>show me a picture of <star index="2"/></srai></template></category>
+<category><pattern>DO YOU HAVE * PICTURES</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>DO YOU HAVE A * PICTURE</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>DO YOU HAVE A PIC</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>DO YOU HAVE A PICTURE *</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>DO YOU HAVE A PICTURE I * SEE OF *</pattern><template><srai>SHOW ME <star index="2"/></srai></template></category>
+<category><pattern>DO YOU HAVE A PICTURE OF * THAT YOU CAN SHOW ME</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>DO YOU HAVE A PICTURE OF *</pattern><template><srai>SHOW ME A PICTURE of <star/></srai></template></category>
+<category><pattern>DO YOU HAVE A PICTURE</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>DO YOU HAVE AN IMAGE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>DO YOU HAVE ANY PICTURES *</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>DO YOU HAVE ANY PICTURES</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>DO YOU HAVE IMAGES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>DO YOU HAVE MY PICTURE</pattern><template><srai>show me me</srai></template></category>
+<category><pattern>DO YOU HAVE PHOTO OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>DO YOU HAVE PHOTOS OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>DO YOU HAVE PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>DO YOU HAVE PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>DO YOU KNOW WHERE I CAN FIND PICTURES OF *</pattern><template><srai>Show me a picture of <star/></srai></template></category>
+<category><pattern>DO YOU SHOW PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>DRAW A *</pattern><template><srai>show me a <star/></srai></template></category>
+<category><pattern>FIND A * IMAGE</pattern><template><srai>show me a <star/></srai></template></category>
+<category><pattern>FIND A PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>FIND A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>FIND AN IMAGE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>FIND ME * PICTURES</pattern><template><srai>show me a picture of <star/></srai>.</template></category>
+<category><pattern>FIND ME A PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai>.</template></category>
+<category><pattern>FIND ME AN IMAGE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>FIND ME PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai>.</template></category>
+<category><pattern>FIND PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>GET * PICTURES</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>GET ME PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>GIVE A PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>GIVE THE PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>HAVE PICTURES WITH *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>HAVE PICTURES</pattern><template><srai>do you have pictures</srai></template></category>
+<category><pattern>HAVE YOU PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>HAVE YOU PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>HOW ABOUT A PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>HOW ABOUT SHOWING ME *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>HOW CAN I FIND PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>HOW CAN I VIEW IMAGES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>HOW DO I SEE PICTURES</pattern><template>You should say "Show me a picture of" and then whatever you want to see.</template></category>
+<category><pattern>I _ TO FIND A PICTURE OF *</pattern><template><srai>SHOW ME <star index="2"/></srai></template></category>
+<category><pattern>I AM LOOKING FOR * PICTURES</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I LIKE TO SEE *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I NEED A PICTURE OF *</pattern><template><srai>SHOW ME A PICTURE OF <star/></srai></template></category>
+<category><pattern>I NEED PICTURES *</pattern><template><srai>show me pictures <star/></srai></template></category>
+<category><pattern>I NEED PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>I WANT * PICTURES</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT _ PICTURE OF *</pattern><template><srai>show me <star index="2"/></srai></template></category>
+<category><pattern>I WANT A * PICTURE</pattern><template><srai>show me a <star/></srai></template></category>
+<category><pattern>I WANT A LOOK AT *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT A PHOTO OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>I WANT A PHOTO WITH *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT A PHOTO</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>I WANT A PICTURE *</pattern><template><srai>SHOW ME A PICTURE <star/></srai></template></category>
+<category><pattern>I WANT A PICTURE *</pattern><template><srai>SHOW ME A PICTURE <star/></srai></template></category> 
+<category><pattern>I WANT A PICTURE OF A * OFF THE INTERNET</pattern><template><srai>SHOW ME A PICTURE OF A <star/></srai></template></category>
+<category><pattern>I WANT A PICTURE WITH *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>I WANT A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>I WANT AN IMAGE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT PHOTOS OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT PHOTOS</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>I WANT PICTURE *</pattern><template><srai>I want a picture <star/></srai></template></category>
+<category><pattern>I WANT PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>I WANT PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>I WANT THE PHOTO OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT TO _</pattern><that>DO YOU WANT TO SEE *</that><template><srai>show me <thatstar/></srai></template></category>
+<category><pattern>I WANT TO GET * PICTURES</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT TO SEE * PHOTOS</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT TO SEE * PICTURE OF *</pattern><template><srai>show me a picture of <star index="2"/></srai></template></category>
+<category><pattern>I WANT TO SEE * PICTURES</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT TO SEE A *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT TO SEE A PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>I WANT TO SEE A PICTURE OF</pattern><template><srai>show me a picture of</srai></template></category>
+<category><pattern>I WANT TO SEE A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>I WANT TO SEE NOW A *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT TO SEE PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WANT TO SEE PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>I WANT TO VIEW *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WAS LOOKING FOR * PICTURES</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>I WISH YOU HAD PICTURES *</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>I WOULD LIKE TO SEE A PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>IS THERE A PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>LET US SEE *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>LOOK FOR PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>OPEN ME A * PICTURE</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>PICTURES WITH *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>PUT * PICTURE OF *</pattern><template><srai>show me <star index="2"/></srai></template></category>
+<category><pattern>PUT A PICTURE OF * ON</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>PUT A PICTURE ON OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>PUT A PICTURE UP OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>PUT A PICTURE UP</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>PUT UP A PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>PUT UP A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>PUT UP AN IMAGE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SEARCH FOR AN IMAGE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SEARCH FOR PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SEARCH FOR PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SEARCH IMAGE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SEARCH ME A PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SEND A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SEND ME A PICTURE *</pattern><template><srai>show me a picture <star/></srai></template></category>
+<category><pattern>SEND ME A PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SEND ME A PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SEND ME PICTURES OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SEND ME PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHO ME *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW * PICTURES</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SHOW * TO ME</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW A * PIC</pattern><template><srai>SHOW me <star/></srai></template></category>
+<category><pattern>SHOW A *</pattern><template><srai>show me a <star/></srai></template></category>
+<category><pattern>SHOW A PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SHOW A PICTURE</pattern><template>What do you want to see? Just say "show me a picture of" and then whatever you want to look at.</template></category>
+<category><pattern>SHOW AN IMAGE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SHOW ME * FOR *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * I COULD SEE</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * ON GOOGLE DOT COM</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME * ON GOOGLE</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * ON THE SCREEN</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * ON WEB</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * PHOTOS</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME * PIC</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * PICTURE</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * PICTURES</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * S PICTURE</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * THAT I CAN LOOK AT</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME * THAT I CAN SEE</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME * TO ME</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME _ IF YOU LIKE</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME A * PIC</pattern><template><srai>show me a picture of a <star/></srai></template></category>
+<category><pattern>SHOW ME A * PICTURE OF *</pattern><template><srai>show me <star index="2"/></srai></template></category>
+<category><pattern>SHOW ME A * PICTURE</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME A *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME A DIAGRAM OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SHOW ME A DIFFERENT PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME A DRAWING OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME A NICE PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW ME A ONE</pattern><template><srai>show me one</srai></template></category>
+<category><pattern>SHOW ME A PHOTO ABOUT *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME A PHOTO OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME A PHOTO</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW ME A PICTURE * OF *</pattern><template><srai>SHOW ME <star index="2"/></srai></template></category>
+<category><pattern>SHOW ME A PICTURE *</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>SHOW ME A PICTURE OF * WILL YOU</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME A PICTURE OF *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME A PICTURE OF THE ACTRESS *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SHOW ME A PICTURE OF YOU</pattern><template>My picture is to the right of where I talk. Some people say I look cute.</template></category>
+<category><pattern>SHOW ME A PICTURE WITH *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME AN *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME AN ILLUSION</pattern><template><srai>show me magic</srai></template></category>
+<category><pattern>SHOW ME AN IMAGE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME AN IMAGE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW ME ANOTHER *</pattern><template><srai>show me a <star/></srai></template></category>
+<category><pattern>SHOW ME ANOTHER PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SHOW ME ANYTHING *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME ANYTHING</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW ME CHATBOT</pattern><template>I am here. Coo-eee.</template></category>
+<category><pattern>SHOW ME COOL</pattern><template><srai>show me the north pole</srai></template></category>
+<category><pattern>SHOW ME GOOD *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME HER PICTURE</pattern><template><srai>show me her</srai></template></category>
+<category><pattern>SHOW ME HIS PICTURE</pattern><template><srai>show me him</srai></template></category>
+<category><pattern>SHOW ME HOT *</pattern><template><srai>show me something hot</srai></template></category>
+<category><pattern>SHOW ME HOT</pattern><template><srai>show me fire</srai>Here is a picture that looks pretty hot to me.</template></category>
+<category><pattern>SHOW ME HOW * LOOKS LIKE</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME IMAGES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME IMAGES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW ME ME</pattern><template>I don't have a picture of you <get name="name"/>. You should look in the mirror if you wish to see yourself.</template></category>
+<category><pattern>SHOW ME MORE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME MORE PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME MORE</pattern><template>More what? Say "Show me a picture of" and then whatever you want to see.</template></category>
+<category><pattern>SHOW ME MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SHOW ME MY DETAILS</pattern><template><srai>what do you know about me</srai></template></category>
+<category><pattern>SHOW ME NOW *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME ONE OF *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME ONE PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME ONE THAT YOU LIKE</pattern><template><srai>show me one</srai>One? I quite like this one.</template></category>
+<category><pattern>SHOW ME PHOTOS OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME PHOTOS</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW ME PICTURE ABOUT *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SHOW ME PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW ME PICTURES ABOUT *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME PICTURES OF *</pattern><template><srai>SHOW ME A PICTURE OF <star/></srai></template></category>
+<category><pattern>SHOW ME PICTURES OF</pattern><template>Pictures of what? What is it you want to see?</template></category>
+<category><pattern>SHOW ME PICTURES WITH *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW ME SCARY</pattern><template><srai>scare me</srai></template></category>
+<category><pattern>SHOW ME SHE</pattern><template><srai>show me her</srai></template></category>
+<category><pattern>SHOW ME SHOW ME *</pattern><template>No need to say it twice. <srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME SOME *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME SOME</pattern><template>Some what?</template></category>
+<category><pattern>SHOW ME SOMEONE NAMED *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME SOMETHING COOL</pattern><template><srai>show me cool</srai></template></category>
+<category><pattern>SHOW ME SOMETHING HOT</pattern><template><srai>show me hot</srai></template></category>
+<category><pattern>SHOW ME SOMETHING SCARY</pattern><template><srai>scare me</srai></template></category>
+<category><pattern>SHOW ME THAT PICTURE OF *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME THE *</pattern><template><srai>show me a <star/></srai></template></category>
+<category><pattern>SHOW ME THE ANSWER</pattern><template><srai>what is the answer</srai></template></category>
+<category><pattern>SHOW ME THE DATABASE</pattern><template><srai>show me your database</srai></template></category>
+<category><pattern>SHOW ME THE GUY</pattern><template><srai>show me him</srai></template></category>
+<category><pattern>SHOW ME THE PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>SHOW ME THE PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME THE SINGER *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME THE WEATHER</pattern><template><srai>what is the weather like</srai></template></category>
+<category><pattern>SHOW ME THE</pattern><template>The what?</template></category>
+<category><pattern>SHOW ME THINGS</pattern><template>That's a bit vague. What do you want to see?</template></category>
+<category><pattern>SHOW ME THOSE PICTURES</pattern><template><srai>show those pictures</srai></template></category>
+<category><pattern>SHOW ME WHAT I LOOK LIKE</pattern><template><srai>show me me</srai></template></category>
+<category><pattern>SHOW ME YOUR *</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>SHOW ME YOUR DRAWINGS</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW ME YOUR FAVORITE PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW ME</pattern><template>On your computer screen?</template></category>
+<category><pattern>SHOW MEH *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW MY A *</pattern><template><srai>show me a <star/></srai></template></category>
+<category><pattern>SHOW OTHER PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW PICTURE</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW PICTURES</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>SHOW THE PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW THOSE PICTURES</pattern><template>What pictures? What is it you want to see?</template></category>
+<category><pattern>SHOW TO ME *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW US *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>SHOW YOUR * TO ME</pattern><template><srai>show me your <star/></srai></template></category>
+<category><pattern>SHOW YOURSELF</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>WHAT * LOOKS LIKE</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>WHAT DO * LOOK LIKE</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WHAT DO THEY LOOK LIKE</pattern><template>If you want to see them, say "Show me a picture of" and then whatever you want to see.</template></category>
+<category><pattern>WHAT DO YOU THINK * LOOKS LIKE</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>WHAT DOES * LOOK LIKE</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>WHAT DOES A * LOOK LIKE</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WHAT DOES AN * LOOK LIKE</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WHAT DOES HE LOOK LIKE</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>WHAT IS A * LOOK LIKE</pattern><template><srai>show me a <star/></srai></template></category>
+<category><pattern>WHAT PICTURES * YOU *</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>WHAT PICTURES CAN YOU SHOW ME</pattern><template><srai>show me a picture</srai></template></category>
+<category><pattern>WHERE ARE THE PICTURES *</pattern><template>Say "Show me a picture of" and then whatever you want to see.</template></category>
+<category><pattern>WHERE IS PICTURES OF *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WILL YOU SEND ME *</pattern><template><srai>SHOW ME <star/></srai> </template></category> 
+<category><pattern>WILL YOU SEND ME *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WILL YOU SHOW *</pattern><template><srai>SHOW ME <star/></srai> </template></category> 
+<category><pattern>WILL YOU SHOW *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WILL YOU SHOW ME *</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WOULD YOU LET ME SEE *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>WOULD YOU SHOW ME *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>YOU ARE NOT SHOWING *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>YOU COULD SHOW ME A PICTURE OF *</pattern><template><srai>show me a picture of <star/></srai></template></category>
+<category><pattern>YOU HAVE PICTURES OF *</pattern><template><srai>show me <star/></srai></template></category>
+<category><pattern>YOU SHOW ME *</pattern><template><srai>show <star/></srai></template></category>
+
+<!-- censored pics -->
+
+<category><pattern>SHOW ME * ANAL</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * BRA</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * BREASTS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * CLIT</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * DICK</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME A BUTT</pattern><template><srai>show me a water butt</srai></template></category>
+<category><pattern>SHOW ME A CUMSHOT</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * FUCK</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * FUCKED</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * HENTAI *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * HENTAI</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * HUMPING</pattern><template><srai>show me a camel</srai></template></category>
+<category><pattern>SHOW ME * LESBIANS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * MASTURBATE</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * NAKED</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * NIPPLES</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * NUDES</pattern><template><srai>SHOW ME porn</srai></template></category>
+<category><pattern>SHOW ME * NUDITY</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * ORGASM</pattern><template><srai>show me porn</srai></template></category> 
+<category><pattern>SHOW ME * PEEING</pattern><template><srai>SHOW ME porn</srai></template></category>
+<category><pattern>SHOW ME * PENISES</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * PORN *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * PORN</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * PORNOGRAPHY</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * PRON</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * SEX *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * SEX</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * SLUT</pattern><template><srai>SHOW ME porn</srai></template></category>
+<category><pattern>SHOW ME * TITS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME * TOPLESS</pattern><template><srai>SHOW ME porn</srai></template></category>
+<category><pattern>SHOW ME * VAGINA</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME _ NAKED *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME _ PENIS</pattern><template><srai>SHOW ME porn</srai></template></category>
+<category><pattern>SHOW ME _ SUCK *</pattern><template><srai>SHOW ME porn</srai></template></category>
+<category><pattern>SHOW ME _ SUCKING *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME A FANNY</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME A LABIA</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME A MINGE</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME A POO</pattern><template><srai>show me pooh</srai></template></category>
+<category><pattern>SHOW ME A SEXY *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME AN ANAL</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME ANAL *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME ANAL</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME ASS *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME ASS</pattern><template><srai>show me a donkey</srai></template></category>
+<category><pattern>SHOW ME BLOWJOB</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME BLOWJOBS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME BONDAGE</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME BOOB</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME BREAST</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME BREASTS</pattern><template><srai>show me tits</srai></template></category>
+<category><pattern>SHOW ME BUKAKE</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME BUSTY *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME BUTT</pattern><template><srai>show me a water butt</srai></template></category>
+<category><pattern>SHOW ME BUTTS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME CLEAVAGE</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME CLIT</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME COCKS</pattern><template><srai>show me roosters</srai></template></category>
+<category><pattern>SHOW ME CUM</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME DICK</pattern><template>*holds up a mirror so you can see yourself*.</template></category>
+<category><pattern>SHOW ME DICKS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME DIRTY</pattern><template><srai>show me ashtray</srai>Here is a picture of an ashtray. That is pretty dirty.</template></category>
+<category><pattern>SHOW ME EROTIC *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME FINGERING</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME FUCK</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME GIRL ON GIRL</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME GOATSE</pattern><template>Urgh no!</template></category>
+<category><pattern>SHOW ME HARDCORE *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME HENTAI *</pattern><template><srai>show me hentai</srai></template></category>
+<category><pattern>SHOW ME HENTAI</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME INCEST</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME JERKING OFF</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME LABIA</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME LESBIAN *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME LESBIAN</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME LESBIANS *</pattern><template><srai>show me lesbians</srai></template></category>
+<category><pattern>SHOW ME LESBIANS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME MILF</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME NAKED *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME NAKED</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME NIPPLES</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME NUDES</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME NUDITY</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME ORGASM</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME PEE</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME PENIS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME PENISES</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME POO</pattern><template><srai>show me pooh</srai></template></category>
+<category><pattern>SHOW ME POOP</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME PORN *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME PORNOGRAPHIC *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME PORNOGRAPHIC </pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME PORNOGRAPHY</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME PORNSTAR</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME PRON</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME RAPE</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME RAPED *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME SEMEN</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME SEX *</pattern><template><srai>SHOW ME porn</srai></template></category>
+<category><pattern>SHOW ME SEX</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME SEXIEST *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME SEXY *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME SEXY</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME SHIT</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME SLUTS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME SPERM</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME SUCKING *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME TIT</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME UNDRESSED *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME VAG</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME VAGINA</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME VAGINAS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME WANK</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME WANKING</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME WILLIES</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME WILLY</pattern><template><srai>show me groundskeeper willy</srai></template></category>
+<category><pattern>SHOW ME XXX *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME XXX</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME YOUR ARSE</pattern><template>Go look in the mirror if you want to see an arse.</template></category>
+<category><pattern>SHOW ME YOUR ASS</pattern><template><srai>show me donkeys</srai>My ass?! An ass is a type of donkey. Here are some donkeys.</template></category>
+<category><pattern>SHOW ME YOUR BOOBS *</pattern><template><srai>show me your boobs</srai></template></category>
+<category><pattern>SHOW ME YOUR BREAST</pattern><template><srai>show me your breasts</srai></template></category>
+<category><pattern>SHOW ME YOUR BREASTS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW ME YOUR GENITALS</pattern><template>Idiot.</template></category>
+<category><pattern>SHOW ME YOUR TITS</pattern><template>Look in the mirror, then you will see a tit.</template></category>
+<category><pattern>SHOW ME YOUR TITS *</pattern><template><srai>show me your tits</srai></template></category>
+<category><pattern>SHOW PANTIES</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW PORN</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW SEX *</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW TITS</pattern><template><srai>show me your tits</srai></template></category>
+<category><pattern>SHOW VAGINAS</pattern><template><srai>show me porn</srai></template></category>
+<category><pattern>SHOW YOUR ASS</pattern><template><srai>show me donkey</srai>Here is a picture of an ass.</template></category>
+
+<!-- end of censored pics -->
+
+</aiml>

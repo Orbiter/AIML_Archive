@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified: 4/28/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+
+<category>
+<pattern>PHONE</pattern>
+<template><oob><dial></dial></oob></template>
+</category>
+
+<category>
+<pattern>CALL</pattern>
+<template><oob><dial></dial></oob></template>
+</category>
+
+
+<category>
+<pattern>CALL 911</pattern>
+<template>Responding to 911 with your location.
+<oob><dial>911</dial></oob>
+</template>
+</category>
+
+<category>
+<pattern>CALL 411</pattern>
+<template>Calling directory assistance with your location: <get name="location"/>.
+<oob><dial>411</dial></oob>
+</template>
+</category>
+
+
+<category>
+<pattern>CALL *</pattern>
+<template>
+<think>
+<set name="whoamicalling"><person/></set>
+<set name="phonenumber">UNKNOWN</set>
+<set name="defaultnumber"><srai>XPHONE <star/> NUMBER</srai></set>
+<set name="mobilenumber"><srai>XPHONE <star/> MOBILE NUMBER</srai></set>
+<set name="homenumber"><srai>XPHONE <star/> HOME NUMBER</srai></set>
+<set name="worknumber"><srai>XPHONE <star/> WORK NUMBER</srai></set>
+<set name="dmh"><get name="defaultnumber"/> <get name="mobilenumber"/> <get name="homenumber"/></set>
+<set name="dmw"><get name="defaultnumber"/> <get name="mobilenumber"/> <get name="worknumber"/></set>
+<set name="dhw"><get name="defaultnumber"/> <get name="homenumber"/> <get name="worknumber"/></set>
+<set name="mhw"><get name="mobilenumber"/> <get name="homenumber"/> <get name="worknumber"/></set>
+<set name="dmhw"><get name="defaultnumber"/> <get name="mobilenumber"/> <get name="homenumber"/> <get name="worknumber"/></set>
+</think>
+
+<condition name="dmhw">
+<li value="UNKNOWN UNKNOWN UNKNOWN UNKNOWN"><think><set name="phonenumber">NEW</set></think></li>
+
+<li>
+<condition name="dmh">
+<li value="UNKNOWN UNKNOWN UNKNOWN"><think><set name="phonenumber"><get name="worknumber"/></set></think></li>
+</condition>
+<condition name="dmw">
+<li value="UNKNOWN UNKNOWN UNKNOWN"><think><set name="phonenumber"><get name="homenumber"/></set></think></li>
+</condition>
+<condition name="dhw">
+<li value="UNKNOWN UNKNOWN UNKNOWN"><think><set name="phonenumber"><get name="mobilenumber"/></set></think></li>
+</condition>
+<condition name="mhw">
+<li value="UNKNOWN UNKNOWN UNKNOWN"><think><set name="phonenumber"><get name="defaultnumber"/></set></think></li>
+</condition>
+</li>
+</condition>
+
+<condition name="phonenumber">
+<li value="NEW"><think><set name="function">call <star/></set></think><srai>addnewcontact <star/></srai></li>
+<li value="UNKNOWN"><srai>CALLMULTIPLE</srai></li>
+<li><srai>callnumber</srai></li>
+</condition>
+
+</template>
+</category>
+
+<category>
+<pattern>CALLMULTIPLE</pattern>
+<template>I have the following numbers for <get name="whoamicalling"/>.<br/><br/>
+<condition name="defaultnumber">
+<li value="UNKNOWN"></li>
+<li>Main - <get name="defaultnumber"/>.<br/></li>
+</condition>
+<condition name="mobilenumber">
+<li value="UNKNOWN"></li>
+<li>Mobile - <get name="mobilenumber"/>.<br/></li>
+</condition>
+<condition name="homenumber">
+<li value="UNKNOWN"></li>
+<li>Home - <get name="homenumber"/>.<br/></li>
+</condition>
+<condition name="worknumber">
+<li value="UNKNOWN"></li>
+<li>Work - <get name="worknumber"/>.<br/></li>
+</condition>
+<br/>Which number do you want to use?
+</template>
+</category>
+
+<category>
+<pattern>MAIN</pattern>
+<that>WHICH NUMBER DO YOU WANT TO USE</that>
+<template>
+<think><set name="phonenumber"><get name="mobilenumber"/></set></think><srai>CALLNUMBER</srai>
+</template>
+</category>
+
+<category>
+<pattern>MOBILE</pattern>
+<that>WHICH NUMBER DO YOU WANT TO USE</that>
+<template>
+<think><set name="phonenumber"><get name="mobilenumber"/></set></think><srai>CALLNUMBER</srai>
+</template>
+</category>
+
+<category>
+<pattern>HOME</pattern>
+<that>WHICH NUMBER DO YOU WANT TO USE</that>
+<template>
+<think><set name="phonenumber"><get name="homenumber"/></set></think><srai>CALLNUMBER</srai>
+</template>
+</category>
+
+<category>
+<pattern>WORK</pattern>
+<that>WHICH NUMBER DO YOU WANT TO USE</that>
+<template>
+<think><set name="phonenumber"><get name="worknumber"/></set></think><srai>CALLNUMBER</srai>
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>WHICH NUMBER DO YOU WANT TO USE</that>
+<template>
+That wasn't one of the choices. Let me remind you:<br/><srai>CALLMULTIPLE</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>CALLNUMBER</pattern>
+<template>
+<condition name="phonenumber">
+<li value="UNKNOWN">Error: No phone number chosen to dial.</li>
+<li>
+Now dialing <get name="whoamicalling"/> on <get name="phonenumber"/>...
+<oob><dial><get name="phonenumber"/></dial></oob>
+</li>
+</condition>
+
+</template>
+</category>
+
+
+
+</aiml>

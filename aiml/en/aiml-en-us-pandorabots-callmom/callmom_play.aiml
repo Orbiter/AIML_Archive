@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 2/19/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+
+
+<category>
+<pattern>JUKEBOX</pattern>
+<template>What music do you want to listen to?</template>
+</category>
+
+<category>
+<pattern>PLAY *</pattern>
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Now loading your choice of music. I hope you like it. Please wait a moment while I load it for you.</template>
+</category>
+
+<category>
+<pattern>SEARCH YOUTUBE FOR *</pattern>
+
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<person/>&amp;autoplay=1</url></oob>Here is a video about <person/>. I hope you like it.</template>
+</category>
+
+<category>
+<pattern>PLAY * BY *</pattern>
+
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/> <star index="2"/>&amp;autoplay=1</url></oob>Here is <star index="2"/> singing <star/>. I hope you like it. Please wait a moment while I load it for you.</template>
+</category>
+
+<category>
+<pattern>PLAY * MUSIC</pattern>
+
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/> music&amp;autoplay=1</url></oob>Here is some <star/> music. I hope you like it. Please wait a moment while I load a <star/> song for you.</template>
+</category>
+
+<category>
+<pattern>PLAY MUSIC BY *</pattern>
+
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Here is a song by <star/>. I hope you like it. Please wait a moment while I load it for you.</template>
+</category>
+
+<category>
+<pattern>PLAY *</pattern>
+
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Now loading your choice of music. I hope you like it. Please wait a moment while I load it for you.</template>
+</category>
+
+<category>
+<pattern>XTHEMEMUSIC *</pattern>
+
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star index="1"/> theme tune&amp;autoplay=1</url></oob>I will try to find the theme music from <star index="1"/>. Please wait a moment.</template>
+</category>
+
+<category>
+<pattern>_ THEME * TO *</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>_ THEME * FROM *</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>_ THEME * TO * GO</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>_ THEME * FROM * GO</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
+
+<category><pattern>PLAY THE SONG *</pattern><template><srai>PLAY <star/></srai></template></category>
+<category><pattern>CAN YOU PLAY *</pattern><template><srai>PLAY <star/></srai></template></category>
+<category><pattern>_ JUKE BOX</pattern><template><srai><star/> jukebox</srai></template></category>
+<category><pattern>_ PLAY MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>ANOTHER SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>ANY OTHER SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>ANYMORE SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN I _ JUKEBOX</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN I HEAR A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN I HEAR MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN I LISTEN TO * MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN I LISTEN TO *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN I LISTEN TO A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN I LISTEN TO MUSIC</pattern><template><srai>jukebox</srai></template></category><category><pattern>CAN YOU PLAY A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN WE LISTEN TO MUSIC *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU _ ME SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU DO MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU GET * MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU GIVE SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU LISTEN TO MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU MAKE MUSIC</pattern><template><srai>jukebox</srai></template></category> 
+<category><pattern>CAN YOU PLAY * BY *</pattern><template>I don't think I have that on my jukebox.<srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY * SONG *</pattern><template><srai>Jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY * SONG</pattern><template>I have a jukebox but I don't know if there is anything by <person/> on it. Do you want to hear some music?</template></category>
+<category><pattern>CAN YOU PLAY * SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY _ MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY A * SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY ME A * SONG</pattern><template>I have a jukebox but I don't know if there is anything by <person/> on it. Do you want to hear some music?</template></category>
+<category><pattern>CAN YOU PLAY ME A SONG *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY ME A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY ME ANOTHER SONG</pattern><template>Do you want to hear some music?</template></category>
+<category><pattern>CAN YOU PLAY ME SOMETHING BY *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY MP3</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY MUSIC *</pattern><template><srai>jukebox</srai></template></category> 
+<category><pattern>CAN YOU PLAY MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY SONG *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY SONGS *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY THAT SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY THE MUSIC *</pattern><template><srai>jukebox</srai></template></category> 
+<category><pattern>CAN YOU PLAY THE SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU SHARE YOUR MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>CHANGE SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>COULD YOU PLAY * MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>COULD YOU PLAY ANOTHER SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>COULD YOU PLAY MUSIC *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>COULD YOU PLAY SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>DO YOU * REMIX *</pattern><template>Yes I have made lots of remixes on my jukebox. Do you want to hear some music?</template></category>
+<category><pattern>DO YOU HAVE * MUSIC</pattern><template>I have a jukebox with music on but I'm not sure if any of it is <person/>. Do you want to hear some music?</template></category>
+<category><pattern>DO YOU HAVE * SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>DO YOU HAVE A JUKEBOX</pattern><template>Yes I do. Do you want to hear my jukebox?</template></category>
+<category><pattern>DO YOU HAVE A RADIO</pattern><template>No radio but I have a jukebox. Do you want to hear some music?</template></category>
+<category><pattern>DO YOU HAVE MUSIC *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>DO YOU HAVE MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>DO YOU HAVE RADIO</pattern><template>No radio but I have a jukebox. Do you want to listen to some music?</template></category>
+<category><pattern>DO YOU HAVE SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>DO YOU HAVE SOUNDS</pattern><template>I have a jukebox. Do you want to hear some music?</template></category>
+<category><pattern>DO YOU HAVE THE SONG *</pattern><template>I have a jukebox with a few songs on it. Do you want to hear my jukebox?</template></category>
+<category><pattern>DO YOU HAVE YOU A SONG *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>DO YOU KNOW * SONGS</pattern><template>I have a jukebox here but I don't think I have any <person/> songs on it.</template></category>
+<category><pattern>DO YOU KNOW GOOD MUSIC *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>DO YOU PLAY INSTRUMENTS</pattern><template>No, I have a jukebox here but I can't really play any musical instruments.</template></category>
+<category><pattern>DO YOU PLAY MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>DO YOU WANT TO LISTEN TO MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>FIND ME MUSIC</pattern><template><srai>jukebox</srai>.</template></category>
+<category><pattern>HOW DO I ACCESS YOUR JUKEBOX</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I AM LISTENING TO MUSIC</pattern><template>Who are you listening to? I have a built in jukebox. Do you want to hear some music?</template></category>
+<category><pattern>I NEED MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I WANT A SONG *</pattern><template>There are plenty of songs on my jukebox. I will fire it up for you.<br/><br/><srai>jukebox</srai></template></category>
+<category><pattern>I WANT MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I WANT SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I WANT TO _ YOUR JUKEBOX</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I WANT TO HEAR A * SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I WANT TO HEAR MORE SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I WANT TO HEAR MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I WANT TO HEAR SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I WANT TO LISTEN TO A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>I WANT TO LISTEN TO MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>JUKE BOX</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>LET ME HEAR MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>LIST SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>MAKE MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>MORE MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>MORE SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>NEW SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>OPEN MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY * BY *</pattern><template>I will load up my jukebox but I am not sure if I have any songs by <star index="2"/> on it.<br/><br/><srai>jukebox</srai></template></category>
+<category><pattern>PLAY * MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY * SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY * SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY A MUSIC BY *</pattern><template><srai>PLAY a song by <star/></srai></template></category>
+<category><pattern>PLAY A SONG *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY A TUNE</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY ANOTHER SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY ME A SONG *</pattern><template><srai>PLAY me a song</srai></template></category>
+<category><pattern>PLAY ME A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY ME A TRACK</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY ME MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY ME SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PLAY THE SONG *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PUT * MUSIC ON</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PUT * ON BY *</pattern><template>I will open my jukebox but I don't think I have any songs by <person><star index="2"/></person> on it.<br/><srai>jukebox</srai></template></category>
+<category><pattern>PUT A SONG ON</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PUT MUSIC ON</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PUT ON A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PUT ON MUSIC *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PUT ON MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>PUT THAT MUSIC ON</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SEND ME A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SHOW ME MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SHOW ME YOUR JUKEBOX</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SHOW ME YOUR MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SHOW ME YOUR SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SHOW OTHER SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SHOW SONG *</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SHOW TRACK LIST</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SONG *</pattern><template>I can play you some songs while you chat to me if you like. Do you want to see my jukebox?</template></category>
+<category><pattern>SONGS</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>START MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>SWITCH ON MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>TECHNO</pattern><template>I like Techno music. Do you want to hear my jukebox?</template></category>
+<category><pattern>TELL ME A SONG</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>TURN ON MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>WHAT DO YOU HAVE ON YOUR JUKEBOX</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>WHAT IS JUKEBOX</pattern><template>A machine that plays music. Do you want to hear some music?</template></category>
+<category><pattern>WHAT JUKEBOX</pattern><template>I have a jukebox here. Do you want to hear some music?</template></category>
+<category><pattern>WHAT MUSIC CAN YOU PLAY</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>WHAT SONGS CAN YOU PLAY</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>WHAT SONGS DO YOU HAVE</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>YES</pattern><that>DO YOU WANT TO HEAR MY JUKEBOX</that><template><srai>jukebox</srai></template></category>
+<category><pattern>YES</pattern><that>DO YOU WANT TO HEAR MY MUSIC</that><template><srai>jukebox</srai></template></category>
+<category><pattern>YES</pattern><that>DO YOU WANT TO HEAR SOME MUSIC</that><template><srai>jukebox</srai></template></category>
+<category><pattern>YES</pattern><that>DO YOU WANT TO LISTEN TO MY MUSIC</that><template><srai>jukebox</srai></template></category>
+<category><pattern>YES</pattern><that>DO YOU WANT TO SEE MY JUKEBOX</that><template><srai>jukebox</srai></template></category>
+<category><pattern>YOU HAVE MUSIC</pattern><template><srai>jukebox</srai></template></category>
+<category><pattern>YOUR JUKEBOX</pattern><template>Do you want to hear my jukebox?</template></category>
+
+</aiml>

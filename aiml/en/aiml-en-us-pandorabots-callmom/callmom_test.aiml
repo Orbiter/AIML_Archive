@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 5/3/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+<category><pattern>OOB TEST DIAL</pattern><template>OOB Test: <oob><dial>123</dial></oob></template></category>
+<category><pattern>OOB TEST SMS</pattern><template>OOB Test: <oob><sms><recipient>123</recipient><message>Hello I am here.</message></sms></oob></template></category>
+<category><pattern>OOB TEST SEARCH</pattern><template>OOB Test: <oob><search>XYZ</search></oob></template></category>
+<category><pattern>OOB TEST URL</pattern><template>OOB Test: <oob><url>http://callmom.pandorabots.com</url></oob></template></category>
+<category><pattern>OOB TEST BOTECHO</pattern><template>OOB Test: <oob><botecho>XYZ</botecho></oob></template></category>
+<category><pattern>OOB TEST MAP</pattern><template>OOB Test: <oob><map>XYZ</map></oob></template></category>
+<category><pattern>OOB TEST DIRECTIONS FROM TO</pattern><template>OOB Test: <oob><directions><from>XYZ</from><to>ABC</to></directions></oob></template></category>
+<category><pattern>OOB TEST DIRECTIONS TO</pattern><template>OOB Test: <oob><directions><to>XYZ</to></directions></oob></template></category>
+<category><pattern>OOB TEST LAUNCH</pattern><template>OOB Test: <oob><launch>com.android.browser</launch></oob></template></category>
+<category><pattern>OOB TEST EMAIL TO CC SUBJECT BODY</pattern><template>OOB Test: <oob><email><to>callmom-info@pandorabots.com</to><cc>info@pandorabots.com</cc><subject>Test message</subject><body>Please ignore.</body></email></oob></template></category>
+<category><pattern>OOB TEST EMAIL TO SUBJECT BODY</pattern><template>OOB Test: <oob><email><to>callmom-info@pandorabots.com</to><subject>Test message</subject><body>Please ignore.</body></email></oob></template></category>
+<category><pattern>OOB TEST EMAIL TO BODY</pattern><template>OOB Test: <oob><email><to>callmom-info@pandorabots.com</to><body>Please ignore.</body></email></oob></template></category>
+<category><pattern>OOB TEST CONTACT</pattern><template>OOB Test: <oob><contact></contact></oob></template></category>
+<category><pattern>OOB TEST BATTERY</pattern><template>OOB Test: <oob><battery></battery></oob></template></category>
+<category><pattern>OOB TEST CAMERA</pattern><template>OOB Test: <oob><camera></camera></oob></template></category>
+<category><pattern>OOB TEST VERSION</pattern><template>OOB Test: <oob><version></version></oob></template></category>
+<category><pattern>OOB TEST SETBOT</pattern><template>OOB Test: <oob><setbot><host>callmom.pandorabots.com</host><botid>d842308e5e345ab0</botid></setbot></oob></template></category>
+<category><pattern>OOB TEST SCHEDULE</pattern>
+
+<template><oob><schedule><title>CallMom Event</title><description>Test Event</description><location>Skype</location><year>2012</year><month>5</month><day>4</day><hour>16</hour><minute>15</minute><duration>60</duration></schedule></oob> Testing calendar.</template>
+</category>
+
+</aiml>
+

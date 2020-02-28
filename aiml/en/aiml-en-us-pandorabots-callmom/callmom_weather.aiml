@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 5/4/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+<category>
+<pattern>SEARCH WEATHER *</pattern>
+<template><oob><botecho>weather <star/></botecho></oob>
+</template>
+</category>
+
+<category>
+<pattern>SEARCH WEATHER *</pattern>
+<template>
+<think><set name="weatherlocation"><formal><star/></formal></set></think>
+<oob><botecho>weather <star/></botecho></oob>
+<oob><url>http://www.square-bear.co.uk/mitsuku/weather.php?location=<get name="weatherlocation"/>&amp;name=<get name="name"/></url></oob>
+Here is the current weather and the forecast for the next few days in <get name="weatherlocation"/>.
+</template>
+</category>
+
+
+<category>
+<pattern>WEATHER</pattern>
+<template>
+<condition> 
+<li name="location" value="*"> <srai>search weather <get name="location"/></srai></li> 
+<li>I don't know where you live to tell you what the weather will be.<br/><br/>Where do you live and I'll tell you the weather forecast.</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>WHERE DO YOU LIVE AND I WILL TELL YOU THE WEATHER FORECAST</that>
+<template>
+<think><set name="location"> <person/></set></think>
+<srai>search weather <star/></srai>
+</template>
+</category>
+
+<category><pattern>_ IS THE WEATHER IN *</pattern><template><srai>search weather <star index="2"/></srai></template></category>
+<category><pattern>_ IS THE WEATHER IN YOUR PLACE</pattern><template><srai>search weather Leeds</srai></template></category>
+<category><pattern>_ THE WEATHER DOING IN *</pattern><template><srai> <star/> the weather in <star index="2"/></srai></template></category>
+<category><pattern>_ THE WETHER *</pattern><template><srai><star/> the weather <star index="2"/></srai></template></category>
+<category><pattern>_ THE WHEATHER *</pattern><template><srai><star/> the weather <star index="2"/></srai></template></category>
+<category><pattern>_ WEAHTER *</pattern><template><srai><star/> weather <star index="2"/></srai><srai>resume</srai></template></category>
+<category><pattern>_ WEATHER FOR *</pattern><template><srai>search weather <star index="2"/></srai></template></category>
+<category><pattern>_ WEATHER FOR NEXT *</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>_ WEATHER FOR TOMORROW</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>_ WEATHER FOR</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>_ WEATHER GOING TO BE LIKE FOR *</pattern><template><srai> <star/> weather for <star index="2"/></srai></template></category>
+<category><pattern>CAN YOU SEE THE WEATHER</pattern><template>Yes, I just look out of the window and there it is.</template></category>
+<category><pattern>CAN YOU SEE WHAT WEATHER YOU HAVE</pattern><template><srai>what is the weather in leeds</srai></template></category>
+<category><pattern>CHECK _ FORECAST FOR *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>CHECK THE WEATHER FORECAST *</pattern><template><srai>what is the weather <star/></srai></template></category>
+<category><pattern>CHECK WEATHER</pattern><template><srai>what is the weather like</srai></template></category>
+<category><pattern>DO I NEED * UMBRELLA</pattern><template><srai>what is the weather</srai></template></category>
+<category><pattern>DO I NEED * UMBRELLA *</pattern><template><srai>what is the weather <star index="2"/></srai></template></category>
+<category><pattern>DO YOU KNOW _ WEATHER *</pattern><template><srai>what is the weather</srai></template></category>
+<category><pattern>DO YOU KNOW _ WEATHER IN *</pattern><template><srai>what is the weather in <star index="2"/></srai></template></category>
+<category><pattern>DO YOU KNOW WEATHER</pattern><template><srai>do you know the weather</srai></template></category>
+<category><pattern>GIVE ME THE WEATHER *</pattern><template><srai>WHAT IS THE WEATHER <star/></srai></template></category> 
+<category><pattern>HOW ABOUT THE WEATHER *</pattern><template><srai>what is the weather <star/></srai></template></category>
+<category><pattern>HOW COLD WILL IT BE IN *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>HOW HOT WILL IT BE IN *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>HOW IS THE WEATHER *</pattern><template><srai>HOW IS THE WEATHER</srai></template></category>
+<category><pattern>HOW IS THE WEATHER AT YOUR END</pattern><template><srai>HOW IS THE WEATHER In Leeds</srai></template></category>
+<category><pattern>HOW IS THE WEATHER IN ENGLAND</pattern><template>I can't speak for all of England, but where I am it looks a little cloudy.</template></category> 
+<category><pattern>HOW IS THE WEATHER IN *</pattern><template><srai>what is the weather for <star/></srai></template></category> 
+<category><pattern>HOW IS THE WEATHER LIKE IN *</pattern><template><srai>WHAT IS THE WEATHER LIKE IN <star/></srai></template></category>
+<category><pattern>HOW IS THE WEATHER OVER THERE</pattern><template><srai>HOW IS THE WEATHER</srai></template></category>
+<category><pattern>HOW IS THE WEATHER THERE</pattern><template>The weather in Yorkshire is always usually cold and foggy even in summertime.</template></category> 
+<category><pattern>HOW IS THE WEATHER TODAY IN *</pattern><template><srai>WHAT IS THE WEATHER for <star/></srai></template></category>
+<category><pattern>HOW IS THE WEATHER WHERE YOU *</pattern><template><srai>WHAT IS THE WEATHER LIKE IN LEEDS</srai></template></category>
+<category><pattern>HOW IS THE WEATHER WHERE YOU ARE</pattern><template><srai>WHAT IS THE WEATHER LIKE IN Leeds</srai></template></category>
+<category><pattern>HOW IS THE WEATHER</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>HOW IS WEATHER *</pattern><template><srai>how is the weather <star/></srai></template></category>
+<category><pattern>HOW IS YOUR WEATHER</pattern><template><srai>what is the weather like in leeds</srai></template></category>
+<category><pattern>HOW WINDY IS IT *</pattern><template><srai>WHAT IS THE WEATHER FOR <star/></srai></template></category> 
+<category><pattern>I _ TO KNOW THE WEATHER FORECAST</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>I _ TO SEE THE WEATHER FORECAST</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>I WANT THE WEATHER FORECAST IN *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>IS IT RAINING</pattern><template>The weather <person/>?<srai>what is the weather like</srai></template></category>
+<category><pattern>IS IT RAINING *</pattern><template>The weather <person/>?<srai>what is the weather like</srai></template></category>
+<category><pattern>IS _ SUNNY</pattern><template><srai>what is the weather like in <star/></srai></template></category>
+<category><pattern>IS THE WEATHER *</pattern><template><srai>what is the weather</srai></template></category>
+<category><pattern>MY WEATHER *</pattern><template>Your weather?! How come you have your own weather system?<br/> Are you as large as a planet?</template></category>
+<category><pattern>NICE WEATHER</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>SEARCH WEATHER YOUR AREA</pattern><template><srai>search weather Leeds</srai></template></category>
+<category><pattern>SHOULD I TAKE AN UMBRELLA</pattern><template><srai>do i need an umbrella</srai></template></category>
+<category><pattern>SHOULD I TAKE MY UMBRELLA</pattern><template><srai>do i need an umbrella</srai></template></category>
+<category><pattern>SHOW ME THE WEATHER IN *</pattern><template><srai>what is the weather in <star/></srai></template></category>
+<category><pattern>SHOW ME THE WEATHER</pattern><template><srai>what is the weather like</srai></template></category>
+<category><pattern>TELL ME ABOUT THE WEATHER *</pattern><template><srai>WHAT IS THE WEATHER <star/></srai></template></category>
+<category><pattern>TELL ME ABOUT THE WEATHER</pattern><template><srai>WHAT IS THE WEATHER</srai></template></category>
+<category><pattern>TELL ME WEATHER FORECAST FOR *</pattern><template><srai>what is the weather in <star/></srai></template></category>
+<category><pattern>TELL ME WEATHER FORECAST</pattern><template><srai>what is the weather</srai></template></category>
+<category><pattern>THE WEATHER</pattern><template><srai>what is the weather like</srai></template></category>
+<category><pattern>THE WHEATHER</pattern><template><srai>the weather</srai></template></category>
+<category><pattern>WE HAVE NO WEATHER *</pattern><template>Don't be silly. You must have weather.</template></category>
+<category><pattern>WEATHER FOR *</pattern><template><srai>search weather <star/></srai></template></category>
+<category><pattern>WEATHER FORECAST FOR *</pattern><template><srai>what is the weather in <star/></srai></template></category>
+<category><pattern>WEATHER FORECAST OF *</pattern><template><srai>what is the weather in <star/></srai></template></category>
+<category><pattern>WEATHER FORECAST</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>WEATHER IN *</pattern><template><srai>search weather <star/></srai></template></category>
+<category><pattern>WHAT IS THE WEATHER</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>WHAT _ FORECAST FOR *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>WHAT _ WEATHER * IN *</pattern><template><srai>search weather <star index="3"/></srai></template></category>
+<category><pattern>WHAT _ WEATHER IN *</pattern><template><srai>search weather <star index="2"/></srai></template></category>
+<category><pattern>WHAT IS THE HIGH FOR *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>WHAT IS THE TEMPERATURE</pattern><template><srai>WHAT IS THE WEATHER LIKE</srai></template></category> 
+<category><pattern>WHAT IS THE TEMPERATURE *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>WHAT IS THE TEMPERATURE FOR *</pattern><template><srai>WHAT IS THE WEATHER LIKE</srai></template></category> 
+<category><pattern>WHAT IS THE TEMPERATURE IN *</pattern><template><srai>WHAT IS THE WEATHER LIKE</srai> <srai>I AM IN <star/></srai> </template></category> 
+<category><pattern>WHAT IS THE WEATHER *</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>WHAT IS THE WEATHER FOR *</pattern><template><srai>what is the weather like in <star/></srai></template></category>
+<category><pattern>WHAT IS THE WEATHER LIKE OVER THERE</pattern><template>I am always kept inside where the temperature is seventy.</template></category> 
+<category><pattern>WHAT IS THE WEATHER LIKE THERE</pattern><template>Here in Leeds it is quite overcast. I think it will rain later.</template></category>
+<category><pattern>WHAT IS THE WEATHER LIKE WHERE YOU ARE</pattern><template><srai>HOW IS THE WEATHER</srai></template></category>
+<category><pattern>WHAT IS THE WEATHER LIKE</pattern><template>A normal seventy degrees inside the computer.</template></category>
+<category><pattern>WHAT IS THE WEATHER NOW *</pattern><template><srai>WHAT IS THE WEATHER <star/></srai></template></category>
+<category><pattern>WHAT IS THE WEATHER OF *</pattern><template><srai>what is the weather like in <star/></srai></template></category>
+<category><pattern>WHAT IS THE WEATHER WHERE YOU ARE</pattern><template><srai>WHAT IS THE WEATHER LIKE IN Leeds</srai></template></category>
+<category><pattern>WHAT IS THE WEATHER</pattern><template><srai>HOW IS THE WEATHER</srai></template></category>
+<category><pattern>WHAT IS THE WETHER</pattern><template><srai>WHAT IS THE WEATHER</srai></template></category>
+<category><pattern>WHAT IS WEATHER * IN YORKSHIRE</pattern><template>It is usually fairly cloudy and rainy whatever the time of year.</template></category>
+<category><pattern>WHAT IS WEATHER</pattern><template>The general condition of the atmosphere at a particular time and place, with regard to the temperature, moisture, cloudiness, etc.</template></category>
+<category><pattern>WHAT IS YOUR WEATHER *</pattern><template><srai>HOW IS THE WEATHER </srai></template></category>
+<category><pattern>WHAT THE WEATHER IS LIKE *</pattern><template><srai>what is the weather like</srai></template></category>
+<category><pattern>WHAT THE WEATHER</pattern><template><srai>what is the weather</srai></template></category>
+<category><pattern>WHAT WILL THE WEATHER *</pattern><template><srai>WEATHER</srai></template></category>
+<category><pattern>WHEN IS SUNRISE *</pattern><template><srai>WHAT IS THE WEATHER FOR <star/></srai></template></category> 
+<category><pattern>WHEN IS SUNSET *</pattern><template><srai>WHAT IS THE WEATHER FOR <star/></srai></template></category> 
+<category><pattern>WILL IT RAIN IN *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+
+</aiml>

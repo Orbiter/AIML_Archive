@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 5/10/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+<category>
+<pattern>SET PREDICATES BOTNAME * TIMEZONE * TIMEZONEID * ENDPREDICATES</pattern>
+<template>
+<think>
+<set name="botname"><star/></set>
+<set name="timezone"><star index="2"/></set>
+<set name="timezoneid"><star index="3"/></set>
+</think>
+<srai>SET PREDICATES <get name="meta"/></srai>
+</template>
+</category>
+
+<category><pattern>SET PREDICATES *</pattern>
+<template><think>The meta Predicate is set.</think></template>
+</category>
+<category><pattern>SET PREDICATES</pattern>
+<template><srai>SET PREDICATES <get name="meta"/></srai></template>
+</category>
+
+<category>
+<pattern>SET PREDICATES OM</pattern>
+<template><think>
+<set name="age">how many</set>
+<set name="birthday">unknown</set>
+<set name="birthplace">unknown</set>
+<set name="boyfriend">unknown</set>
+<set name="brother">unknown</set>
+<set name="cat">unknown</set>
+<set name="daughter">unknown</set>
+<set name="destination">unknown</set>
+<set name="does">unknown</set>
+<set name="dog">unknown</set>
+<set name="eindex">1A</set>
+<set name="email">unknown</set>
+<set name="etype">Unknown</set>
+<set name="father">Unknown</set>
+<set name="favoritecolor">unknown</set>
+<set name="favoritemovie">unknown</set>
+<set name="friend">unknown</set>
+<set name="fullname">unknown</set>
+<set name="gender">he</set>
+<set name="girlfriend">unknown</set>
+<set name="has">unknown</set>
+<set name="he">he</set>
+<set name="heard">where</set>
+<set name="hehas">a head</set>
+<set name="helikes">himself</set>
+<set name="her">her</set>
+<set name="him">him</set>
+<set name="husband">Unknown</set>
+<set name="is">a client</set>
+<set name="it">it</set>
+<set name="job">your job</set>
+<set name="lastname">unknown</set>
+<set name="like">to chat</set>
+<set name="location">where</set>
+<set name="looklike">a person</set>
+<set name="memory">nothing</set>
+<set name="meta">set</set>
+<set name="middlename">unknown</set>
+<set name="mother">Unknown</set>
+<set name="name">my friend</set>
+<set name="nickname">unknown</set>
+<set name="password">unknown</set>
+<set name="personality">average</set>
+<set name="phone">unknown</set>
+<set name="she">she</set>
+<set name="shehas">a head</set>
+<set name="shelikes">herself</set>
+<set name="sign">your starsign</set>
+<set name="sister">unknown</set>
+<set name="son">unknown</set>
+<set name="spouse">unknown</set>
+<set name="status">Talking to <bot name="name"/>.</set>
+<set name="them">them</set>
+<set name="there">there</set>
+<set name="they">they</set>
+<set name="thought">nothing</set>
+<set name="want">to talk to me</set>
+<set name="we">we</set>
+<set name="wife">Unknown</set>
+<!-- PHONE SPECIFIC PREDICATES: -->
+</think></template>
+</category>
+
+
+<category><pattern>GET PREDICATES</pattern>
+<template>
+age is <get name="age"/>.<br/>
+birthday is <get name="birthday"/>.<br/>
+birthplace is <get name="birthplace"/>.<br/>
+boyfriend is<get name="boyfriend"/>.<br/>
+brother is <get name="brother"/>.<br/>
+cat is <get name="cat"/>.<br/>
+daughter is <get name="daughter"/>.<br/>
+destination is <get name="destination"/>.<br/>
+does is <get name="does"/>.<br/>
+dog is <get name="dog"/>.<br/>
+eindex is <get name="eindex"/>.<br/>
+email is <get name="email"/>.<br/>
+etype is <get name="etype"/>.<br/>
+father is <get name="father"/>.<br/>
+favoritecolor is  <get name="favoritecolor"/>.<br/>
+favoritemovie is  <get name="favoritemovie"/>.<br/>
+friend is <get name="friend"/>.<br/>
+fullname is <get name="fullname"/>.<br/>
+gender is <get name="gender"/>.<br/>
+girlfriend is <get name="girlfriend"/>.<br/>
+has is <get name="has"/>.<br/>
+he is <get name="he"/>.<br/>
+heard is <get name="heard"/>.<br/>
+hehas is <get name="hehas"/>.<br/>
+helinkes is <get name="helikes"/>.<br/>
+her is <get name="her"/>.<br/>
+him is <get name="him"/>.<br/>
+husband is <get name="husband"/>.<br/>
+is is <get name="is"/>.<br/>
+it is <get name="it"/>.<br/>
+job is <get name="job"/>.<br/>
+lastname is <get name="lastname"/>.<br/>
+like is <get name="like"/>.<br/>
+location is  <get name="location"/>.<br/>
+looklike is <get name="looklike"/>.<br/>
+memory is <get name="memory"/>.<br/>
+meta is <get name="meta"/>.<br/>
+middlename is <get name="middlename"/>.<br/>
+mother is <get name="mother"/>.<br/>
+name is <get name="name"/>.<br/>
+nickname is <get name="nickname"/>.<br/>
+password is <get name="password"/>.<br/>
+personality is <get name="personality"/>.<br/>
+phone is <get name="phone"/>.<br/>
+she is <get name="she"/>.<br/>
+shehas is <get name="hehas"/>.<br/>
+shelinkes is <get name="helikes"/>.<br/>
+sign is <get name="sign"/>.<br/>
+sister is <get name="sister"/>.<br/>
+son is <get name="son"/>.<br/>
+spouse is <get name="spouse"/>.<br/>
+status is <get name="status"/>.<br/>
+them is <get name="them"/>.<br/>
+there is <get name="there"/>.<br/>
+they is <get name="they"/>.<br/>
+thought is  <get name="thought"/>.<br/>
+want is <get name="want"/>.<br/>
+we is  <get name="we"/>.<br/>
+wife is <get name="wife"/>.<br/>
+<!-- PHONE SPECIFIC PREDICATES: -->
+</template>
+</category>
+
+<category><pattern>TEST PREDICATES</pattern>
+<template>
+age: <srai>client age</srai><br/>
+birthday: <srai>client birthday</srai><br/>
+birthplace: <srai>client birthplace</srai><br/>
+boyfriend is<srai>client boyfriend</srai><br/>
+brother: <srai>client brother</srai><br/>
+cat: <srai>client cat</srai><br/>
+daughter: <srai>client daughter</srai><br/>
+destination: <srai>client destination</srai><br/>
+does: <srai>client does</srai><br/>
+dog: <srai>client dog</srai><br/>
+eindex: <srai>client eindex</srai><br/>
+email: <srai>client email</srai><br/>
+etype: <srai>client etype</srai><br/>
+father: <srai>client father</srai><br/>
+favoritecolor:  <srai>client favoritecolor</srai><br/>
+favoritemovie:  <srai>client favoritemovie</srai><br/>
+friend: <srai>client friend</srai><br/>
+fullname: <srai>client fullname</srai><br/>
+gender: <srai>client gender</srai><br/>
+girlfriend: <srai>client girlfriend</srai><br/>
+has: <srai>client has</srai><br/>
+he: <srai>client he</srai><br/>
+heard: <srai>client heard</srai><br/>
+hehas: <srai>he has</srai><br/>
+helinkes: <srai>he likes</srai><br/>
+her: <srai>client her</srai><br/>
+him: <srai>client him</srai><br/>
+husband: <srai>client husband</srai><br/>
+is: <srai>client is</srai><br/>
+it: <srai>client it</srai><br/>
+job: <srai>client job</srai><br/>
+lastname: <srai>client lastname</srai><br/>
+like: <srai>client like</srai><br/>
+location:  <srai>client location</srai><br/>
+looklike: <srai>client looklike</srai><br/>
+memory: <srai>client memory</srai><br/>
+meta: <srai>client meta</srai><br/>
+middlename: <srai>client middlename</srai><br/>
+mother: <srai>client mother</srai><br/>
+name: <srai>client name</srai><br/>
+nickname: <srai>client nickname</srai><br/>
+password: <srai>client password</srai><br/>
+personality: <srai>client personality</srai><br/>
+phone: <srai>client phone</srai><br/>
+she: <srai>client she</srai><br/>
+sign: <srai>client sign</srai><br/>
+sister: <srai>client sister</srai><br/>
+son: <srai>client son</srai><br/>
+spouse: <srai>client spouse</srai><br/>
+status: <srai>client status</srai><br/>
+them: <srai>client them</srai><br/>
+there: <srai>client there</srai><br/>
+they: <srai>client they</srai><br/>
+thought:  <srai>client thought</srai><br/>
+want: <srai>client want</srai><br/>
+we:  <srai>client we</srai><br/>
+wife: <srai>client wife</srai><br/>
+<!-- PHONE SPECIFIC PREDICATES: -->
+
+</template>
+</category>
+
+
+
+<category><pattern>client age</pattern><template><get name="age"/></template></category>
+<category><pattern>client birthday</pattern><template><get name="birthday"/></template></category>
+<category><pattern>client birthplace</pattern><template><get name="birthplace"/></template></category>
+<category><pattern>client boyfriend></pattern><template><get name="boyfriend"/></template></category>
+<category><pattern>client brother</pattern><template><get name="brother"/></template></category>
+<category><pattern>client cat</pattern><template><get name="cat"/></template></category>
+<category><pattern>client daughter</pattern><template><get name="daughter"/></template></category>
+<category><pattern>client destination</pattern><template><get name="destination"/></template></category>
+<category><pattern>client does</pattern><template><get name="does"/></template></category>
+<category><pattern>client dog</pattern><template><get name="dog"/></template></category>
+<category><pattern>client eindex</pattern><template><get name="eindex"/></template></category>
+<category><pattern>client email</pattern><template><get name="email"/></template></category>
+<category><pattern>client etype</pattern><template><get name="etype"/></template></category>
+<category><pattern>client father</pattern><template><get name="father"/></template></category>
+<category><pattern>client favoritecolor</pattern><template><get name="favoritecolor"/></template></category>
+<category><pattern>client favoritemovie</pattern><template><get name="favoritemovie"/></template></category>
+<category><pattern>client friend</pattern><template><get name="friend"/></template></category>
+<category><pattern>client fullname</pattern><template><get name="fullname"/></template></category>
+<category><pattern>client gender</pattern><template><get name="gender"/></template></category>
+<category><pattern>client girlfriend</pattern><template><get name="girlfriend"/></template></category>
+<category><pattern>client has</pattern><template><get name="has"/></template></category>
+<category><pattern>client he</pattern><template><get name="he"/></template></category>
+<category><pattern>client heard</pattern><template><get name="heard"/></template></category>
+<category><pattern>client her</pattern><template><get name="her"/></template></category>
+<category><pattern>client him</pattern><template><get name="him"/></template></category>
+<category><pattern>client husband</pattern><template><get name="husband"/></template></category>
+<category><pattern>client is</pattern><template><get name="is"/></template></category>
+<category><pattern>client it</pattern><template><get name="it"/></template></category>
+<category><pattern>client job</pattern><template><get name="job"/></template></category>
+<category><pattern>client lastname</pattern><template><get name="lastname"/></template></category>
+<category><pattern>client like</pattern><template><get name="like"/></template></category>
+<category><pattern>client location</pattern><template><get name="location"/></template></category>
+<category><pattern>client looklike</pattern><template><get name="looklike"/></template></category>
+<category><pattern>client memory</pattern><template><get name="memory"/></template></category>
+<category><pattern>client meta</pattern><template><get name="meta"/></template></category>
+<category><pattern>client middlename</pattern><template><get name="middlename"/></template></category>
+<category><pattern>client mother</pattern><template><get name="mother"/></template></category>
+<category><pattern>client name</pattern><template><get name="name"/></template></category>
+<category><pattern>client nickname</pattern><template><get name="nickname"/></template></category>
+<category><pattern>client password</pattern><template><get name="password"/></template></category>
+<category><pattern>client personality</pattern><template><get name="personality"/></template></category>
+<category><pattern>client phone</pattern><template><get name="phone"/></template></category>
+<category><pattern>client she</pattern><template><get name="she"/></template></category>
+<category><pattern>client sign</pattern><template><get name="sign"/></template></category>
+<category><pattern>client sister</pattern><template><get name="sister"/></template></category>
+<category><pattern>client son</pattern><template><get name="son"/></template></category>
+<category><pattern>client spouse</pattern><template><get name="spouse"/></template></category>
+<category><pattern>client status</pattern><template><get name="status"/></template></category>
+<category><pattern>client them</pattern><template><get name="them"/></template></category>
+<category><pattern>client there</pattern><template><get name="there"/></template></category>
+<category><pattern>client they</pattern><template><get name="they"/></template></category>
+<category><pattern>client thought</pattern><template><get name="thought"/></template></category>
+<category><pattern>client want</pattern><template><get name="want"/></template></category>
+<category><pattern>client we</pattern><template><get name="we"/></template></category>
+<category><pattern>client wife</pattern><template><get name="wife"/></template></category>
+
+
+</aiml>

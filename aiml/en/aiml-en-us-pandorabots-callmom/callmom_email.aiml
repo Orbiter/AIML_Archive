@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 5/1/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+<category>
+<pattern>SEND AN E MAIL</pattern>
+
+<template><srai>SEND EMAIL</srai></template>
+</category>
+
+<category>
+<pattern>MY EMAIL IS *</pattern>
+<template>
+<think><set name="email"><star/></set></think>
+I'll remember your email <star/>.
+</template>
+</category>
+
+<category>
+<pattern>SEND ME A TRANSCRIPT</pattern>
+<template>
+<srai>TRANSCRIPT</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>SEND ME A TRANSCRIPT *</pattern>
+<template>
+<srai>TRANSCRIPT</srai>
+</template>
+</category>
+
+<category>
+<pattern>I WANT A TRANSCRIPT *</pattern>
+<template>
+<srai>TRANSCRIPT</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>CAN I GET A TRANSCRIPT *</pattern>
+<template>
+<srai>TRANSCRIPT</srai>
+</template>
+</category>
+
+<category>
+<pattern>CAN I GET A TRANSCRIPT</pattern>
+<template>
+<srai>TRANSCRIPT</srai>
+</template>
+</category>
+
+<category>
+<pattern>TRANSCRIPTS</pattern>
+<template>
+<srai>TRANSCRIPT</srai>
+</template>
+</category>
+
+<category>
+<pattern>GET A TRANSCRIPT</pattern>
+<template>
+<srai>TRANSCRIPT</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>TRANSCRIPT</pattern>
+<template>
+Sending transcript to <get name="email"/>.
+<oob><email><to><get name="email"/></to><subject>Transcript of <bot name="name"/> with <get name="name"/> on <date format="%B %d, %Y at %H:%M:%S %Z"/></subject><body><srai>DIALOG HISTORY</srai></body></email></oob></template>
+</category>
+
+
+ <category>
+<pattern>EMAIL * I *</pattern>
+<template>
+<oob><email><to><srai>EMAIL ADDRESS <star/></srai></to><body>I <star index="2"/></body></email></oob>
+Sending email to <star/> form <get name="name"/>: "I <star index="2"/>".</template>
+</category>
+
+<category>
+<pattern>TELL THE DEVELOPERS *</pattern>
+<template>
+Sending "<star/>" to the developers.
+<oob><email><to>callmom-info@pandorabots.com</to><subject>Message for CallMom Developers</subject><body><star/></body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>EMAIL RICHARD *</pattern>
+<template>Sending "<star/>" to Richard.
+<oob><email><to>rich@pandorabots.com</to><body><star/></body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>EMAIL RICHARD ABOUT * AND SAY *</pattern>
+<template>Sending "<star index="2"/>" to Richard with subject "<star/>".
+<oob><email><to>rich@pandorabots.com</to><subject><star/></subject><body><star index="2"/></body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>TEST EMAIL</pattern>
+<template>Sending an email.
+<oob><email><to>callmom-info@pandorabots.com</to><cc>callmom-info@pandorabots.com.com</cc><subject>test</subject><body>This is a test of CallMom</body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>SEND EMAIL</pattern>
+<template>Opening a blank email.
+<oob><email><from></from><body></body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>SEND MAIL</pattern>
+<template><srai>SEND EMAIL</srai></template>
+</category>
+
+<category>
+<pattern>CLEAR DIALOG HISTORY</pattern>
+<template>
+Cleared.
+<think>
+<set name="response1"></set>
+<set name="request1"></set>
+<set name="response2"></set>
+<set name="request2"></set>
+<set name="response3"></set>
+<set name="request3"></set>
+<set name="response4"></set>
+<set name="request4"></set>
+<set name="response5"></set>
+<set name="request5"></set>
+<set name="response6"></set>
+<set name="request6"></set>
+<set name="response7"></set>
+<set name="request7"></set>
+<set name="response8"></set>
+<set name="request8"></set>
+<set name="response9"></set>
+<set name="request9"></set>
+<set name="response10"></set>
+<set name="request10"></set>
+<set name="response11"></set>
+<set name="request11"></set>
+<set name="response12"></set>
+<set name="request12"></set>
+<set name="response13"></set>
+<set name="request13"></set>
+<set name="response14"></set>
+<set name="request14"></set>
+<set name="response15"></set>
+<set name="request15"></set>
+<set name="response16"></set>
+<set name="request16"></set>
+<set name="response17"></set>
+<set name="request17"></set>
+<set name="response18"></set>
+<set name="request18"></set>
+<set name="response19"></set>
+<set name="request19"></set>
+<set name="response20"></set>
+<set name="request20"></set>
+<set name="response21"></set>
+<set name="request21"></set>
+<set name="response22"></set>
+<set name="request22"></set>
+<set name="response23"></set>
+<set name="request23"></set>
+<set name="response24"></set>
+<set name="request24"></set>
+<set name="response25"></set>
+<set name="request25"></set>
+<set name="response26"></set>
+<set name="request26"></set>
+<set name="response27"></set>
+<set name="request27"></set>
+<set name="response28"></set>
+<set name="request28"></set>
+<set name="response29"></set>
+<set name="request29"></set>
+<set name="response30"></set>
+<set name="request30"></set>
+<set name="response31"></set>
+<set name="request31"></set>
+<set name="response32"></set>
+<set name="request32"></set>
+<set name="response33"></set>
+<set name="request33"></set>
+<set name="response34"></set>
+<set name="request34"></set>
+<set name="response35"></set>
+<set name="request35"></set>
+<set name="response36"></set>
+<set name="request36"></set>
+<set name="response37"></set>
+<set name="request37"></set>
+<set name="response38"></set>
+<set name="request38"></set>
+<set name="response39"></set>
+<set name="request39"></set>
+<set name="response40"></set>
+<set name="request40"></set>
+<set name="response41"></set>
+<set name="request41"></set>
+<set name="response42"></set>
+<set name="request42"></set>
+<set name="response43"></set>
+<set name="request43"></set>
+<set name="response44"></set>
+<set name="request44"></set>
+<set name="response45"></set>
+<set name="request45"></set>
+<set name="response46"></set>
+<set name="request46"></set>
+<set name="response47"></set>
+<set name="request47"></set>
+<set name="response48"></set>
+<set name="request48"></set>
+<set name="response49"></set>
+<set name="request49"></set>
+<set name="response50"></set>
+<set name="request50"></set>
+<set name="response51"></set>
+<set name="request51"></set>
+<set name="response52"></set>
+<set name="request52"></set>
+<set name="response53"></set>
+<set name="request53"></set>
+<set name="response54"></set>
+<set name="request54"></set>
+<set name="response55"></set>
+<set name="request55"></set>
+<set name="response56"></set>
+<set name="request56"></set>
+<set name="response57"></set>
+<set name="request57"></set>
+<set name="response58"></set>
+<set name="request58"></set>
+<set name="response59"></set>
+<set name="request59"></set>
+<set name="response60"></set>
+<set name="request60"></set>
+<set name="response61"></set>
+<set name="request61"></set>
+<set name="response62"></set>
+<set name="request62"></set>
+<set name="response63"></set>
+<set name="request63"></set>
+<set name="response64"></set>
+<set name="request64"></set>
+<set name="response65"></set>
+<set name="request65"></set>
+<set name="response66"></set>
+<set name="request66"></set>
+<set name="response67"></set>
+<set name="request67"></set>
+<set name="response68"></set>
+<set name="request68"></set>
+<set name="response69"></set>
+<set name="request69"></set>
+<set name="response70"></set>
+<set name="request70"></set>
+<set name="response71"></set>
+<set name="request71"></set>
+<set name="response72"></set>
+<set name="request72"></set>
+<set name="response73"></set>
+<set name="request73"></set>
+<set name="response74"></set>
+<set name="request74"></set>
+<set name="response75"></set>
+<set name="request75"></set>
+<set name="response76"></set>
+<set name="request76"></set>
+<set name="response77"></set>
+<set name="request77"></set>
+<set name="response78"></set>
+<set name="request78"></set>
+<set name="response79"></set>
+<set name="request79"></set>
+<set name="response80"></set>
+<set name="request80"></set>
+<set name="response81"></set>
+<set name="request81"></set>
+<set name="response82"></set>
+<set name="request82"></set>
+<set name="response83"></set>
+<set name="request83"></set>
+<set name="response84"></set>
+<set name="request84"></set>
+<set name="response85"></set>
+<set name="request85"></set>
+<set name="response86"></set>
+<set name="request86"></set>
+<set name="response87"></set>
+<set name="request87"></set>
+<set name="response88"></set>
+<set name="request88"></set>
+<set name="response89"></set>
+<set name="request89"></set>
+<set name="response90"></set>
+<set name="request90"></set>
+<set name="response91"></set>
+<set name="request91"></set>
+<set name="response92"></set>
+<set name="request92"></set>
+<set name="response93"></set>
+<set name="request93"></set>
+<set name="response94"></set>
+<set name="request94"></set>
+<set name="response95"></set>
+<set name="request95"></set>
+<set name="response96"></set>
+<set name="request96"></set>
+<set name="response97"></set>
+<set name="request97"></set>
+<set name="response98"></set>
+<set name="request98"></set>
+<set name="response99"></set>
+<set name="request99"></set>
+<set name="response100"></set>
+<set name="request100"></set>
+
+
+</think>
+</template>
+</category>
+
+<category>
+<pattern>XEXCHANGE * XHUMAN * XBOT *</pattern>
+<template>
+<think>
+<set name="request"><star index="2"/></set>
+<set name="response"><star index="3"/></set>
+</think>
+<condition name="request">
+<li value="OM">Incomplete dialog</li>
+<li>
+<get name="name"/>: <get name="request"/><br/>
+<bot name="name"/>: <get name="response"/><br/>
+</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>XEXCHANGE * XHUMAN * XBOT SENDING TRANSCRIPT *</pattern>
+<template><think>Badly formatted dialog exchage: <star/></think></template>
+</category>
+
+<category>
+<pattern>XEXCHANGE * </pattern>
+<template><think>Badly formatted dialog exchage: <star/></think></template>
+</category>
+
+
+<category>
+<pattern>DIALOG HISTORY</pattern>
+<template>
+<srai>XEXCHANGE request99 XHUMAN  <request index="99"/> XBOT <response index="99"/></srai>
+<srai>XEXCHANGE request98 XHUMAN  <request index="98"/> XBOT <response index="98"/></srai>
+<srai>XEXCHANGE request97 XHUMAN  <request index="97"/> XBOT <response index="97"/></srai>
+<srai>XEXCHANGE request96 XHUMAN  <request index="96"/> XBOT <response index="96"/></srai>
+<srai>XEXCHANGE request95 XHUMAN  <request index="95"/> XBOT <response index="95"/></srai>
+<srai>XEXCHANGE request94 XHUMAN  <request index="94"/> XBOT <response index="94"/></srai>
+<srai>XEXCHANGE request93 XHUMAN  <request index="93"/> XBOT <response index="93"/></srai>
+<srai>XEXCHANGE request92 XHUMAN  <request index="92"/> XBOT <response index="92"/></srai>
+<srai>XEXCHANGE request91 XHUMAN  <request index="91"/> XBOT <response index="91"/></srai>
+<srai>XEXCHANGE request90 XHUMAN  <request index="90"/> XBOT <response index="90"/></srai>
+<srai>XEXCHANGE request89 XHUMAN  <request index="89"/> XBOT <response index="89"/></srai>
+<srai>XEXCHANGE request88 XHUMAN  <request index="88"/> XBOT <response index="88"/></srai>
+<srai>XEXCHANGE request87 XHUMAN  <request index="87"/> XBOT <response index="87"/></srai>
+<srai>XEXCHANGE request86 XHUMAN  <request index="86"/> XBOT <response index="86"/></srai>
+<srai>XEXCHANGE request85 XHUMAN  <request index="85"/> XBOT <response index="85"/></srai>
+<srai>XEXCHANGE request84 XHUMAN  <request index="84"/> XBOT <response index="84"/></srai>
+<srai>XEXCHANGE request83 XHUMAN  <request index="83"/> XBOT <response index="83"/></srai>
+<srai>XEXCHANGE request82 XHUMAN  <request index="82"/> XBOT <response index="82"/></srai>
+<srai>XEXCHANGE request81 XHUMAN  <request index="81"/> XBOT <response index="81"/></srai>
+<srai>XEXCHANGE request80 XHUMAN  <request index="80"/> XBOT <response index="80"/></srai>
+<srai>XEXCHANGE request79 XHUMAN  <request index="79"/> XBOT <response index="79"/></srai>
+<srai>XEXCHANGE request78 XHUMAN  <request index="78"/> XBOT <response index="78"/></srai>
+<srai>XEXCHANGE request77 XHUMAN  <request index="77"/> XBOT <response index="77"/></srai>
+<srai>XEXCHANGE request76 XHUMAN  <request index="76"/> XBOT <response index="76"/></srai>
+<srai>XEXCHANGE request75 XHUMAN  <request index="75"/> XBOT <response index="75"/></srai>
+<srai>XEXCHANGE request74 XHUMAN  <request index="74"/> XBOT <response index="74"/></srai>
+<srai>XEXCHANGE request73 XHUMAN  <request index="73"/> XBOT <response index="73"/></srai>
+<srai>XEXCHANGE request72 XHUMAN  <request index="72"/> XBOT <response index="72"/></srai>
+<srai>XEXCHANGE request71 XHUMAN  <request index="71"/> XBOT <response index="71"/></srai>
+<srai>XEXCHANGE request70 XHUMAN  <request index="70"/> XBOT <response index="70"/></srai>
+<srai>XEXCHANGE request69 XHUMAN  <request index="69"/> XBOT <response index="69"/></srai>
+<srai>XEXCHANGE request68 XHUMAN  <request index="68"/> XBOT <response index="68"/></srai>
+<srai>XEXCHANGE request67 XHUMAN  <request index="67"/> XBOT <response index="67"/></srai>
+<srai>XEXCHANGE request66 XHUMAN  <request index="66"/> XBOT <response index="66"/></srai>
+<srai>XEXCHANGE request65 XHUMAN  <request index="65"/> XBOT <response index="65"/></srai>
+<srai>XEXCHANGE request64 XHUMAN  <request index="64"/> XBOT <response index="64"/></srai>
+<srai>XEXCHANGE request63 XHUMAN  <request index="63"/> XBOT <response index="63"/></srai>
+<srai>XEXCHANGE request62 XHUMAN  <request index="62"/> XBOT <response index="62"/></srai>
+<srai>XEXCHANGE request61 XHUMAN  <request index="61"/> XBOT <response index="61"/></srai>
+<srai>XEXCHANGE request60 XHUMAN  <request index="60"/> XBOT <response index="60"/></srai>
+<srai>XEXCHANGE request59 XHUMAN  <request index="59"/> XBOT <response index="59"/></srai>
+<srai>XEXCHANGE request58 XHUMAN  <request index="58"/> XBOT <response index="58"/></srai>
+<srai>XEXCHANGE request57 XHUMAN  <request index="57"/> XBOT <response index="57"/></srai>
+<srai>XEXCHANGE request56 XHUMAN  <request index="56"/> XBOT <response index="56"/></srai>
+<srai>XEXCHANGE request55 XHUMAN  <request index="55"/> XBOT <response index="55"/></srai>
+<srai>XEXCHANGE request54 XHUMAN  <request index="54"/> XBOT <response index="54"/></srai>
+<srai>XEXCHANGE request53 XHUMAN  <request index="53"/> XBOT <response index="53"/></srai>
+<srai>XEXCHANGE request52 XHUMAN  <request index="52"/> XBOT <response index="52"/></srai>
+<srai>XEXCHANGE request51 XHUMAN  <request index="51"/> XBOT <response index="51"/></srai>
+<srai>XEXCHANGE request50 XHUMAN  <request index="50"/> XBOT <response index="50"/></srai>
+<srai>XEXCHANGE request49 XHUMAN  <request index="49"/> XBOT <response index="49"/></srai>
+<srai>XEXCHANGE request48 XHUMAN  <request index="48"/> XBOT <response index="48"/></srai>
+<srai>XEXCHANGE request47 XHUMAN  <request index="47"/> XBOT <response index="47"/></srai>
+<srai>XEXCHANGE request46 XHUMAN  <request index="46"/> XBOT <response index="46"/></srai>
+<srai>XEXCHANGE request45 XHUMAN  <request index="45"/> XBOT <response index="45"/></srai>
+<srai>XEXCHANGE request44 XHUMAN  <request index="44"/> XBOT <response index="44"/></srai>
+<srai>XEXCHANGE request43 XHUMAN  <request index="43"/> XBOT <response index="43"/></srai>
+<srai>XEXCHANGE request42 XHUMAN  <request index="42"/> XBOT <response index="42"/></srai>
+<srai>XEXCHANGE request41 XHUMAN  <request index="41"/> XBOT <response index="41"/></srai>
+<srai>XEXCHANGE request40 XHUMAN  <request index="40"/> XBOT <response index="40"/></srai>
+<srai>XEXCHANGE request39 XHUMAN  <request index="39"/> XBOT <response index="39"/></srai>
+<srai>XEXCHANGE request38 XHUMAN  <request index="38"/> XBOT <response index="38"/></srai>
+<srai>XEXCHANGE request37 XHUMAN  <request index="37"/> XBOT <get name="`response37"/></srai>
+<srai>XEXCHANGE request36 XHUMAN  <request index="36"/> XBOT <response index="36"/></srai>
+<srai>XEXCHANGE request35 XHUMAN  <request index="35"/> XBOT <response index="35"/></srai>
+<srai>XEXCHANGE request34 XHUMAN  <request index="34"/> XBOT <response index="34"/></srai>
+<srai>XEXCHANGE request33 XHUMAN  <request index="33"/> XBOT <response index="33"/></srai>
+<srai>XEXCHANGE request32 XHUMAN  <request index="32"/> XBOT <response index="32"/></srai>
+<srai>XEXCHANGE request31 XHUMAN  <request index="31"/> XBOT <response index="31"/></srai>
+<srai>XEXCHANGE request30 XHUMAN  <request index="30"/> XBOT <response index="30"/></srai>
+<srai>XEXCHANGE request29 XHUMAN  <request index="29"/> XBOT <response index="29"/></srai>
+<srai>XEXCHANGE request28 XHUMAN  <request index="28"/> XBOT <response index="28"/></srai>
+<srai>XEXCHANGE request27 XHUMAN  <request index="27"/> XBOT <response index="27"/></srai>
+<srai>XEXCHANGE request26 XHUMAN  <request index="26"/> XBOT <response index="26"/></srai>
+<srai>XEXCHANGE request25 XHUMAN  <request index="25"/> XBOT <response index="25"/></srai>
+<srai>XEXCHANGE request24 XHUMAN  <request index="24"/> XBOT <response index="24"/></srai>
+<srai>XEXCHANGE request23 XHUMAN  <request index="23"/> XBOT <response index="23"/></srai>
+<srai>XEXCHANGE request22 XHUMAN  <request index="22"/> XBOT <response index="22"/></srai>
+<srai>XEXCHANGE request21 XHUMAN  <request index="21"/> XBOT <response index="21"/></srai>
+<srai>XEXCHANGE request20 XHUMAN  <request index="20"/> XBOT <response index="20"/></srai>
+<srai>XEXCHANGE request19 XHUMAN  <request index="19"/> XBOT <response index="19"/></srai>
+<srai>XEXCHANGE request18 XHUMAN  <request index="18"/> XBOT <response index="18"/></srai>
+<srai>XEXCHANGE request17 XHUMAN  <request index="17"/> XBOT <response index="17"/></srai>
+<srai>XEXCHANGE request16 XHUMAN  <request index="16"/> XBOT <response index="16"/></srai>
+<srai>XEXCHANGE request15 XHUMAN  <request index="15"/> XBOT <response index="15"/></srai>
+<srai>XEXCHANGE request14 XHUMAN  <request index="14"/> XBOT <response index="14"/></srai>
+<srai>XEXCHANGE request13 XHUMAN  <request index="13"/> XBOT <response index="13"/></srai>
+<srai>XEXCHANGE request12 XHUMAN  <request index="12"/> XBOT <response index="12"/></srai>
+<srai>XEXCHANGE request11 XHUMAN  <request index="11"/> XBOT <response index="11"/></srai>
+<srai>XEXCHANGE request10 XHUMAN  <request index="10"/> XBOT <response index="10"/></srai>
+<srai>XEXCHANGE request9 XHUMAN  <request index="9"/> XBOT <response index="9"/></srai>
+<srai>XEXCHANGE request8 XHUMAN  <request index="8"/> XBOT <response index="8"/></srai>
+<srai>XEXCHANGE request7 XHUMAN  <request index="7"/> XBOT <response index="7"/></srai>
+<srai>XEXCHANGE request6 XHUMAN  <request index="6"/> XBOT <response index="6"/></srai>
+<srai>XEXCHANGE request5 XHUMAN  <request index="5"/> XBOT <response index="5"/></srai>
+<srai>XEXCHANGE request4 XHUMAN  <request index="4"/> XBOT <response index="4"/></srai>
+<srai>XEXCHANGE request3 XHUMAN  <request index="3"/> XBOT <response index="3"/></srai>
+<srai>XEXCHANGE request2 XHUMAN  <request index="2"/> XBOT <response index="2"/></srai>
+<srai>XEXCHANGE request1 XHUMAN  <request index="1"/> XBOT <response index="1"/></srai>
+</template>
+</category>
+
+
+
+
+</aiml>
+

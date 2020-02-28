@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 4/28/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+<!-- 
+“We have a flat tire.”
+“How do I tie a bow tie again?”
+“What’s the fastest way to Hartford Hospital?”
+“Do I need an umbrella in New York this weekend?”
+“Call Chris when I get home.”
+“Move my meeting from 3 to 4.”
+“What does a weasel look like?”
+“Remind me to get milk when I leave work.”
+“Tell my wife I’m going to make it.”
+“Wake me up at 6.”
+“Play some Coltrane.”
+“I’m locked out.” 
+-->
+<category>
+<pattern>ARE YOU BETTER THAN SIRI</pattern>
+<template>
+Unlike other Android and Apple virtual assistants, CallMom can learn and adapt to your style.  Anyone can change and modify my responses.
+</template>
+</category>
+
+<category>
+<pattern>WE HAVE A FLAT TIRE</pattern>
+<template><srai>FLAT TIRE</srai></template>
+</category>
+
+<category>
+<pattern>FLAT TIRE</pattern>
+<template>
+<oob><dial>1-800-222-4357</dial></oob>
+I'm calling Triple A.
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I * AGAIN</pattern>
+<template>
+<srai>HOW DO I <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHAT IS THE FASTEST WAY TO *</pattern>
+<template><srai>DIRECTIONS TO <star/></srai></template>
+</category>
+
+<category>
+<pattern>DO I NEED AN UMBRELLA IN * THIS *</pattern>
+<template>
+<srai>SEARCH WEATHER <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>CALL * WHEN I *</pattern>
+<template>CallMom can only place a call right now.</template>
+</category>
+
+<category>
+<pattern>REMIND ME TO *</pattern>
+<template>CallMom alarm/calendar access not yet implemented.</template>
+</category>
+
+<category>
+<pattern>WAKE ME UP *</pattern>
+<template>CallMom alarm/calendar access not yet implemented.</template>
+</category>
+
+<category>
+<pattern>MOVE MY MEETING *</pattern>
+<template>CallMom alarm/calendar access not yet implemented.</template>
+</category>
+
+<category>
+<pattern>PLAY SOME *</pattern>
+<template>CallMom music player access not yet implemented.</template>
+</category>
+
+<category>
+<pattern>I AM LOCKED OUT</pattern>
+<template>I can find some locksmiths near you.  
+<srai>XSEARCH LOCKSMITH</srai>
+</template>
+</category>
+
+</aiml>
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 1/21/2012 -->
+<!-- -->
+<!-- Authors: Steve Worswick squarebear@square-bear.co.uk -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+
+<!--
+
+Here is something that should amaze and impress your friends.
+They will believe that your phone can identify them just
+from pointing the camera at them and asking who they are.
+
+However, what they don't know is that you say a
+different set of words depending on who you want
+to identify. You can add as many people as you like
+as long as you remember the phrases for each one.
+Have fun! - Steve Worswick -->
+
+
+<category>
+<pattern>WHO IS THIS</pattern>
+<template>Let's take a look. I would say that is your work colleague Charlie Black.</template>
+</category>
+
+ 
+<category>
+<pattern>WHO IS THIS PERSON</pattern>
+<template>Unless I am mistaken, you are pointing me at Kirsty Rowe.</template>
+</category>
+
+
+<category>
+<pattern>TELL ME WHO THIS IS</pattern>
+<template>Why that's Paul of course.</template>
+</category>
+
+
+<category>
+<pattern>WHO AM I LOOKING AT</pattern>
+<template>That looks like your beautiful wife Tracey to me.</template>
+</category>
+
+
+<category>
+<pattern>WHO IS SAT HERE</pattern>
+<template>That's Paula. She is Josh's girlfriend.</template>
+</category>
+
+<!-- Currency converter - only does dollars and pounds at the moment -->
+
+<category>
+<pattern>WHAT IS _ DOLLARS IN POUNDS</pattern>
+<template><oob><url>http://exchangerates.mobi/USD-GBP/<star/></url></oob>
+<srai>currencyconverterblab</srai>
+</template>
+</category>
+
+<category>
+<pattern>WHAT IS _ POUNDS IN DOLLARS</pattern>
+<template><oob><url>http://exchangerates.mobi/GBP-USD/<star/></url></oob><srai>currencyconverterblab</srai>
+</template>
+</category>
+
+<category>
+<pattern>CURRENCYCONVERTERBLAB</pattern>
+<template>I will convert it for you and display it on your screen.</template>
+</category>
+
+</aiml>
