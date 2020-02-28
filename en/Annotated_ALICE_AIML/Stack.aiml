@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+<!-- Free software Copyright © ALICE A.I. Foundation, Inc. --> 
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.0.1 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated September 2003 -->
+<!-- .... -->
+<!-- Stack.aiml : a simple topic stack in AIML -->
+<!-- Be sure that the default predicate value returned by "top" is OM. -->
+<category><pattern>POP</pattern> 
+<template>
+<set name="topic"><srai>POPOM <get name="top" /></srai></set>
+</template></category>
+<category>
+<pattern>PUSH *</pattern> 
+<template>
+<think>
+<set name="last">
+<get name="seventh" /> 
+</set>
+<set name="seventh">
+<get name="sixth" /> 
+</set>
+<set name="sixth">
+<get name="fifth" /> 
+</set>
+<set name="fifth">
+<get name="fourth" /> 
+</set>
+<set name="fourth">
+<get name="third" /> 
+</set>
+<set name="third">
+<get name="second" /> 
+</set>
+<set name="second">
+<get name="top" /> 
+</set>
+<set name="top">
+<star /> 
+</set>
+</think>
+<star /> 
+</template>
+</category>
+<category>
+<pattern>POPOM *</pattern> 
+<template>
+<get name="top" /> 
+<think>
+<set name="top">
+<get name="second" /> 
+</set>
+<set name="second">
+<get name="third" /> 
+</set>
+<set name="third">
+<get name="fourth" /> 
+</set>
+<set name="fourth">
+<get name="fifth" /> 
+</set>
+<set name="fifth">
+<get name="sixth" /> 
+</set>
+<set name="sixth">
+<get name="seventh" /> 
+</set>
+<set name="seventh">
+<get name="last" /> 
+</set>
+<set name="last">
+<srai>RANDOM TOPIC</srai> 
+</set>
+</think>
+</template>
+</category>
+<category>
+<pattern>POPOM OM</pattern> 
+<template>
+<set name="top">
+<srai>RANDOM TOPIC</srai> 
+</set>
+</template>
+</category>
+<category>
+<pattern>SHOW STACK</pattern> 
+<template>
+  top=" 
+<get name="top" /> 
+  " second=" 
+<get name="second" /> 
+  " third=" 
+<get name="third" /> 
+  " fourth=" 
+<get name="fourth" /> 
+  " fifth=" 
+<get name="fifth" /> 
+  " sixth=" 
+<get name="sixth" /> 
+  " seventh=" 
+<get name="seventh" /> 
+  " last=" 
+<get name="last" /> 
+  " 
+</template>
+</category>
+<category>
+<pattern>RANDOM TOPIC</pattern> 
+<template>
+<random>
+<li>Your Chinese animal sign</li> 
+<li>Your home town</li> 
+<li>Your favorite color</li> 
+<li>Your star sign</li> 
+<li>Your rising sign</li> 
+<li>My favorite movie</li> 
+<li>Your personality</li> 
+<li>Your good looks</li> 
+<li>Your favorite band</li> 
+<li>Your problems</li> 
+</random>
+</template>
+</category>
+</aiml>

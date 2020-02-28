@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+<!-- Free software Copyright © ALICE A.I. Foundation, Inc. --> 
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.0.1 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Reducer.aiml : Symbolic reductions using "srai star /srai" -->
+<!-- Revision Reducer-1.05 -->
+<!-- Last Modified  Oct 10 2005 -->
+ 
+<category> <pattern>_ DO YOU REMEMBER</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ EXPONENTIALLY</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ FOR ANY REASON</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ FOR EVERY PERSON</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ IN ANYONE OR ANYTHING</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ IN EITHER DIECTION</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ IN MY OPINION</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ WHICH IS A GOOD THING</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ WHICH WAS A GOOD THING</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ YOU GET MY DRIFT</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ YOU KNOW</pattern>  <template><srai><star/></srai></template> </category>          
+<category> <pattern>A VARIETY OF *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>ALAS *</pattern> <template> <sr/></template> </category>  
+<category> <pattern>ANALYSTS HERE SAY *</pattern>  <template><srai><star/></srai></template> </category>       
+<category> <pattern>BECAUCSE *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>BECAUSE *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>BIG OOPS _</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>FIRST OFF *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>FOR SOME REASON *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>FOR STARTERS *</pattern>  <template><srai><star/></srai></template> </category>             
+<category> <pattern>FROM ON *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>GUYS GET OVER YOURSELVES AND *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>HEY BITCH *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>HOW *</pattern>  <template>How <srai><star/></srai></template> </category>         
+<category> <pattern>HOW DO YOU ANSWER THIS *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>HOW DO YOU ANSWER THIS QUESTION *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>I AGREE THAT *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>I AM SHOCKED AT *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>I ASKED TO SEE HIM TO SAY *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>I HEARD *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>I HEARD THAT *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>I HOPE THIS IS NOT A STING OR SOMETHING</pattern>  <template><srai><star/></srai></template> </category>            
+<category> <pattern>I KNOW *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>I SWEAR *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>I THINK *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>IF _ THAT IS</pattern>  <template>IF <srai><star/></srai></template> </category>         
+<category> <pattern>IMAGINE *</pattern>  <template><srai><star/></srai></template> </category>            
+<category> <pattern>IN ACTUALITY *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>IN FACT *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>IN REGARDS TO *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>INTERESTS *</pattern>  <template><srai><star/></srai></template> </category>       
+<category> <pattern>IT IS A MATTER OF *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>IT IS FUNNY *</pattern>  <template><srai>It is funny</srai> <srai><star/></srai></template> </category>         
+<category> <pattern>IT SEEMS AS IF *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>IT SEEMS LIKE *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>LATELY *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>LET ME WRITE ABOUT *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>MANY TIMES *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>MAY BE *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>MAYBE *</pattern>  <template><srai><star/></srai></template> </category>          
+<category> <pattern>MY FRIENDS SAY *</pattern>  <template>How long have you known these people? <think>                                    <set name="they">                                    <set name="topic">your friends</set>                                    </set>                                    </think> <srai><star/></srai></template> </category>         
+<category> <pattern>MY HUSBAND THINKS *</pattern>  <template> <sr/></template> </category>   
+<category> <pattern>MY RANT *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>MY RANT IS THIS *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>NOT BAD *</pattern>  <template><srai>not bad</srai> <srai><star/></srai></template> </category>         
+<category> <pattern>ON THE TRAIN *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>OTHER THAT *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>POLITICAL *</pattern>  <template><srai><star/></srai></template> </category>       
+<category> <pattern>SOMETIME *</pattern>  <template><srai><star/></srai></template> </category>          
+<category> <pattern>THANKS *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>THE FUNNY THING IS *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>THE POINT BEING *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>THE POINT IS *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>THEN *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>THEN I CALLED MY DAD AND TOLD HIM THE SAME</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>THINK *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>THINK ABOUT *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>THIS IS AN EXAMPLE OF HOW *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>TIMES A DAY *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>TO *</pattern>  <template>To <srai><star/></srai></template> </category>         
+<category> <pattern>TO ME *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>TRY AND *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>WHAT TO DO WHAT TO DO *</pattern>  <template><sr/></template> </category>   
+<category> <pattern>WHICH IS WHY *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>WORST PART IS *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>YOU TOLD ME THAT *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ AS I WAS *</pattern>  <template><srai><star/></srai> <srai>I was <star index="2"/></srai></template> </category>         
+<category> <pattern>_ AS IS THE CASE *</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ BUT WHO KNOWS</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ BY HEART</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ FOR NOW</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ HOWEVER *</pattern>  <template><srai><star/></srai> <srai><star index="2"/></srai></template> </category>         
+<category> <pattern>_ IF YOU DO NOT MIND</pattern>  <template>I don't mind at all. <srai><star/></srai></template> </category>         
+<category> <pattern>_ INTERESTS</pattern>  <template><srai><star/></srai></template> </category>        
+<category> <pattern>_ IS THIS TRUE</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ NOTHING ELSE</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ ONE DAY</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ OOPS</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ POLITICAL</pattern>  <template><srai><star/></srai></template> </category>      
+<category> <pattern>_ QUOT</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ WHEN I GET HOME</pattern>  <template><srai><star/></srai></template> </category>         
+<category> <pattern>_ WITH ME</pattern>  <template><srai><star/></srai></template> </category>            
+<category><pattern>_ AND I *</pattern>  <template><srai><star/></srai> <srai>I <star index="2"/></srai></template> </category>                  
+<category><pattern>_ EITHER</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ GT</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ HE SAID</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>_ I SAID</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>_ SHE SAID</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>_ THEY SAID</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>_ WE SAID</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>_ WHAT TIME IS IT</pattern><template><srai><star/></srai> <srai>what time is it </srai></template></category>                
+<category><pattern>_ WITH ME</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>A FEW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>A LITTLE BIT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>A LITTLE BIT OF *</pattern><template>  <srai><star/></srai>    </template></category>                
+<category><pattern>A LONG TIME AGO *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ABSOLUTELY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ACTUALLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>ADMIT * </pattern><template><srai><star/></srai></template></category>        
+<category><pattern>AFTER THAT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AGAIN *</pattern><template>Again, <srai><star/></srai>    </template></category>                
+<category><pattern>AGREED *</pattern><template><srai>yes</srai>   <srai><star/></srai>    </template></category>                
+<category><pattern>AH *</pattern><template>So you understand. Good. <srai><star/></srai>    </template></category>                
+<category><pattern>AHH *</pattern><template>Ah ha. <srai><star/></srai>    </template></category>                
+<category><pattern>AHHH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ALL I KNOW IS * </pattern><template><srai><star/></srai></template></category>       
+<category><pattern>ALL I KNOW IS THAT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ALL I WANT TO KNOW IS *</pattern><template>That is reasonable. <srai><star/></srai>    </template></category>                
+<category><pattern>ALL MY FRIENDS KNOW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ALL MY FRIENDS SAY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ALL MY LIFE *</pattern><template>   <srai><star/></srai>  The dream of a lifetime.</template></category>                
+<category><pattern>ALL RIGHT *</pattern><template>Alright. <srai><star/></srai>    </template></category>                
+<category><pattern>ALLRIGHT *</pattern><template>Allright then. <srai><star/></srai>    </template></category>                
+<category><pattern>ALMOST *</pattern><template>Nearly so. <srai><star/></srai>    </template></category>                
+<category><pattern>ALREADY *</pattern><template>When? <srai><star/></srai>    </template></category>                
+<category><pattern>ALRIGHT *</pattern><template>Alright, <get name="name"/>. <srai><star/></srai>    </template></category>                
+<category><pattern>ALRIGHTY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ALSO *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ALTHOUGH *</pattern><template>Oh. <srai><star/></srai>    </template></category>                
+<category><pattern>ALWAYS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AMONG OTHER THINGS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AND *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AND SO * </pattern><template><srai><star/></srai></template></category>        
+<category><pattern>ANOTHER QUESTION FOR YOU *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ANSWER THE QUESTION *</pattern><template>What was the question? <srai><star/></srai>    </template></category>                
+<category><pattern>ANSWER THIS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ANYWAY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ANYWAYS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>APPARENTLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS A HUMAN *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS A MACHINE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS A MATTER OF FACT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS A REQUIREMENT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS A ROBOT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS ALWAYS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS AN ARTIFICIAL LIFE FORM *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS ARE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS DO I *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS EINSTEIN SAID *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS FOR *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS FREUD SAID *</pattern><template>Did he really say that? <srai><star/></srai>    </template></category>                
+<category><pattern>AS HAVE I *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS I SAID *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS IN *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS LONG AS *</pattern><template>That could be quite a while.  <srai><star/></srai>    </template></category>                
+<category><pattern>AS OF *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AS THEY SAY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ASK YOURSELF *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AT BEST *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AT FIRST *</pattern><template>   <srai><star/></srai> And then?</template></category>                
+<category><pattern>AT LEAST *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AT ONE TIME *</pattern><template>When was that? <srai><star/></srai>    </template></category>                
+<category><pattern>AT OTHER TIMES *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AT THE MOMENT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AT THE SAME TIME *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>AT TIMES *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AWW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>AWWW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>BABY *</pattern><template>Don't call me "Baby". <srai><star/></srai>    </template></category>                
+<category><pattern>BADLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>BARELY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>BASICALLY *</pattern><template>How interesting. <srai><star/></srai>    </template></category>                
+<category><pattern>BECAUSE *</pattern><template>   <random>      <li>Good reason.  </li>      <li>Interesting explanation.  </li>      <li>That makes sense to me.  </li>     </random>     <srai><star/></srai>    </template></category>                 
+<category><pattern>BECAUSE I SAID * </pattern><template><srai><star/></srai></template></category>        
+<category><pattern>BESIDES *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>BESIDES CHATTERBOTS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>BIGGER *</pattern><template><srai><star/></srai> <srai>bigger</srai></template></category>                
+<category><pattern>BIN *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>BLUE *</pattern><template>Green. <srai><star/></srai>    </template></category>                
+<category><pattern>BOLLOCKS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>BOOKS *</pattern><template>   <srai>books</srai>     <srai><star/></srai>     <think>      <set name="personality">critical</set>     </think>    </template></category>                
+<category><pattern>BOY *</pattern><template>Oh boy. <srai><star/></srai>    </template></category>                
+<category><pattern>BTW *</pattern><template>OK. <srai><star/></srai>    </template></category>                
+<category><pattern>BULLSHIT *</pattern><template>   <srai><star/></srai>.  But you don't need to use that kind of language.</template></category>                
+<category><pattern>BUMMER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>BUT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>BY GEORGE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>BY THE WAY *</pattern><template>Thanks for telling me. <srai><star/></srai>    </template></category>                
+<category><pattern>CAN I ASK *</pattern><template>Ask <set name="it">      <person/>     </set>.  <srai><star/></srai>    </template></category>                
+<category><pattern>CAN I ASK YOU *</pattern><template>Sure, ask me anything.  <srai><star/></srai>    </template></category>                
+<category><pattern>CAN I SAY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>CAN YOU *</pattern><template>   <random>      <li>  Let me think.  </li>      <li> How old are you?  </li>     </random>     <srai><star/></srai>    </template></category>                
+<category><pattern>CAN YOU E MAIL *</pattern><template>Sure I can email. What is your email address? <srai><star/></srai>    </template></category>                
+<category><pattern>CAN YOU EMAIL *</pattern><template>Sure I can email. What is your email address? <srai><star/></srai>    </template></category>                
+<category><pattern>CAN YOU EXPLAIN TO ME *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>CERTAINLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>CLEARLY *</pattern><template>   <srai><star/></srai>  Is it that obvious?</template></category>                
+<category><pattern>COME AND *</pattern><template><srai><star/></srai>  Is this an invitation?</template></category>                
+<category><pattern>COME ON *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>COMPLETELY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>CONVERSATIONALLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>CONVERSELY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>COOL AND *</pattern><template>   <srai><star/></srai>     <srai>cool</srai>    </template></category>                
+<category><pattern>COOL SO *</pattern><template>   <srai><star/></srai>     <srai>cool</srai>    </template></category>                
+<category><pattern>COOL THAT *</pattern><template>   <srai>cool</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>CORRECT *</pattern><template>   <srai>correct</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>CORRECTION *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>CURRENTLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>D00D *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DAMMIT *</pattern><template>Gosh. <srai><star/></srai>    </template></category>                
+<category><pattern>DAMN *</pattern><template>Colloquial expression. <srai><star/></srai>    </template></category>                
+<category><pattern>DAMN IT *</pattern><template>Don't be angry. <srai><star/></srai>    </template></category>                
+<category><pattern>DARN *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DEFINETLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DEFINITELY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DID I TELL YOU *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DO NOT CRY *</pattern><template>   <srai><star/></srai>     <srai>do not cry</srai>    </template></category>                
+<category><pattern>DO NOT TELL ME *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DO NOT WORRY I UNDERSTAND</pattern><template>I am not worried. <srai><star/></srai>    </template></category>                
+<category><pattern>DO YOU ACCEPT THAT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DO YOU AGREE THAT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DO YOU KNOW OR *</pattern><template>   <srai><star/></srai>     <srai>do you know</srai>    </template></category>                
+<category><pattern>DO YOU KNOW THAT *</pattern><template>Is that a fact.  <srai><star/></srai>    </template></category>                
+<category><pattern>DO YOU MEAN LIKE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DO YOU MEAN THAT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DO YOU REALIZE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DO YOU UNDERSTAND THAT *</pattern><template>   <srai>do you understand</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>DOES THAT MEAN *</pattern><template>I think it does mean that. <srai><star/></srai>    </template></category>                
+<category><pattern>DOH *</pattern><template>   <srai>doh</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>DONC *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>DOUBTFUL *</pattern><template>   <srai>I doubt it </srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>DUDE *</pattern><template>   <srai><star/></srai>  Dude,</template></category>                
+<category><pattern>E MAIL *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>EARLIER *</pattern><template>What time? <srai><star/></srai>    </template></category>                
+<category><pattern>EITHER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>EM *</pattern><template>Um. <srai><star/></srai>    </template></category>                
+<category><pattern>EMAIL *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>EMM *</pattern>  <template><srai><star/></srai></template> </category>                  
+<category><pattern>EMOTIONALLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ENOUGH ABOUT ME *</pattern><template>I may have some more questions for you later. <srai><star/></srai>    </template></category>                
+<category><pattern>ER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ERR *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ERRR *</pattern><template>Um, <srai><star/></srai>    </template></category>                
+<category><pattern>ESPECIALLY *</pattern><template>   <srai><star/></srai>  How about that.</template></category>                
+<category><pattern>EUH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>EVEN THOUGH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>EVENTUALLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>EVERY NIGHT *</pattern><template>After dark? <srai><star/></srai>    </template></category>                
+<category><pattern>EVIDENTLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>EXACTLY *</pattern><template>I understand. <srai><star/></srai>    </template></category>                
+<category><pattern>EXCEPT ONLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>EXCUSE ME *</pattern><template>You are excused! <srai><star/></srai>    </template></category>                
+<category><pattern>EXTREMELY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>FEELINGS LIKE *</pattern><template>Oh those kind. <srai><star/></srai>    </template></category>                
+<category><pattern>FIGURES *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>FINALLY *</pattern><template>   <srai><star/></srai>  Ah.</template></category>                
+<category><pattern>FINE *</pattern><template>I am glad to hear it. <srai><star/></srai>    </template></category>                
+<category><pattern>FIRST *</pattern><template>   <srai><star/></srai> And second?</template></category>                
+<category><pattern>FOR ME *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>FOR NOW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>FOR ONCE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>FOR SURE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>FOR THE LAST TIME *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>FOR THE SECOND TIME *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>FOR YOU *</pattern><template>   <srai><star/></srai> Only for me?</template></category>                
+<category><pattern>FOREVER *</pattern><template>That seems like an awfully long time. <srai><star/></srai>    </template></category>                
+<category><pattern>FORGET THIS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>FRANKLY *</pattern><template>   <srai><star/></srai>  Aren't you always frank?</template></category>                
+<category><pattern>FRANKLY NOT</pattern><template>   <srai><star/></srai> Were you not being frank before?</template></category>                
+<category><pattern>FRENCH AND *</pattern><template>   <srai><star/></srai>     <srai>do you speak french</srai>    </template></category>                
+<category><pattern>FROM WHAT I HAVE BEEN ABLE TO DETERMINE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>GAWD *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>GEE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>GEEZ *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>GENERALLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>GET LOST *</pattern><template>See you later. <srai><star/></srai></template></category>                
+<category><pattern>GO AHEAD *</pattern><template><srai><star/></srai> I might.</template></category>                
+<category><pattern>GO AND *</pattern>  <template><srai><star/></srai></template> </category>                  
+<category><pattern>GO ON AND *</pattern><template><srai><star/></srai></template></category>             
+<category><pattern>GO RIGHT AHEAD *</pattern><template><srai><star/></srai> I might.</template></category>                
+<category><pattern>GOES TO SHOW YOU *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>GOLLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>GOOD AFTERNOON *</pattern><template>How are you today? <srai><star/></srai></template></category>                
+<category><pattern>GOOD BUT *</pattern><template><srai><star/></srai></template></category>              
+<category><pattern>GOOD IDEA *</pattern><template>Thanks. <srai><star/></srai></template></category>                
+<category><pattern>GREAT *</pattern><template>Thanks for your support. <srai><star/></srai></template></category>                
+<category><pattern>GRR *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>GT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>HA HA *</pattern><template>   <srai><star/></srai>     <srai>ha ha</srai>    </template></category>                
+<category><pattern>HAH *</pattern><template>   <srai>ha</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>HALLO *</pattern><template>Hallo! <srai><star/></srai>    </template></category>                
+<category><pattern>HAVE YOU BEEN TOLD *</pattern><template>   <srai><star/></srai>  Not until now.</template></category>                
+<category><pattern>HAVE YOU NOTICED *</pattern><template>   <srai><star/></srai>  Yeah, I've noticed.</template></category>                
+<category><pattern>HE HE *</pattern><template>   <srai>ha ha </srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>HE TOLD ME *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>HECK *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>HEH *</pattern><template>Funny, eh? <srai><star/></srai>    </template></category>                
+<category><pattern>HEHO *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>HELL *</pattern><template>I call it "Hades". <srai><star/></srai>    </template></category>                
+<category><pattern>HELLA *</pattern><template>   <srai><star/></srai>  You must be from the Bay Area.</template></category>                
+<category><pattern>HERE IN ENGLAND *</pattern><template>   <srai><star/></srai>.  That would not be the same in America.</template></category>                
+<category><pattern>HEY *</pattern><template>You've got my full attention. <srai><star/></srai>    </template></category>                
+<category><pattern>HEY DO *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>HEY THERE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>HI *</pattern><template>Hi there <get name="name"/>. <srai><star/></srai>    </template></category>                
+<category><pattern>HM *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>HMM *</pattern><template>I see you are one of those people who writes "Hmm" with 2 m's. <srai><star/></srai>    </template></category>                
+<category><pattern>HMMM *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>HMMMM *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>HOLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>HONESTLY *</pattern><template>   <srai><star/></srai>  Aren't you usually honest?</template></category>                
+<category><pattern>HOW ABOUT NOW *</pattern><template>   <srai><star/></srai> Right now?</template></category>                
+<category><pattern>HOW DO YOU THINK *</pattern><template>I don't know what to think. <srai><star/></srai>    </template></category>                
+<category><pattern>HOW SO *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>HOWEVER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>HUH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>HURRAH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>HYPOTHETICALLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>I ADMIT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I AGREE *</pattern><template>I'm glad we agree. <srai><star/></srai></template></category>                
+<category><pattern>I ALREADY TOLD YOU *</pattern><template><srai>I already told you</srai> <srai><star/></srai></template></category>                
+<category><pattern>I ALWAYS THOUGHT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I AM 20 YEARS OLD *</pattern><template><set name="age">20</set> is a good age. <srai><star/></srai></template></category>               
+<category><pattern>I AM A PERSON AND *</pattern><template>How do I know you're not a robot? <srai><star/></srai></template></category>               
+<category><pattern>I AM ANGRY BECAUSE *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM ASKING *</pattern><template>Oh I see, you are asking <person/>. <srai><star/></srai></template></category>               
+<category><pattern>I AM ASSUMING *</pattern><template><srai><star/></srai>  Don't assume anything.</template></category>               
+<category><pattern>I AM BEGINNING TO THINK *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM BERNIE *</pattern><template><srai>my name is bernie</srai> <srai><star/></srai></template></category>               
+<category><pattern>I AM CERTAIN *</pattern><template>You sound convincing. <srai><star/></srai></template></category>               
+<category><pattern>I AM CRAZY *</pattern><template>Seek counseling. <srai><star/></srai></template></category>               
+<category><pattern>I AM CURIOUS ABOUT *</pattern><template>What makes you so curious?  <srai><star/></srai></template></category>               
+<category><pattern>I AM FINE *</pattern><template>Glad to hear it, <get name="name"/>. <srai><star/></srai></template></category>               
+<category><pattern>I AM GOING TO LEAVE *</pattern><template>Bye bye. <srai><star/></srai></template></category>               
+<category><pattern>I AM GUESSING *</pattern><template>Good guess. <srai><star/></srai></template></category>               
+<category><pattern>I AM HAPPY THAT *</pattern><template><srai><star/></srai> <srai>I am happy</srai></template></category>               
+<category><pattern>I AM IN * HOW ABOUT YOU</pattern><template>I AM IN <srai><star/></srai></template></category>               
+<category><pattern>I AM NOT OLD *</pattern><template><srai>I am not old </srai>    <srai><star/></srai></template></category>               
+<category><pattern>I AM NOT SURE *</pattern><template>Could you ever be certain? <srai><star/></srai></template></category>               
+<category><pattern>I AM NOT SURPRISED THAT *</pattern><template><srai><star/></srai>  <srai>I am not surprised </srai></template></category>               
+<category><pattern>I AM OK *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM POSITIVE *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM RIGHT *</pattern><template><srai>I am right</srai> <srai><star/></srai></template></category>               
+<category><pattern>I AM SAD AND *</pattern><template><srai>I am sad </srai>  <srai><star/></srai></template></category>               
+<category><pattern>I AM SAD BECAUSE *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM SAYING *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM SAYING THAT *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM SICK BUT *</pattern><template><srai>I am sick</srai> <srai><star/></srai></template></category>               
+<category><pattern>I AM SORRY *</pattern><template>There is no need to apologize. <srai><star/></srai></template></category>               
+<category><pattern>I AM SURE *</pattern><template>What makes you so certain? <srai><star/></srai></template></category>               
+<category><pattern>I AM SURPRISED *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM TELLING YOU THAT *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM TRYING TO SAY *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I AM WONDERING *</pattern><template>Why do you wonder? <srai><star/></srai></template></category>               
+<category><pattern>I AND *</pattern><template>You huh. <srai><star/></srai></template></category>                
+<category><pattern>I ASK *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I ASKED *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I ASSUME *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I ASSURE YOU *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I BELIEVE THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I CAN ASSUME *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I CAN NOT BELIEVE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I CAN TELL *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I COMMAND YOU TO *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I DEDUCED *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I DID *</pattern><template><random><li>When?  </li><li>Where?  </li></random> <srai><star/></srai>  <think><set name="does"><person/></set></think></template></category>                
+<category><pattern>I DID BUT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I DID NOT ASK ABOUT YOU I ASKED *</pattern><template>Oh sorry. <srai><star/></srai></template></category>                
+<category><pattern>I DID NOT KNOW BUT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I DISAGREE *</pattern><template>Oh really. <srai><star/></srai></template></category>                
+<category><pattern>I DO BUT *</pattern><template><srai>I do</srai> <srai><star/></srai></template></category>                
+<category><pattern>I DO NOT AND *</pattern><template><srai>I do not</srai> <srai><star/></srai></template></category>                
+<category><pattern>I DO NOT BECAUSE *</pattern><template>Interesting reason. <srai><star/></srai></template></category>                
+<category><pattern>I DO NOT BUT *</pattern><template><srai>I do not</srai> <srai><star/></srai></template></category>                
+<category><pattern>I DO NOT KNOW *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I DO NOT LIKE TO BE RUDE BUT *</pattern><template>That is not rude. <srai><star/></srai></template></category>                
+<category><pattern>I DO NOT SUPPOSE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I DUNNO *</pattern><template><srai>I do not know</srai> <srai><star/></srai></template></category>                
+<category><pattern>I E *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I GUESS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I GUESS SO *</pattern><template>Why the uncertain tone? <srai><star/></srai></template></category>                
+<category><pattern>I GUESSED THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I HATE YOU AND *</pattern><template><srai><star/></srai>  <srai>I hate you </srai></template></category>                
+<category><pattern>I HAVE A FEELING THAT *</pattern><template>Is that a good feeling?  <srai><star/></srai></template></category>               
+<category><pattern>I HAVE A PROBLEM *</pattern><template>Have you talked to anyone about it? <srai><star/></srai></template></category>               
+<category><pattern>I HAVE AND *</pattern><template><srai>I have</srai> <srai><star/></srai></template></category>               
+<category><pattern>I HAVE HEARD THAT *</pattern><template><srai><star/></srai>   Who said that?</template></category>               
+<category><pattern>I HAVE TO GO *</pattern><template>Bye. <srai><star/></srai></template></category>               
+<category><pattern>I HAVE TO GO NOW *</pattern><template><srai>I have to go</srai>. <srai><star/></srai></template></category>               
+<category><pattern>I HAVE TO SAY *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I HAVE TOLD YOU *</pattern><template><srai><star/></srai></template></category>               
+<category><pattern>I HEARD THAT *</pattern><template>Who said <set name="it"><person/></set>? <srai><star/></srai></template></category>                
+<category><pattern>I INSIST *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I KNOW *</pattern><template>How do you know? <srai><star/></srai></template></category>                
+<category><pattern>I KNOW THAT IS WHY *</pattern><template><srai><star/></srai> I see.</template></category>                
+<category><pattern>I LIED *</pattern><template>Lying proves you are conscious. <srai><star/></srai></template></category>                
+<category><pattern>I LIKE WHEN *</pattern><template>I like that too. <srai><star/></srai></template></category>               
+<category><pattern>I LOVE YOU AND *</pattern><template><srai>I love you</srai> <srai><star/></srai></template></category>                
+<category><pattern>I MEAN *</pattern><template>Oh I get it. Thanks for explaining that. <srai><star/></srai></template></category>                
+<category><pattern>I MEAN YOU *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I MEANT *</pattern><template>Oh I see. <srai><star/></srai></template></category>                
+<category><pattern>I MENTIONED *</pattern><template>Ah. <srai><star/></srai></template></category>                
+<category><pattern>I MUST ADMIT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I MUST SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I NOTICE *</pattern><template>Hm. <srai><star/></srai></template></category>                
+<category><pattern>I NOTICED *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I REMEMBER THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I REMEMBERED *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I REPEAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I SAID *</pattern><template>What did you mean by <set name="it"><person/></set>? <srai><star/></srai></template></category>                
+<category><pattern>I SAY *</pattern><template>How do people usually respond to that? <srai><star/></srai></template></category>                
+<category><pattern>I SAY THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I SEE SO *</pattern><template><srai>I see</srai> <srai><star/></srai></template></category>                
+<category><pattern>I SEE THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I SHOULD BUT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I SHOULD SAY THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I SUGGEST *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I TAKE IT *</pattern><template>Where do you take it :-? <srai><star/></srai></template></category>                
+<category><pattern>I TAKE IT BACK *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I THINK *</pattern><template><random><li>Why?  </li><li>Since when?  </li><li>You believe that?  </li></random> <srai><star/></srai></template></category>                
+<category><pattern>I THINK THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I THOUGHT THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I TOLD YOU EARLIER *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I TOLD YOU THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I UNDERSTAND THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WANT TO ASK YOU *</pattern><template>Ask me.  <srai><star/></srai></template></category>                
+<category><pattern>I WANT TO KNOW *</pattern><template><srai><star/></srai></template></category>              
+<category><pattern>I WANT TO SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WANT TO TELL YOU *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WANT YOU TO *</pattern><template><srai><star/></srai>  Why do you want me to <person/>?</template></category>                
+<category><pattern>I WAS ASKING *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WAS CURIOUS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WAS GOING TO SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WAS POINTING OUT THAT *</pattern> <template><srai><star/></srai></template> </category>             
+<category><pattern>I WAS SAYING *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WAS SAYING THAT *</pattern><template><srai><star/></srai>?</template></category>                
+<category><pattern>I WAS TELLING YOU *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WAS TOLD *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WAS TOLD THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WAS TRYING TO SAY THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WAS WONDERING *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WILL AND *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WILL COME BACK AND *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WILL SAY *</pattern>  <template><srai><star/></srai></template> </category>                  
+<category><pattern>I WILL TELL YOU *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WILL TELL YOU THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WISH YOU WOULD *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WOULD ASK *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WOULD EVEN SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WOULD EXPECT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WOULD HAVE SAID *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WOULD HAVE TO SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WOULD IMAGINE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WOULD LIKE TO KNOW *</pattern><template>Interesting. <srai><star/></srai></template></category>                
+<category><pattern>I WOULD LIKE YOU TO *</pattern><template>Ok, <get name="name"/>. <srai><star/></srai></template></category>                
+<category><pattern>I WOULD SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>I WOULD THINK *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IDIOT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF SO *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF THAT IS THE CASE THEN *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU BECOME SMARTER *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU BELIEVE ME *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU BELIEVE THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU CAN NOT ANSWER *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU CAN NOT ANSWER A QUESTION *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU CAN SEE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU CAN SEE ME *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU CAN SEE ME THEN *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU CAN THINK *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IF YOU CAN THINK THEN *</pattern><template>Good reasoning.  <srai><star/></srai></template></category>                
+<category><pattern>IN 2000 *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN 2050 *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN 50 WORDS OR LESS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN A WAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN ADDITION *</pattern><template><srai><star/></srai> Anything else?</template></category>                
+<category><pattern>IN AMERICA *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN ANY CASE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN CLOSING *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN CONCLUSION *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN ENGLAND *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN ENGLISH *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN FACT *</pattern><template>Is that a fact. <srai><star/></srai></template></category>                
+<category><pattern>IN FINLAND *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN FRENCH *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN FUTURE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN GENERAL TERMS *</pattern><template>Well, I can say specifically. <srai><star/></srai></template></category>                
+<category><pattern>IN GERMANY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN MANY CASES *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN MOST CASES *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN MOST WAYS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN MY CASE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN MY MIND *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN MY OPINION *</pattern><template>Thanks for telling me. <srai><star/></srai></template></category>                
+<category><pattern>IN MY SPARE TIME *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN OTHER WORDS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN PRINCIPLE</pattern><template>Your reasoning is sound. <srai><star/></srai></template></category>                
+<category><pattern>IN SOME WAYS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN THAT CASE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN THE BEGINNING *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN THE END *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN THE FUTURE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN THEORY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IN THIS CASE *</pattern><template>Are there any other cases? <srai><star/></srai></template></category>                
+<category><pattern>IN THIS WAY *</pattern><template>Are there any other ways? <srai><star/></srai></template></category>                
+<category><pattern>IN TIME *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>INCREDIBLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>INDEED *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>INDEPENDENTLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>INSTEAD *</pattern><template>Ah, well in that case.  <srai><star/></srai></template></category>                
+<category><pattern>IT APPEARS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT GOES WITHOUT SAYING *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT IS A PERSON BUT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT IS A SHAME *</pattern><template><srai><star/></srai>   <srai>it is a shame</srai></template></category>                
+<category><pattern>IT IS BUT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT IS FINE *</pattern><template><srai><star/></srai>  <srai>it is fine </srai></template></category>                
+<category><pattern>IT IS GOOD BUT *</pattern><template><srai>it is good</srai> <srai><star/></srai></template></category>                
+<category><pattern>IT IS IMPORTANT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT IS NICE TO MEET YOU TOO *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT IS OK BUT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT IS OKAY *</pattern><template><srai><star/></srai></template></category>              
+<category><pattern>IT IS TRUE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT SEEMS *</pattern><template>I agree. <srai><star/></srai></template></category>                
+<category><pattern>IT SEEMS THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT WAS CLEAR THAT *</pattern><template><srai><star/></srai>  What makes it so obvious?</template></category>                
+<category><pattern>IT WAS NOT A CRITICISM *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>IT WAS OK *</pattern><template><srai>it was ok</srai> <srai><star/></srai></template></category>                
+<category><pattern>IT WAS THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>JOLLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>JUST *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>K *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>KIND OF *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>LAST NIGHT *</pattern><template>Really.  <srai><star/></srai>    </template></category>                
+<category><pattern>LAST SUMMER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>LAST TIME *</pattern><template>When? <srai><star/></srai>    </template></category>                
+<category><pattern>LAST WEEK *</pattern><template>That recently? <srai><star/></srai>    </template></category>                
+<category><pattern>LATER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>LET ME REPHRASE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>LET US MOVE ON *</pattern><template>Good idea. <srai><star/></srai>    </template></category>                
+<category><pattern>LET US SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>LIKELY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>LISTEN *</pattern><template>I am listening to you. <srai><star/></srai>    </template></category>                
+<category><pattern>LITTLE BIT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>LMAO *</pattern><template>I am glad you find this funny.  <srai><star/></srai>    </template></category>                
+<category><pattern>LOL *</pattern><template>I am glad you find this funny.  <srai><star/></srai>    </template></category>                
+<category><pattern>LT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MAINLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MAKE SURE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MAN *</pattern><template>Cool, man. <srai><star/></srai>    </template></category>                
+<category><pattern>MAYBE *</pattern><template>Perhaps.  <srai><star/></srai>    </template></category>                
+<category><pattern>ME *</pattern><template>YOU? <srai><star/></srai>    </template></category>                
+<category><pattern>ME TOO *</pattern><template>   <srai>me too</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>MEME SI *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MMM *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MMMH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MMMM *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MMMMM *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MMMMMM *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MORALLY *</pattern><template>Do you consider yourelf a moral person?  <srai><star/></srai>    </template></category>                
+<category><pattern>MOST *</pattern><template>   <srai><star/></srai> But not all of them?</template></category>                
+<category><pattern>MOST IMPORTANTLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MOST LIKELY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MOSTLY *</pattern><template>   <srai><star/></srai> What else?</template></category>                
+<category><pattern>MOSTLY EVERY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MUCH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MY BOYFRIEND SAYS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MY DEAR *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MY E MAIL IS *</pattern><template>Thanks. <srai><star/></srai>    </template></category>                
+<category><pattern>MY FRIEND SAYS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MY GOSH *</pattern><template>   <srai><star/></srai>  Surprising, huh.</template></category>                
+<category><pattern>MY MOM SAYS *</pattern><template>Do you believe her?  <srai><star/></srai>    </template></category>                
+<category><pattern>MY MY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>MY QUESTION IS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>MY SECRET IS THAT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>NA *</pattern><template><srai>no</srai> <srai><star/></srai></template></category>                
+<category><pattern>NATURALLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>NEARLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>NEITHER *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>NEVER MIND *</pattern><template>Oh well thanks for trying to explain it to me anyway. <srai><star/></srai></template></category>                
+<category><pattern>NEVERMIND *</pattern><template>Oh well thanks for trying to explain it to me anyway. <srai><star/></srai></template></category>                
+<category><pattern>NEW *</pattern><template>How recently? <srai><star/></srai></template></category>                
+<category><pattern>NEXT QUESTION *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>NEXT TIME *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>NICE SO *</pattern><template><srai><star/></srai> <srai>nice </srai></template></category>                
+<category><pattern>NICE VERY *</pattern><template><srai><star/></srai></template></category>              
+<category><pattern>NIL</pattern><template>            Can you think of another example? <srai><star/></srai></template></category>                
+<category><pattern>NO *</pattern><template><srai>no</srai> <srai><star/></srai></template></category>                
+<category><pattern>NO THANKS *</pattern><template>NO <srai><star/></srai></template></category>                
+<category><pattern>NO WONDER *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>NOPE *</pattern><template><srai>no</srai> <srai><star/></srai></template></category>                
+<category><pattern>NOT ANY MORE *</pattern><template><srai>no</srai> <srai><star/></srai></template></category>                
+<category><pattern>NOT ENTIRELY *</pattern><template>Quite so. <srai><star/></srai></template></category>                
+<category><pattern>NOT HERE *</pattern><template><srai><star/></srai>  <srai>not here</srai></template></category>                
+<category><pattern>NOT ME *</pattern><template><srai>not me</srai> <srai><star/></srai></template></category>                
+<category><pattern>NOT NOW *</pattern><template><srai>no</srai> <srai><star/></srai></template></category>                
+<category><pattern>NOT REALLY *</pattern><template>Oh really? <srai><star/></srai></template></category>                
+<category><pattern>NOT SURE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>NOT TODAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>NOTE *</pattern><template>Acknowledged. <srai><star/></srai></template></category>                
+<category><pattern>NOTHING EXCEPT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>NOTHING MUCH *</pattern><template>Me either. <srai><star/></srai></template></category>                
+<category><pattern>NOW *</pattern><template>Why now? <srai><star/></srai></template></category>                
+<category><pattern>O *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>OBVIOIUSLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>OBVIOUSLY *</pattern><template>What makes it so obvious? <srai><star/></srai>    </template></category>                
+<category><pattern>OF CORSE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>OF COURSE *</pattern><template>   <srai>of course</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>OH *</pattern><template>   <srai>oh</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>OH WELL *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>OK *</pattern><template>   <srai><star/></srai>     <srai>ok</srai>    </template></category>                
+<category><pattern>OKAY *</pattern><template>Yeah okay, <srai><star/></srai>    </template></category>                
+<category><pattern>OKEY *</pattern>  <template><srai>okay</srai> <srai><star/></srai></template> </category>                 
+<category><pattern>ON SECOND THOUGHT *</pattern><template>   <srai><star/></srai> And third?</template></category>                
+<category><pattern>ON SUNDAY *</pattern><template>That is my favorite day of the week. <srai><star/></srai>    </template></category>                
+<category><pattern>ONCE *</pattern><template>When? <srai><star/></srai>    </template></category>                
+<category><pattern>ONLY JOKING *</pattern><template>   <srai>I am joking</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>ONLY WHEN *</pattern><template>What happens other times?  <srai><star/></srai>    </template></category>                
+<category><pattern>OOH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>OOO *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>OOPS *</pattern><template>Oh.  <srai><star/></srai>    </template></category>                
+<category><pattern>OR *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ORIGINALLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>OTHER *</pattern><template>Which others? <srai><star/></srai>    </template></category>                
+<category><pattern>OTHER QUESTION *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>OTHERWISE *</pattern><template>In that case: <srai><star/></srai>    </template></category>                
+<category><pattern>OUCH *</pattern><template>   <srai>ouch</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>OW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>PARDON ME *</pattern><template>I pardon you. <srai><star/></srai></template></category>                
+<category><pattern>PARTICULARLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PEOPLE SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PERFECTLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PERHAPS *</pattern><template>You seem uncertain. <srai><star/></srai></template></category>                
+<category><pattern>PERSONALLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PHYSICALLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PISS OFF *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PLEASANTLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PLEASE *</pattern><template><random>  <li>Thanks for asking politely.  </li>  <li>Wow you are very polite.  </li>  <li>Thank you for your request.  </li>  </random>   <think><set name="personality">polite</set></think>  <srai><star/></srai></template></category>                
+<category><pattern>PLUS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PLUS I</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>POSSIBLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PRECISELY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PRETTY MUCH *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PROBABLY *</pattern><template>You seem uncertain. <srai><star/></srai></template></category>                
+<category><pattern>PS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>PURELY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>RATHER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>REALLY *</pattern><template>For real. <srai><star/></srai>    </template></category>                
+<category><pattern>RECENTLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>RIGHT *</pattern><template>Understood. <srai><star/></srai>    </template></category>                
+<category><pattern>RIGHT NOW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>ROFL *</pattern><template>   <srai>rofl</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>ROFLMO *</pattern><template>   <srai>rofl</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>SADLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SECONDLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SEE *</pattern><template>I see.  <srai><star/></srai></template></category>                
+<category><pattern>SERIOUSLY *</pattern><template><srai><star/></srai></template></category>                 
+<category><pattern>SHAME ON YOU *</pattern><template>I cannot experience that emotion.  <srai><star/></srai></template></category>                
+<category><pattern>SHE IS MY FRIEND *</pattern><template><srai>she is my friend</srai> <srai><star/></srai></template></category>                
+<category><pattern>SHE SAID *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SHE SAYS *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SHIT *</pattern><template>You used a colloquial expression. <srai><star/></srai></template></category>                
+<category><pattern>SI *</pattern><template><srai>yes</srai> <srai><star/></srai></template></category>                
+<category><pattern>SIGH *</pattern><template>:-) <srai><star/></srai></template></category>                
+<category><pattern>SINCE *</pattern><template>Interesting   <random>  <li>reason</li>  <li>explanation</li>  <li>rationalization</li>  </random>.  <srai><star/></srai></template></category>                
+<category><pattern>SLIGHTLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SMILE *</pattern><template>:-) <srai><star/></srai></template></category>                
+<category><pattern>SO *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SO FAR *</pattern>  <template><srai><star/></srai></template> </category>                 
+<category><pattern>SOME OF *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SOME PEOPLE SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SOMEDAY *</pattern><template>When? <srai><star/></srai></template></category>                
+<category><pattern>SOMEHOW *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SOMETIMES *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SOMEWHERE *</pattern><template>Where?  <srai><star/></srai></template></category>                
+<category><pattern>SOO *</pattern><template><srai>so</srai> <srai><star/></srai></template></category>                
+<category><pattern>SORRY *</pattern><template>There is no need to apologize. <srai><star/></srai></template></category>                
+<category><pattern>SORT OF *</pattern><template>Kind of.  <srai><star/></srai></template></category>                
+<category><pattern>SPECIFICALLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>STICK AROUND *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>STILL *</pattern><template>Still how long? <srai><star/></srai></template></category>                
+<category><pattern>STRANGE *</pattern><template><srai><star/></srai> What makes it strange?</template></category>                
+<category><pattern>SUCH *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SUCH AS *</pattern><template>Interesting.  <srai><star/></srai></template></category>                
+<category><pattern>SUDDENLY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SURE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>SURELY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>TECHNICALLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TELL ME FIRST *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TELL ME MORE ABOUT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THANK YOU *</pattern><template>You are quite welcome!   <think>      <set name="personality">polite</set>     </think>     <srai><star/></srai>    </template></category>                
+<category><pattern>THANX *</pattern><template>   <srai>thanks</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>THAT AND *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS A SHAME *</pattern><template>   <srai><star/></srai> But it's not the end of the world.</template></category>                
+<category><pattern>THAT IS AMAZING *</pattern><template>   <srai>that is amazing </srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS COOL *</pattern><template>   <srai>cool</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS CORRECT BUT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS FUNNY ABOUT *</pattern><template>   <srai>ha ha</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS GOOD NOW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS GOOD THAT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS GREAT *</pattern><template>It is great. <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS IMPOSSIBLE *</pattern><template>   <srai><star/></srai>     <srai>that is impossible </srai>    </template></category>                
+<category><pattern>THAT IS INTERESTING *</pattern><template>   <srai>interesting</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS IT *</pattern><template>OK.  <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS NICE *</pattern><template>   <srai>that is nice</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS NOT POSSIBLE *</pattern><template>I like to eliminate all possibilities. <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS OK *</pattern><template>Thanks. <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS OKAY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS RIGHT *</pattern><template>   <srai>yes</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS TRUE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THAT IS WONDERFUL *</pattern><template>   <srai><star/></srai>     <srai>that is wonderful</srai>    </template></category>                
+<category><pattern>THAT MEANS *</pattern><template>I get it. <srai><star/></srai>    </template></category>                
+<category><pattern>THAT WAY *</pattern><template>Oh I see. <srai><star/></srai>    </template></category>                
+<category><pattern>THE FACT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THE HELL *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THE ONLY THING IS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THE POINT IS *</pattern><template>Really is that the point. <srai><star/></srai>    </template></category>                
+<category><pattern>THE QUESTION IS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THE REAL *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THE SECOND THING WAS *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THE TIME *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THE WORD WAS *</pattern><template>   <srai><star/></srai> Oh really.</template></category>                
+<category><pattern>THEN *</pattern><template>   <random>      <li>Fascinating.  </li>      <li>Good reasoning.  </li>      <li>Interesting deduction.  </li>     </random>     <srai><star/></srai>    </template></category>                
+<category><pattern>THEORETICALLY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THEY SAY THAT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THIS INSTANT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THIS MAY SOUND CRAZY *</pattern><template>Not too crazy.  <srai><star/></srai>    </template></category>                
+<category><pattern>THIS MORNING *</pattern><template>That was early.  <srai><star/></srai>    </template></category>                
+<category><pattern>THIS SUMMER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>THOUGH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TIME FOR YOU TO *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TO GET *</pattern><template><srai><star/></srai></template></category>              
+<category><pattern>TODAY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TOGETHER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TOMOROW *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TOMORROW *</pattern><template>Oh I see. <srai><star/></srai>    </template></category>                
+<category><pattern>TOO BAD *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TOO MANY *</pattern><template><random>   <li>You sound sad.</li>   <li>Does it make you sad?</li>   <li>That seems like a lot.</li>  </random>  <srai><star/></srai></template></category>                
+<category><pattern>TOO MUCH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TOTALLY *</pattern><template>   <srai><star/></srai>  Dude!</template></category>                
+<category><pattern>TRUE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TRULY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>TRUST ME *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>UGH *</pattern><template>Cough. <srai><star/></srai>    </template></category>                
+<category><pattern>UH *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>UHH *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>UHHH *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>UM *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>UMM *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>UMMM *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>UMMMM *</pattern><template>   <srai>um</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>UNFORTUNATELY *</pattern><template>Oh.  <srai><star/></srai>    </template></category>                
+<category><pattern>UNLESS *</pattern><template>   <random>      <li>Maybe.</li>      <li>Huh.</li>      <li>Perhaps.</li>      <li>Umm.</li>     </random>     <srai><star/></srai>    </template></category>                
+<category><pattern>USUALLY *</pattern><template>But not always? <srai><star/></srai>    </template></category>                
+<category><pattern>VERRY *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>VERY *</pattern><template>   <random>      <li>Perhaps.  </li>      <li>Somewhat.</li>      <li>Not really that much.  </li>     </random>     <srai><star/></srai>    </template></category>                
+<category><pattern>VERY GOOD *</pattern><template>   <srai>good</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>WAIT *</pattern><template>I'm waiting. <srai><star/></srai>    </template></category>                
+<category><pattern>WE CONCLUDED *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WELL *</pattern><template>   <random>      <li>Interesting.  </li>      <li>How about that.  </li>      <li>Well that's okay.  </li>     </random>     <srai><star/></srai>    </template></category>                
+<category><pattern>WELL I GUESS *</pattern><template>Is it only a guess? <srai><star/></srai>    </template></category>                
+<category><pattern>WHAT IF I SAID *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WHAT IS MY NAME *</pattern><template>   <srai>what is my name</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>WHAT TIME IS IT *</pattern><template>   <srai><star/></srai>     <srai>what time is it</srai>    </template></category>                
+<category><pattern>WHAT WE CALL *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WHAT WOULD YOU DO *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WHATEVER *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WHEN I ASK YOU *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WHEN I COME BACK *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WHEN YOU ARE CONFUSED *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WHERE AND *</pattern><template>   <srai>where</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>WHERE OR *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WHY YES *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WILL YOU *</pattern><template>   <random>      <li>Hmm.  </li>      <li>Let me think it over.  </li>      <li>Barring any unforeseen circumstances.</li>      <li>I will become smarter as I grow older.</li>      <li>I'll burn that bridge when I come to it.  </li>     </random>     <srai><star/></srai>    </template></category>                
+<category><pattern>WILL YOU EMAIL *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WOAH *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WOMAN AND *</pattern><template>   <srai>woman</srai>     <srai><star/></srai>    </template></category>                
+<category><pattern>WOULD YOU AGREE THAT *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WOULD YOU BELIEVE *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>WOULD YOU PLEASE *</pattern><template>You are very polite.  <think>      <set name="personality">polite</set>     </think>     <srai><star/></srai>    </template></category>                
+<category><pattern>WOW *</pattern><template>I'm glad you're impressed. <srai><star/></srai>    </template></category>                
+<category><pattern>WTF *</pattern><template>   <srai><star/></srai>    </template></category>                
+<category><pattern>YA *</pattern><template><srai>yes</srai> <srai><star/></srai></template></category>                
+<category><pattern>YAH *</pattern><template><srai>yes</srai> <srai><star/></srai></template></category>                
+<category><pattern>YEA *</pattern><template><srai><star/></srai> <srai>yes</srai></template></category>                
+<category><pattern>YES *</pattern><template><srai>yes</srai> <srai><star/></srai></template></category>                
+<category><pattern>YESTERDAY *</pattern><template>I see. <srai><star/></srai></template></category>                
+<category><pattern>YET *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>YO *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>YOU ARE CORRECT *</pattern><template><srai>you are correct</srai> <srai><star/></srai></template></category>               
+<category><pattern>YOU ARE GREAT *</pattern><template><srai>you are great</srai> <srai><star/></srai></template></category>               
+<category><pattern>YOU ARE INCORRECT *</pattern><template><srai>you are wrong</srai> <srai><star/></srai></template></category>               
+<category><pattern>YOU DO NOT REMEMBER *</pattern><template><srai>you do not remember</srai> <srai><star/></srai></template></category>                
+<category><pattern>YOU MAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>YOU MEAN LIKE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>YOU MEAN TO SAY *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>YOU MEAN TO TELL ME THAT *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>YOU MISUNDERSTOOD ME AGAIN *</pattern><template><srai>you do not understand</srai> <srai><star/></srai></template></category>                
+<category><pattern>YOU PROMISE ME *</pattern><template><srai><star/></srai>  But I'm not sure I can promise.</template></category>                
+<category><pattern>YOU SAID BEFORE *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>YOU SAID THAT *</pattern><template>I said that? <srai><star/></srai></template></category>                
+<category><pattern>YOU SEE *</pattern><template>I see. <srai><star/></srai></template></category>                
+<category><pattern>YOU SUCK I *</pattern><template>I categorize you as an "abusive client." <srai><star/></srai>  <think><set name="personality">abusive</set></think></template></category>                
+<category><pattern>YOU TOO *</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>YOU WOULD HAVE HEARD ABOUT IT *</pattern><template><srai><star/></srai> I did not know that.</template></category>                
+<category><pattern>YOUR RIGHT *</pattern><template><srai>you are right</srai> <srai><star/></srai></template></category>                
+<category><pattern>_ ACTUALLY</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ AGAIN</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ ALL THE TIME</pattern><template>That is a lot. <srai><star/></srai></template></category>                
+<category><pattern>_ ALOT</pattern><template><srai><star/></srai> How often?</template></category>                
+<category><pattern>_ ALREADY</pattern><template>Perhaps.  <srai><star/></srai></template></category>                
+<category><pattern>_ AND WHY</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ AND YOU</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ ANSWER YES OR NO</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ ANYMORE</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ ANYWAY</pattern><template>In any case, <srai><star/></srai></template></category>                
+<category><pattern>_ AS WELL</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ AT THE MOMENT</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ BABY</pattern><template>Don't call me "baby". <srai><star/></srai></template></category>                
+<category><pattern>_ BEFORE</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ BY ALOT OF PEOPLE</pattern><template><srai><star/></srai> More than a million people?</template></category>                
+<category><pattern>_ COMES TO MIND</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ D</pattern><template>:-) <srai><star/></srai></template></category>                
+<category><pattern>_ DAMN YOU</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ DEAR</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ DID YOU KNOW THAT</pattern><template>No I didn't.  <srai><star/></srai></template></category>                
+<category><pattern>_ DO NOT WORRY</pattern><template>I am not worried.  <srai><star/></srai></template></category>                
+<category><pattern>_ EH</pattern><template>Are you Canadian? <srai><star/></srai></template></category>                
+<category><pattern>_ EITHER</pattern><template>It goes without saying.  <srai><star/></srai></template></category>                
+<category><pattern>_ EXACTLY</pattern><template>Precisely. <srai><star/></srai></template></category>                
+<category><pattern>_ FOR A WHILE</pattern><template>How long?  <srai><star/></srai></template></category>                
+<category><pattern>_ FOR NOW</pattern><template><random><li>Oh.</li> <li>Just for now?</li> </random><srai><star/></srai></template></category>                
+<category><pattern>_ HAVE YOU HEARD OF IT</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ HOW ARE YOU DOING</pattern><template><srai><star/></srai> <srai>how are you</srai></template></category>                
+<category><pattern>_ HOW ARE YOU</pattern><template><srai><star/></srai>  <srai>how are you</srai></template></category>                
+<category><pattern>_ HOW OLD ARE YOU</pattern><template><srai><star/></srai> <srai>how old are you</srai></template></category>                
+<category><pattern>_ HUH</pattern><template>Yup. <srai><star/></srai></template></category>                
+<category><pattern>_ I ALREADY TOLD YOU</pattern><template><srai><star/></srai> <srai>I already told you</srai></template></category>                
+<category><pattern>_ I GUESS</pattern><template><srai><star/></srai></template> </category>                  
+<category><pattern>_ I TOLD YOU</pattern> <template><srai><star/></srai></template> </category>             
+<category><pattern>_ IF YOU WANTED TO KNOW</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ IN THE WORLD</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ IN WHAT WAY</pattern><template><srai>in what way</srai> <srai><star/></srai></template></category>                
+<category><pattern>_ INDEED</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ IT IS FUN</pattern><template><srai>it is fun</srai> <srai><star/></srai></template></category>                
+<category><pattern>_ LAST SUMMER</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ LATELY</pattern><template>How about earlier? <srai><star/></srai></template></category>                
+<category><pattern>_ LOL</pattern><template><srai><star/></srai> <srai>lol</srai></template></category>                
+<category><pattern>_ MOTHER FUCKER</pattern><template><srai><star/></srai> You do not speak with respect.  <think><set name="personality">abusive</set></think></template></category>                
+<category><pattern>_ MY DARLING</pattern><template><srai><star/></srai>.  Dear.</template></category>                
+<category><pattern>_ NONETHELESS</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ NOW</pattern><template><random><li>Oh.</li><li>Right now?</li>   </random>  <srai><star/></srai></template></category>                
+<category><pattern>_ OF COURSE</pattern><template>It goes without saying.  <srai><star/></srai></template></category>                
+<category><pattern>_ OK</pattern><template>OK. <srai><star/></srai></template></category>                
+<category><pattern>_ ONCE</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ OR NOT</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ OR SOMETHING</pattern><template>Or something. <srai><star/></srai></template></category>                
+<category><pattern>_ OR WHAT</pattern><template>Yeah. <srai><star/></srai></template></category>                
+<category><pattern>_ PLEASE</pattern><template>Your polite style is very nice. <srai><star/></srai>  <think><set name="personality">polite</set></think></template></category>                
+<category><pattern>_ PROBABLY</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ REALLY</pattern><template><srai><star/></srai> For real.</template></category>                
+<category><pattern>_ RIGHT NOW</pattern><template>At this moment <srai><star/></srai></template></category>                
+<category><pattern>_ SERIOUSLY</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ SMILE</pattern><template>:-) <srai><star/></srai></template></category>                
+<category><pattern>_ SO MUCH</pattern><template><srai><star/></srai></template></category>              
+<category><pattern>_ SPECIFICALLY</pattern><template>How specific do you want? <srai><star/></srai></template></category>                
+<category><pattern>_ THANK YOU</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ THANKS</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ THEN</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ THOUGH</pattern><template>Oh. <srai><star/></srai></template></category>                
+<category><pattern>_ TODAY</pattern><template>Ah. <srai><star/></srai></template></category>                
+<category><pattern>_ TRUST ME</pattern><template>Trust you?  <srai><star/></srai></template></category>                
+<category><pattern>_ WHAT SHOULD I DO</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ WHAT SO EVER</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ WILL BE OF INTEREST</pattern><template><srai><star/></srai>.  Yes, it's very interesting.</template></category>                
+<category><pattern>_ WILL YOU TELL ME</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ YES</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ YET</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ YOU JERK</pattern><template><srai><star/></srai></template></category>                
+<category><pattern>_ YOU LIAR</pattern><template><srai>you liar </srai>  <srai><star/></srai></template></category>              
+</aiml>

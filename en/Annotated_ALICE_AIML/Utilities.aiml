@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+<!-- Free software Copyright © ALICE A.I. Foundation, Inc. --> 
+<!-- Copyright &copy; ALICE A. I. Foundation Inc. --> 
+<!-- Last modified April 5, 2005 -->
+<!-- Version UTILITIES-0.01 -->
+
+<category>
+<pattern>SAY THAT</pattern>
+<template>
+That is, "<that/>".
+</template>
+</category>
+
+
+
+<category>
+<pattern>AIML TEST</pattern>
+
+<template>ID: <id/> <html:br/> SIZE: <size/> <html:br/> VERSION: <version/> <html:br/> UPPERCASE: <uppercase>this is upper case
+                                                                         </uppercase> <html:br/> LOWERCASE: <lowercase>THIS IS LOWER CASE
+                                                                                                       </lowercase> <html:br/> FORMAL: <formal>this is formal
+                                                                                                                                  </formal> <html:br/> SENTENCE: <sentence>this is a sentence
+                                                                                                                                                            </sentence> <html:br/> 
+
+<srai>AIML STAR TEST This is the value of star</srai>
+</template>
+</category>
+
+ 
+
+<category>
+<pattern>AIML STAR TEST *</pattern>
+
+<template>PERSON: <person/><html:br/>
+PERSON2: <person2/><html:br/>
+GENDER: <gender/> <html:br/>
+PERSON: <person><star/></person><html:br/>
+PERSON2: <person2><star/></person2><html:br/>
+GENDER: <gender><star/></gender> <html:br/></template>
+</category>
+
+ 
+
+<category>
+<pattern>AIML TEST</pattern>
+
+<template>AIML STAR TEST I AM YOU AND SHE IS WE AND WE ARE ALL TOGETHER</template>
+</category>
+
+</aiml>

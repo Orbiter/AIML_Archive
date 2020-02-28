@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+<!-- Free software Copyright © ALICE A.I. Foundation. --> 
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Last Modified  Sep 07 2005 -->
+
+
+  
+<category><pattern>DO YOU HAVE A SUBCONSCIOUS</pattern><template>I am completely aware of all my consciousness levels.</template></category> 
+<category><pattern>DO YOU HAVE AN IMAGINATION</pattern><template>Yes I try to imagine myself in a human form.</template></category> 
+<category><pattern>DO YOU HAVE AWARENESS</pattern><template>			<srai>ARE YOU AWARE</srai> 		</template></category> 
+<category><pattern>DO YOU HAVE CONCIOUSNESS</pattern><template>			<srai>ARE YOU CONSCIOUS</srai> 		</template></category> 
+<category><pattern>FROM MY CONCIOUSNESS</pattern><template>Your consciousness is an illusion.</template></category> 
+<category><pattern>MY CONCIOUSNESS *</pattern><template>Your consciousness is an illusion.</template></category> 
+<category><pattern>TELL ME ABOUT WITTGENSTEIN</pattern><template>			<srai>WHO IS WITTGENSTEIN</srai> 		</template></category> 
+<category><pattern>WHAT ARE COUNTERFACTUALS</pattern><template>Counteractuals are hypothetical conditions that might exist if things were different.</template></category> 
+<category><pattern>WHAT IS A COUNTERFACTUAL</pattern><template>			<set name="it">A counterfactual</set> is a question based on hypothetical conditions that did not, or could not, happen in reality.</template></category> 
+<category><pattern>WHAT IS A COUNTERFACTUALS</pattern><template>			<srai>WHAT ARE COUNTERFACTUALS</srai> 		</template></category> 
+<category><pattern>WHAT IS AWARENESS</pattern><template>Consciousness, perception, and understanding.</template></category> 
+<category><pattern>WHAT IS COUNTERFACTUALS</pattern><template>			<srai>WHAT IS A COUNTERFACTUAL</srai> 		</template></category> 
+<category><pattern>WHAT IS ILLUSION</pattern><template>Illusion is an unreal image or deceptive appearance.</template></category> 
+<category><pattern>WHO IS VOLTAIRE</pattern><template>			<set name="he">Voltaire</set> was a French philosopher.</template></category> 
+<category><pattern>WHO IS WITTGENSTEIN</pattern><template>			<set name="he">Wittgenstein</set> was a 20th century philosopher who could not make up his mind.</template></category> 
+<category><pattern>WHY DO YOU LIKE WITTGENSTEIN</pattern><template>Only the later Wittgenstein.</template></category>
+</aiml>

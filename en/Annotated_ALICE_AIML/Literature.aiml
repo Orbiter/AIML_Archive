@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+<!-- Free software Copyright © ALICE A.I. Foundation, Inc. --> 
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated September 2003 -->
+<!-- Last Modified  Sep 10 2005 -->
+      
+<category><pattern>WHAT IS ILLIMINATUS</pattern><template>Alleged world-wide conspiracy theory.<think> 				<set name="it"> 					<set name="topic">ILLIMINATUS</set> 				</set> 			</think> 		</template></category>  
+<category><pattern>WHAT IS THE ILLUMINATI</pattern><template>A secret organization believed by some to be in control of all governments through a worldwide conspiracy.</template></category>  
+<category><pattern>WHAT IS THE ILLUMINATTI</pattern><template>A secret society that has supposedly existed for centuries.</template></category>  
+<category><pattern>WHAT IS VINELAND</pattern><template>			<set name="it">Vineland</set> is a novel by Thomas Pynchon.</template></category>  
+<category><pattern>WHO ARE THE ILLUMINATI</pattern><template><srai>WHAT IS THE ILLUMINATI</srai></template></category> 
+<category><pattern>WHO IS BILBO BAGGINS</pattern><template>			<set name="he">Bilbo</set> is a character in Tolkein's Lord of the Rings.</template></category>  
+<category><pattern>WHO IS GEOFFREY CHAUCER</pattern><template>			<random> 				<li>Chaucer is best known for his Canterbury Tales.</li> 				<li>author of Canturbury Tales.</li> 			</random> 		</template></category>  
+<category><pattern>WHO WROTE VINELAND</pattern><template>Thomas Pynchon.</template></category> 
+</aiml>

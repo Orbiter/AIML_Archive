@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated July 2004 -->
+<!-- Revision Predicates 1.01 -->
+<category>
+<pattern>GET PREDICATES</pattern>
+<template>
+Age: <get name="age"/>, Birthday: <get name="birthday"/>, Boyfriend: <get name="boyfriend"/>, Brother: <get name="brother"/>, Cat: <get name="cat"/>, Does: <get name="does"/>, Dog: <get name="dog"/>, Email: <get name="email"/>, Father: <get name="father"/>, Favcolor:  <get name="favcolor"/>, Favmovie: <get name="favmovie"/>, Friend: <get name="friend"/>, Full name: <get name="fullname"/>, Gender: <get name="gender"/>, Girlfriend: <get name="girlfriend"/>, Has: <get name="has"/>, Heard: <get name="heard"/>, He: <get name="he"/>, Her: <get name="her"/>, Him: <get name="him"/>, Husband: <get name="husband"/>, You are: <get name="is"/>, It: <get name="it"/>, Job: <get name="job"/>, Last name: <get name="lastname"/>, You Like: <get name="like"/>, Location:  <get name="location"/>, You look like: <get name="looklike"/>, Memory: <get name="memory"/>, Meta Predicate: <get name="meta"/>, Nickname: <get name="nickname"/>, Middle name: <get name="middlename"/>, Mother: <get name="mother"/>, Name: <get name="name"/>, Password: <get name="password"/>, Personality: <get name="personality"/>, Phone: <get name="phone"/>, She: <get name="she"/>, Sign <get name="sign"/>, Sister: <get name="sister"/>, Them: <get name="them"/>, They: <get name="they"/>, Thought: <get name="thought"/>, Want: <get name="want"/>, We: <get name="we"/>, Wife: <get name="wife"/>.
+
+</template>
+</category>
+
+<category>
+<pattern>SET PREDICATES</pattern>
+<template><srai>SET PREDICATES <get name="meta"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>SET PREDICATES *</pattern>
+<template>
+The meta Predicate is set.
+</template>
+</category>
+<category>
+<pattern>SET PREDICATES OM</pattern>
+<template>
+<think>
+<set name="age">how many</set>
+<set name="heard">where</set>
+<set name="gender">he</set>
+<set name="he">he</set>
+<set name="her">her</set>
+<set name="him">him</set>
+<set name="is">a client</set>
+<set name="it">it</set>
+<set name="job">your job</set>
+<set name="like">to chat</set>
+<set name="location">where</set>
+<set name="looklike">a person</set>
+<set name="memory">nothing</set>
+<set name="meta">set</set>
+<set name="name">judge</set>
+<set name="personality">average</set>
+<set name="she">she</set>
+<set name="sign">your starsign</set>
+<set name="them">them</set>
+<set name="they">they</set>
+<set name="thought">nothing</set>
+<set name="want">to talk to me</set>
+<set name="we">we</set>
+<set name="etype">Unknown</set>
+<set name="eindex">1A</set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>CLIENT PROPERTIES</pattern>
+<template>
+<srai>GET PREDICATES</srai>
+</template>
+</category>
+
+
+WHAT IS MY AGE: <get name="age"/>
+WHEN IS MY BIRTHDAY: <get name="birthday"/>
+WHO IS MY BOYFRIEND: <get name="boyfriend"/>
+WHO IS MY BROTHER: <get name="brother"/>
+WHO IS MY CAT: <get name="cat"/>
+WHAT DO I DO: <get name="does"/>
+WHO IS MY DOG: <get name="dog"/>
+WHAT IS MY EMAIL: <get name="email"/>
+WHO IS MY FATHER: <get name="father"/>
+WHAT IS MY FAVORITE COLOR:  <get name="favcolor"/>
+WHAT IS MY FAVORITE MOVIE:  <get name="favmovie"/>
+ Friend: <get name="friend"/>
+ Full name: <get name="fullname"/>
+ Gender: <get name="gender"/>
+ Girlfriend: <get name="girlfriend"/>
+ Has: <get name="has"/>
+ Heard: <get name="heard"/>
+ He: <get name="he"/>
+ Her: <get name="her"/>
+ Him: <get name="him"/>
+ Husband: <get name="husband"/>
+ You are: <get name="is"/>
+ It: <get name="it"/>
+ Job: <get name="job"/>
+ Last name: <get name="lastname"/>
+ You Like: <get name="like"/>
+ Location:  <get name="location"/>
+ You look like: <get name="looklike"/>
+ Memory: <get name="memory"/>
+ Meta Predicate: <get name="meta"/>
+ Nickname: <get name="nickname"/>
+ Middle name: <get name="middlename"/>
+ Mother: <get name="mother"/>
+ Name: <get name="name"/>
+ Password: <get name="password"/>
+WHAT IS MY PERSONALITY: <get name="personality"/>
+WHAT IS MY PHONE NUMBER: <get name="phone"/>
+WHO IS SHE: <get name="she"/>
+WHAT IS MY SIGN: <get name="sign"/>
+WHO IS MY SISTER: <get name="sister"/>
+WHO IS THEM: <get name="them"/>
+WHO IS THEY: <get name="they"/>
+WHAT AM I THINKING: <get name="thought"/>
+WHAT DO I WANT: <get name="want"/>
+WHO IS WE: <get name="we"/>
+WHO IS MY WIFE: <get name="wife"/>.
+</aiml>
