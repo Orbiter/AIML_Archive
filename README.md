@@ -31,3 +31,5 @@ Open Source AIML of Pandorabots CallMom from https://code.google.com/archive/p/a
 Copy from https://code.google.com/archive/p/aiml-en-us-foundation-alice/
 This includes the data set safe-aiml-reductions, mindpix and Annotated_ALICE_AIML.
 
+#### /aiml/en/rosie
+Rosie is a fork of the ALICE 2.0 project that has been optimized for use on the Pandorabots platform. Copied from https://github.com/pandorabots/rosie
